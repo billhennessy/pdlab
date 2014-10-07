@@ -1,0 +1,54 @@
+
+<div class="post-page panel">
+  <h2>Labs</h2>
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th>Client</th>
+            <th>Dates</th>
+            <th>Track</th>
+            <th>Client Contact</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="lab in labs" ng-click="selectLab(lab.$id)">
+            <td>{{lab.client}}</td>
+            <td>{{lab.day1}} & {{lab.day2}}</td>
+            <td>{{lab.track}}</td>
+            <td>{{lab.contact}}</td>
+            <td> <div class="col-xs-1" ng-click="deleteLab(lab)" ng-show="signedIn() && lab.owner === currentUser.username">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+            </div></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="container auth-forms">
+    <h2>Lab Details</h2>
+
+    <form ng-submit="submitLab()" name="form">
+        <div ng-show="error || form.labname.$error">
+            <p ng-show="error" class="text-danger"></p>
+            <p ng-show="form.labname.$error.taken" class="text-danger">Username is already taken.</p>
+            <p ng-show="form.labname.$error.invalid" class="text-danger">Username contains invalid characters.</p>
+        </div>
+        <input type="text" ng-model="lab.client" placeholder="Client" class="form-control"><br>
+        <input type="text" ng-model="lab.code" placeholder="Lab Code" name="labcode" check-labcode class="form-control"><br>
+        <input type="email" ng-model="lab.contact" placeholder="Client Contact Email" class="form-control"><br>
+        <input type="text" ng-model="lab.projectmgr" placeholder="Project Manager" class="form-control"><br>
+      <input type="text" ng-model="lab.ae" placeholder="AE" class="form-control"><br>
+      <input type="text" ng-model="lab.facilitator" placeholder="Facilitator" class="form-control"><br>
+      <input type="datetime" ng-model="lab.day1" placeholder="Session 1" class="form-control"><br>
+      <input type="datetime" ng-model="lab.day2" placeholder="Session 2" class="form-control"><br>
+        <select class="form-control" ng-model="lab.track">
+            <option>Consumer</option>
+            <option>Channel</option>
+            <option>Direct</option>
+            <option>Employee</option>
+        </select>
+      <input type="submit" value="Register" class="btn btn-primary" ng-show="signedIn()" />
+        <input type="button" ng-click="labClear()" value="Reset" class="btn">
+    </form>
+    </div>
+</div>

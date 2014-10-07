@@ -1,0 +1,23 @@
+<div class="container posts-page">
+    <h5>Your Progress</h5>
+    <div class="progress">
+
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
+            35%
+        </div>
+    </div>
+<ul class="media-list">
+    <li class="media post row" ng-repeat="challenge in challenges">
+        <a class="pull-left" href="#/challenges/{{challenge.$id}}" >
+
+            <img class="media-object" src="images/nxt-checkbox-checked-ok-md.png" height="140" width="140" alt="Complete">
+        </a>
+        <div class="media-body">
+            <h3 class="media-heading">{{challenge.title}}</h3>
+            <p>{{challenge.description}}</p>
+            <h3>{{challenge.points}} <small>points</small></h3>
+            <a  href="#/challenges/{{challenge.$id}}" class="btn btn-primary btn-lg  pull-right">GO!</a>
+        </div>
+    </li>
+</ul>
+  </div>

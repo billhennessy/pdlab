@@ -1,0 +1,25 @@
+
+<div class="container post-page auth-forms">
+<form class="auth-forms" ng-submit="submitChallenge()" ng-show="signedIn()">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Title" ng-model="challenge.title">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Description" ng-model="challenge.description">
+    </div>
+    <div class="form-group">
+        <input type="url" class="form-control" placeholder="Link" ng-model="challenge.links">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Video Embed" ng-model="challenge.video">
+    </div>
+    <div class="form-group">
+        <input type="url" class="form-control" placeholder="PDF" ng-model="challenge.PDF">
+
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Points" ng-model="challenge.points">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
