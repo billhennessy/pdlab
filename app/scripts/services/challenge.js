@@ -46,7 +46,7 @@ app.factory('Challenge',
                 if (User.signedIn()) {
                     var user = User.getCurrent();
                     var challenge = Challenge.find(challengeId);
-
+//TODO: test to see if user has already performed this challenge and skip point increment if so.
                     User.challenges(user.username).$set(challengeId, points).then(function() {
                         var score = parseInt(user.points) + parseInt(points);
                         user.points = score;
