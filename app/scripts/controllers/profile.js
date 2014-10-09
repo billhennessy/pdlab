@@ -6,18 +6,19 @@
 
 
 app.controller('ProfileCtrl',
-    function ($scope, $routeParams, Challenge, User) {
+    function ($scope, $location, $routeParams, Challenge, User) {
 
-        $scope.user = User.findByUsername($routeParams.username);
+       $scope.user = User.findByUsername($routeParams.username);
 
         $scope.challenges = {};
        // $scope.posts = {};
         $scope.commentedChallenges = {};
         $scope.comments = {};
+        $scope.points = 0;
 
         $scope.user.$loaded(function() {
             populateChallenges();
-            populateComments();
+           // populatePoints();
         });
 
 
@@ -27,9 +28,12 @@ app.controller('ProfileCtrl',
             challenges.$loaded(function (){
                 angular.forEach(challenges, function (challenge){
                     $scope.challenges[challenge.$id] = Challenge.find(challenge.$id);
+                    $scope.points += challenge[1];
                 });
             });
-        }
+
+        };
+
 
         function populateComments () {
             var comments = User.comments($routeParams.username).$asArray();

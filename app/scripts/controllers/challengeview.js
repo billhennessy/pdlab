@@ -6,7 +6,7 @@
 app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge, $sce) {
 
     $scope.challenge = Challenge.find($routeParams.challengeId);
-    console.log($scope.challenge.pdf);
+
     $scope.comments = Challenge.comments($routeParams.challengeId).$asArray();
 
     $scope.addComment = function () {
@@ -16,9 +16,10 @@ app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge, $
         $scope.comment = '';
     };
 
-    $scope.completeChallenge = function(challengeId){
-        console.log(challengeId);
-        Challenge.userChallenge(challengeId);
+    $scope.completeChallenge = function(challengeId, points){
+        //console.log(challengeId);
+        Challenge.userChallenge(challengeId, points);
+
     }
 
     $scope.trustSrc = function(src) {

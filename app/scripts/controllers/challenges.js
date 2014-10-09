@@ -3,9 +3,10 @@
  */
 'use strict';
 
-app.controller('ChallengesCtrl', function ($scope, $location, Challenge) {
+app.controller('ChallengesCtrl', function ($scope, $location,User, Challenge) {
     if ($location.path() === '/challenges') {
         $scope.challenges = Challenge.all;
+
     }
     $scope.challange = {
         title: '',
@@ -16,6 +17,14 @@ app.controller('ChallengesCtrl', function ($scope, $location, Challenge) {
         points: 0
 
     };
+    $scope.sumPoints = function(challenges){
+     var point = 0;
+        angular.forEach(challenges, function(challenge){
+            point += parseInt(challenge.points);
+        });
+        return point;
+    };
+
 
     $scope.submitChallenge = function () {
         Challenge.create($scope.challenge).then(function (ref) {

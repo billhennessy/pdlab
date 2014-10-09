@@ -42,13 +42,21 @@ app.factory('Challenge',
                 }
             },
 
-            userChallenge: function(challengeId){
-                var user = User.getCurrent();
-                console.log(user.username);
-               // var challenge = this.find(challengeId);
-               // console.log(challenge.title);
-                User.challenges(user.username).$set(challengeId, '');
+            userChallenge: function (challengeId, points) {
+                if (User.signedIn()) {
+                    var user = User.getCurrent();
+                    var challenge = Challenge.find(challengeId);
 
+                    User.challenges(user.username).$set(challengeId, points).then(function() {
+                        var score = parseInt(user.points) + parseInt(points);
+                        user.points = score;
+                        user.$save().then(function(){
+                            ref.name() === user.$id;
+                        });
+                    });
+
+
+                };
             },
 
             comments: function (challengeId) {

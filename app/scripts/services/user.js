@@ -29,6 +29,7 @@ app.factory('User',
                     user.fname = fname;
                     user.lname = lname;
                     user.cell = cell;
+                    user.points = 0;
 
                     user.md5_hash = authUser.md5_hash;
 
@@ -51,6 +52,7 @@ app.factory('User',
 
             },
 
+
             getCurrent: function () {
 
                 return $rootScope.currentUser;
@@ -65,6 +67,7 @@ app.factory('User',
             posts: function (username) {
                 return $firebase(new Firebase(FIREBASE_URL + 'user_posts/' + username));
             },
+
 
             challenges: function (username) {
                 return $firebase(new Firebase(FIREBASE_URL + 'user_challenges/' + username));
