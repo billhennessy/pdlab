@@ -4,7 +4,7 @@
 'use strict';
 
 app.controller('ChallengesCtrl', function ($scope, $location, Challenge) {
-    if ($location.path() === '/') {
+    if ($location.path() === '/challenges') {
         $scope.challenges = Challenge.all;
     }
     $scope.challange = {

@@ -17,7 +17,7 @@
     <div class="row">
 
         <ul class="nav nav-tabs">
-            <li class="active"><a data-target="#submissions" data-toggle="tab">Challenges Complete</a></li>
+            <li class="active"><a data-target="#challenges" data-toggle="tab">Challenges Complete</a></li>
             <li><a data-target="#comments" data-toggle="tab">Comments</a></li>
             <li><a data-target="#profile" data-toggle="tab">Profile</a> </li>
         </ul>
@@ -27,9 +27,9 @@
 </div>
 
 <div class="tab-content">
-    <div ng-include="'views/posts.html'" class="tab-pane active" id="submissions" ng-controller="PostsCtrl"></div>
+    <div ng-include="'views/challenges.html'" class="tab-pane active" id="challenges" ng-controller="ChallengesCtrl"></div>
     <div class="tab-pane container posts-page" id="profile">
-        <input type="email" ng-model="user.email" placeholder="Email" class="form-control" value="user.email"><br>
+      <input type="email" ng-model="user.email" placeholder="Email" class="form-control" value="user.email"><br>
         <input type="text" ng-model="user.username" placeholder="Username" name="username" check-username class="form-control"><br>
         <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
         <input type="text" ng-model="user.labcode" placeholder="Lab Code (from email)" class="form-control" value="user.labcode"><br>
@@ -42,22 +42,23 @@
         </div>
     </div>
     <div class="container posts-page tab-pane" id="comments">
-        <div class="post row" ng-repeat="(commentId, comment) in comments">
+        <p class="alert-danger">Still working on this.</p>
+    <!--<div class="post row" ng-repeat="(commentId, comment) in comments">
             <div class="col-xs-1">
 
             </div>
             <div class="col-md-9 col-xs-11">
                 <div class="info">
-                    <a href="{{ commentedPosts[commentId].url }}">{{ commentedPosts[commentId].title }}</a>
-                    <span class="url">({{ commentedPosts[commentId].url | hostnameFromUrl }})</span>
+                    <a href="{{ commentedChallenges[commentId].url }}">{{ commentedChallenges[commentId].title }}</a>
+                    <span class="url">({{ commentedChallenges[commentId].url | hostnameFromUrl }})</span>
                 </div>
 
-                <a href="#/posts/{{ commentedPosts[commentId].$id }}">comments</a>
+                <a href="#/posts/{{ commentedChallenges[commentId].$id }}">comments</a>
                 <p>{{ comment.text }}</p>
             </div>
             <div class="col-md-2">
 
-            </div>
+            </div>   -->
         </div>
     </div>
 

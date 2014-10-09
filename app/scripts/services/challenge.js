@@ -20,7 +20,7 @@ app.factory('Challenge',
                     return challenges.$add(challenge).then(function (ref) {
                         var challengeId = ref.name();
 
-                        User.challenges(user.username).$set(challengeId, '');
+                       // User.challenges(user.username).$set(challengeId, '');
 
                         return challengeId;
                     });
@@ -36,14 +36,23 @@ app.factory('Challenge',
                     if (user.username === challenge.owner) {
                         challenges.$remove(challenge).then(function () {
 
-                            User.challenges(user.username).$remove(challenge.$id);
+                         //   User.challenges(user.username).$remove(challenge.$id);
                         });
                     }
                 }
             },
 
+            userChallenge: function(challengeId){
+                var user = User.getCurrent();
+                console.log(user.username);
+               // var challenge = this.find(challengeId);
+               // console.log(challenge.title);
+                User.challenges(user.username).$set(challengeId, '');
+
+            },
+
             comments: function (challengeId) {
-                return $firebase(new Firebase(FIREBASE_URL + 'challenges/' + challengeId));
+                return $firebase(new Firebase(FIREBASE_URL + 'comments/' + challengeId));
             },
 
             addComment: function (challengeId, comment) {

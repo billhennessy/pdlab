@@ -23,6 +23,8 @@
 
     <!-- Add your site or application content here -->
     <div ng-include="'views/nav.html'"></div>
+
+    <div ng-show="currentUser.username" class="container" ng-include="'views/progress.html'"></div>
     <div class="container" ng-view=""></div>
 
 

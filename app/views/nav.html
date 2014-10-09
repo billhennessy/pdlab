@@ -13,6 +13,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div ng-controller="NavCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav nav-pills navbar-nav">
+            <li ng-show="currentUser.username">
+                <a href="#/challenges">Challenges</a>
+            </li>
             <li>
                 <a href="#/about">About</a>
             </li>
@@ -43,14 +46,10 @@
 
             <li>
                 <a href="#/users/{{ currentUser.username }}">
-                    <img ng-src="http://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic"/>
+                    <img ng-src="https://www.gravatar.com/avatar/{{ currentUser.md5_hash }}" class="nav-pic"/>
                     {{ currentUser.username }}
                 </a><br>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
-                        35%
-                    </div>
-                </div>
+
             </li>
 
             <li>

@@ -1,5 +1,9 @@
 <div class="container posts-page">
-
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#/challenges">My Challenges</a></li>
+        <li><a href="#/challenges">Next Challenge</a></li>
+        <li><a href="#/users/{{currentUser.username}}">My Profile</a></li>
+    </ul>
     <div class="post row">
         <div class="col-xs-1">
 
@@ -12,14 +16,21 @@
             <div>
                  {{challenge.description}}
             </div>
+            <div class="btn btn-link" ng-href="{{challenge.links}}">Link</div>     <br>
+            <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+            <video id="sampleMovie" ng-src="{{trustSrc(challenge.video)}}" autobuffer controls></video><br>
+
             <div>
-                {{challenge.video}}
+                <embed ng-src="{{trustSrc(challenge.PDF)}}" width="1000" height="800" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+            </div>
+
+
             </div>
         </div>
         <div class="col-md-2">
 
         </div>
-
+         <button class="btn btn-default" ng-click="completeChallenge(challenge.$id)">Complete</button>
     </div>
 
     <div ng-repeat="comment in comments" class="row cmt">

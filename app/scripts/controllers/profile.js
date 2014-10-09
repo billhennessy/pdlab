@@ -6,26 +6,27 @@
 
 
 app.controller('ProfileCtrl',
-    function ($scope, $routeParams, Post, User) {
+    function ($scope, $routeParams, Challenge, User) {
 
         $scope.user = User.findByUsername($routeParams.username);
 
-        $scope.posts = {};
-        $scope.commentedPosts = {};
+        $scope.challenges = {};
+       // $scope.posts = {};
+        $scope.commentedChallenges = {};
         $scope.comments = {};
 
         $scope.user.$loaded(function() {
-            populatePosts();
+            populateChallenges();
             populateComments();
         });
 
 
-        function populatePosts () {
-            var posts = User.posts($routeParams.username).$asArray();
+        function populateChallenges () {
+            var challenges = User.challenges($routeParams.username).$asArray();
 
-            posts.$loaded(function (){
-                angular.forEach(posts, function (post){
-                    $scope.posts[post.$id] = Post.find(post.$id);
+            challenges.$loaded(function (){
+                angular.forEach(challenges, function (challenge){
+                    $scope.challenges[challenge.$id] = Challenge.find(challenge.$id);
                 });
             });
         }
@@ -36,14 +37,14 @@ app.controller('ProfileCtrl',
             comments.$loaded(function () {
                 angular.forEach(comments, function (comment) {
 
-                    var post = Post.find(comment.post);
+                    var challenge = Challenge.find(comment.challenge);
 
-                    post.$loaded(function () {
-                        var postComments = Post.comments(comment.comment).$asObject();
+                    challenge.$loaded(function () {
+                        var challengeComments = Challenge.comments(comment.comment).$asObject();
 
-                        postComments.$loaded(function () {
-                            $scope.commentedPosts[comment.$id] = post;
-                            $scope.comments[comment.$id] = postComments[comment.$id];
+                        challengeComments.$loaded(function () {
+                            $scope.commentedChallenges[comment.$id] = challenge;
+                            $scope.comments[comment.$id] = challengeComments[comment.$id];
                         });
                     });
                 });

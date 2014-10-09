@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.filter('safeVideoUrl', function () {
+app.filter('hostnameFromUrl', function () {
     return function (str) {
         var url = document.createElement('a');
 

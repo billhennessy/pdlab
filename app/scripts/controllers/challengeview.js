@@ -3,10 +3,10 @@
  */
 'use strict';
 
-app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge) {
+app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge, $sce) {
 
     $scope.challenge = Challenge.find($routeParams.challengeId);
-
+    console.log($scope.challenge.pdf);
     $scope.comments = Challenge.comments($routeParams.challengeId).$asArray();
 
     $scope.addComment = function () {
@@ -15,4 +15,14 @@ app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge) {
         // console.log($routeParams.postId +": " + $scope.comment.text);
         $scope.comment = '';
     };
+
+    $scope.completeChallenge = function(challengeId){
+        console.log(challengeId);
+        Challenge.userChallenge(challengeId);
+    }
+
+    $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+    }
+
 });
