@@ -13,6 +13,9 @@ app.factory('Auth',
             register: function (user) {
                 return auth.$createUser(user.email, user.password);
             },
+            changePassword: function (user) {
+                return auth.$changePassword(email, password);
+            },
             signedIn: function () {
                 return auth.user !== null;
             },

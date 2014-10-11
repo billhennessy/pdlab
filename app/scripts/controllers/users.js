@@ -6,7 +6,10 @@
 
 app.controller('UsersCtrl', function ($scope, $location, User) {
 
+    //TODO: Order by points descending
+
     $scope.users = User.all;
+    $scope.predicate = '-points';
 
 
 

@@ -78,11 +78,16 @@ body {
   }
 }
 body {
-    background: #F3F3F3;
+    /*background: #F3F3F3;*/
+    background-color: #F3F3F3;
 }
 
 
 /* NAV BAR */
+
+.nav {
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
 .nav-pic {
     margin: -2px 5px 0 0;
     max-height: 20px;

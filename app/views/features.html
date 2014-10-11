@@ -1,21 +1,55 @@
-<h3>Complete Features</h3>
-<ul>
-    <li>Register for lab</li>
-    <li>See progress</li>
-    <li>Read About Persuasive Design Lab&trade;</li>
-    <li>Admin tools
-        <ul>
-            <li>Create a lab</li>
-            <li>Edit a lab</li>
-            <li>List registered users</li>
-            <li>List labs</li>
-        </ul>
-    </li>
-</ul>
 
-<h3>Features Coming Soon</h3>
-        <ul>
-            <li>Create Challenges</li>
-            <li>See challenges for you</li>
-            <li>complete challenges</li>
-        </ul>
+        <h3>Requested Features</h3>
+        <div class="list-group"  ng-repeat="feature in features | orderBy:'status'">
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">{{feature.title}}   <span class="glyphicon glyphicon-thumbs-up" ng-show="{{feature.status === 'Complete'}}"></span></h4>
+                <p class="list-group-item-text">{{feature.description}}</p>
+                <p class="list-group-item-text"><b>Status:</b> {{feature.status}}  </p>
+                <p class="list-group-item-text"><small>submitted by {{feature.reporter}}</small></p>
+            </a>
+        </div>
+
+
+
+
+                <h2>Request a Feature <small>or report a bug</small></h2>
+                <form role="form" ng-submit="submitFeature()">
+                <div class="form-group">
+                    <label for="featureReporter">Email address</label>
+                    <input type="email" class="form-control" id="featureReporter" ng-model="feature.reporter" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="featureTitle">Name your feature</label>
+                    <input type="text" class="form-control" id="featureTitle" ng-model="feature.title" placeholder="Name Feature">
+                </div>
+                <div class="form-group">
+                    <label for="featureDescription">What else can you tell us about this feature?</label>
+                    <textarea class="form-control" id="featureDescription" ng-model="feature.description" placeholder="Details"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" data-toggle="modal">Save changes</button>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" ak-modal="showModal" data-backdrop="static" id="myModal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+
+    </div>
+</div>

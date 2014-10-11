@@ -31,10 +31,11 @@
 
     </div>
     <div class="tab-pane container posts-page" id="profile">
-      <input type="email" ng-model="user.email" placeholder="Email" class="form-control" value="user.email"><br>
+
+      <input type="email" ng-model="user.email" placeholder="Email" class="form-control" value="user.email" ng-disabled="true"><br>
         <input type="text" ng-model="user.username" placeholder="Username" name="username" check-username class="form-control"><br>
         <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
-        <input type="text" ng-model="user.labcode" placeholder="Lab Code (from email)" class="form-control" value="user.labcode"><br>
+        <input type="password" ng-model="user.labcode" placeholder="Lab Code (from email)" class="form-control" value="user.labcode"><br>
         <div class="=panel">
             <h3>About You</h3>
             <input type="text" ng-model="user.fname" placeholder="First Name" class="form-control" value="user.fname"><br>

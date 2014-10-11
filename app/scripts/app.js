@@ -23,7 +23,7 @@ var app = angular.module('angNewsApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'views/publichome.html',
         controller: 'AboutCtrl'
       })
       .when('/about', {
@@ -61,7 +61,7 @@ var app = angular.module('angNewsApp', [
         })
         .when('/features',{
             templateUrl: 'views/features.html',
-            controller: 'FeaturesCtrl'
+            controller: 'FeatureCtrl'
         })
         .when('/admin/challenges', {
             templateUrl: 'views/admin/admin-challenges.html',
@@ -74,6 +74,10 @@ var app = angular.module('angNewsApp', [
         .when('/challenges/:challengeId',{
             templateUrl: 'views/showchallenge.html',
             controller: 'ChallengeViewCtrl'
+        })
+        .when('/features/:featureId',{
+            templateUrl: 'views/features.html',
+            controller: 'FeatureCtrl'
         })
       .otherwise({
         redirectTo: '/'

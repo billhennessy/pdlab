@@ -12,7 +12,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="lab in labs" ng-click="selectLab(lab.$id)">
+        <tr ng-repeat="lab in labs | orderBy:'Dates'" ng-click="selectLab(lab.$id)">
             <td>{{lab.client}}</td>
             <td>{{lab.day1}} & {{lab.day2}}</td>
             <td>{{lab.track}}</td>
