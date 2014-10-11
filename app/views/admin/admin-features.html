@@ -1,0 +1,38 @@
+<div class="container" ng-controller="FeatureCtrl">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Reporter</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="feature in features">
+            <td><b>{{feature.title}}</b><br>{{feature.description | orderBy:'priority'}}</td>
+            <td>
+                <select id="priority" ng-model="feature.priority">
+                    <option ng-selected="feature.priority==='1'">1</option>
+                    <option ng-selected="feature.priority==='2'">2</option>
+                    <option ng-selected="feature.priority==='3'">3</option>
+                </select>
+            </td>
+            <td>
+                <select id="status" ng-model="feature.status">
+                    <option ng-selected="feature.status==='Complete'">Complete</option>
+                    <option ng-selected="feature.status==='In Progress'">In Progress</option>
+                    <option ng-selected="feature.status==='New'">New</option>
+                </select>
+            </td>
+            <td>{{feature.reporter}}</td>
+            <td>
+                <a class="btn btn-primary" ng-click="updateFeature(feature)">Update</a>
+                <a ng-click="deleteFeature(feature)">Delete</a>
+            </td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>

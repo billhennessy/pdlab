@@ -15,7 +15,7 @@ app.controller('AuthCtrl',
 
         $scope.login = function () {
             Auth.login($scope.user).then(function () {
-                $location.path('/');
+                $location.path('/challenges');
             }, function (error) {
                 $scope.error = error.toString();
             });

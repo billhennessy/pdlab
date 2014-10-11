@@ -12,5 +12,4 @@ app.controller('UsersCtrl', function ($scope, $location, User) {
     $scope.predicate = '-points';
 
 
-
 });

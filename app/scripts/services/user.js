@@ -73,18 +73,19 @@ app.factory('User',
                 return $firebase(new Firebase(FIREBASE_URL + 'user_challenges/' + username));
             },
 
+
             comments: function (username) {
                 return $firebase(new Firebase(FIREBASE_URL + 'user_comments/' + username));
             },
 
-            labs: function(username) {
+            labs: function (username) {
                 return $firebase(new Firebase(FIREBASE_URL + 'user_labs/' + username));
             }
 
 
         };
 
-        function setCurrentUser (username) {
+        function setCurrentUser(username) {
 
             $rootScope.currentUser = User.findByUsername(username);
 
@@ -105,7 +106,7 @@ app.factory('User',
         });
 
 
-        $rootScope.$on('$firebaseSimpleLogin:logout', function() {
+        $rootScope.$on('$firebaseSimpleLogin:logout', function () {
 
             delete $rootScope.currentUser;
 

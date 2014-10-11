@@ -16,6 +16,7 @@ body {
 .header {
     border-bottom: 1px solid #e5e5e5;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
     margin-top: 0;
@@ -37,57 +38,63 @@ body {
         max-width: 730px;
     }
 }
+
 .container-narrow > hr {
     margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+    font-size: 21px;
+    padding: 14px 24px;
 }
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+    margin: 40px 0;
 }
+
 .marketing p + h4 {
-  margin-top: 28px;
+    margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
 }
+
 body {
     /*background: #F3F3F3;*/
     background-color: #F3F3F3;
 }
 
-
 /* NAV BAR */
 
 .nav {
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
 }
+
 .nav-pic {
     margin: -2px 5px 0 0;
     max-height: 20px;
@@ -96,14 +103,13 @@ body {
     border-radius: 100px;
 }
 
-
 /* MAIN POSTS PAGE */
 .post {
     background: #fff;
     padding: 15px 15px 5px 5px;
-    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .panel {
@@ -115,8 +121,7 @@ body {
 }
 
 .btn {
-    border;
-    1px 1px 1px 1px;
+    border: 1px 1px 1px 1px;
     border-color: #555555;
 
 }
@@ -128,16 +133,15 @@ body {
 
 .info .url {
     font-weight: normal;
-    color:#999;
-    font-size:13px;
-    margin-left:5px;
+    color: #999;
+    font-size: 13px;
+    margin-left: 5px;
 }
 
-
 /* PROFILE PAGE */
-.prof-img{
-    width:100%;
-    max-width:100px;
+.prof-img {
+    width: 100%;
+    max-width: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
@@ -149,38 +153,46 @@ body {
 }
 
 .nav-tabs {
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .vote {
-    height:20px;
+    height: 20px;
     cursor: pointer;
 }
 
 .auth-forms {
-    max-width:400px;
-    margin:0 auto;
+    max-width: 400px;
+    margin: 0 auto;
     background: #fff;
-    padding:1px 25px 25px 25px;
-    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1px 25px 25px 25px;
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
 
 .cmt-form {
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .cmt {
-    margin-top:10px;
-    padding-top:10px;
-    border-top:1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
 }
 
 .cmt .author {
-    font-size:11px;
-    color:#bbb;
+    font-size: 11px;
+    color: #bbb;
+}
+
+/* format checkbox images */
+.check-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    margin-bottom: 15px;
 }

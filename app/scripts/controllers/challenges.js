@@ -4,16 +4,15 @@
 'use strict';
 
 app.controller('ChallengesCtrl', function ($scope, $location,User, Challenge) {
-    if ($location.path() === '/challenges') {
+    if ($location.path() === '/challenges' || $location.path() === '/admin/challenges') {
         $scope.challenges = Challenge.all;
 
     }
     $scope.challange = {
         title: '',
         description: '',
-        links: {},
-        video: '',
-        pdf: '',
+        link: '',
+        linktype: '',
         points: 0
 
     };
@@ -31,12 +30,11 @@ app.controller('ChallengesCtrl', function ($scope, $location,User, Challenge) {
             $scope.challange = {
                 title: '',
                 description: '',
-                links: {},
-                video: '',
-                pdf: '',
+                link: '',
+                linktype: '',
                 points: 0
-            };
-            $location.path('/challenges/' + ref.name());
+            }
+            $location.path('/admin/challenges/');
         });
     };
 
@@ -48,4 +46,7 @@ app.controller('ChallengesCtrl', function ($scope, $location,User, Challenge) {
         Challenge.deleteComment($scope.challenge, comment);
     };
 
+    $scope.isComplete = function () {
+        return
+    }
 });

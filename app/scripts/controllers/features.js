@@ -34,4 +34,9 @@ app.controller('FeatureCtrl', function ($scope, $location, Feature, User) {
     $scope.showModal = false;
 
     $scope.status = 'New';
+
+    $scope.chkStatus = function (feature, status) {
+        return feature === status;
+    }
+
 });

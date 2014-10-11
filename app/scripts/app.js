@@ -67,6 +67,11 @@ var app = angular.module('angNewsApp', [
             templateUrl: 'views/admin/admin-challenges.html',
             controller: 'ChallengesCtrl'
         })
+        .when('/admin/features', {
+            templateUrl: 'views/admin/admin-features.html',
+            controller: 'FeatureCtrl'
+        })
+
         .when('/challenges', {
             templateUrl: 'views/challenges.html',
             controller: 'ChallengesCtrl'

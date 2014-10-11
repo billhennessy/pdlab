@@ -33,7 +33,7 @@ app.factory('Feature',
                 }
             },
             update: function (feature) {
-                return labs.$save(feature);
+                return features.$save(feature);
             }
         }
 
