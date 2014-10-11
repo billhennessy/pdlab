@@ -1,12 +1,13 @@
 
     <!--main body-->
-        <div class=" posts-page">
+    <h3>Challenges <span class="badge">{{challenges.length}}</span></h3>
+    <div class="posts-page">
 
-            <ul class="media-list">
-                <li class="media post row" ng-repeat="challenge in challenges">
-                    <a class="pull-left" href="#/challenges/{{challenge.$id}}" >
+        <ul class="media-list">
+            <li class="media post row" ng-repeat="challenge in challenges">
+                <a class="pull-left" href="#/challenges/{{challenge.$id}}">
 
-                        <img class="media-object" src="images/nxt-checkbox-checked-ok-md.png" height="140" width="140" alt="Complete">
+                <img class="media-object" src="images/nxt-checkbox-checked-ok-md.png" height="140" width="140" alt="Complete">
                     </a>
                     <div class="media-body">
                         <h3 class="media-heading">{{challenge.title}}</h3>
