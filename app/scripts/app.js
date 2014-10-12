@@ -17,7 +17,8 @@ var app = angular.module('angNewsApp', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'ui.bootstrap'
   ])
     .constant('FIREBASE_URL', 'https://pdlab.firebaseIO.com/')
   .config(function ($routeProvider) {
@@ -83,6 +84,14 @@ var app = angular.module('angNewsApp', [
         .when('/features/:featureId',{
             templateUrl: 'views/features.html',
             controller: 'FeatureCtrl'
+        })
+        .when('/about', {
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl'
+        })
+        .when('/about', {
+            templateUrl: 'views/about.html',
+            controller: 'AboutCtrl'
         })
       .otherwise({
         redirectTo: '/'

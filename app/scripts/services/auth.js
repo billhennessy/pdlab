@@ -13,8 +13,8 @@ app.factory('Auth',
             register: function (user) {
                 return auth.$createUser(user.email, user.password);
             },
-            changePassword: function (user) {
-                return auth.$changePassword(email, password);
+            changePassword: function (email, oldpassword, newpassword) {
+                return auth.$changePassword(email, oldpassword, newpassword);
             },
             signedIn: function () {
                 return auth.user !== null;

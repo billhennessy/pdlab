@@ -6,9 +6,13 @@
 
 
 app.controller('ProfileCtrl',
-    function ($scope, $location, $routeParams, Challenge, User) {
+    function ($scope, $location, $routeParams, Challenge, Auth, User) {
 
        $scope.user = User.findByUsername($routeParams.username);
+
+        $scope.updateUser = function (user) {
+            return User.update(user);
+        }
 
         $scope.challenges = {};
        // $scope.posts = {};
@@ -54,4 +58,20 @@ app.controller('ProfileCtrl',
                 });
             });
         }
+
+        $scope.changePassword = function (email, oldpassword, newpassword, newpassword2) {
+
+            if (newpassword === newpassword2) {
+                Auth.changePassword(email, oldpassword, newpassword).then(function () {
+                    $scope.error = "";
+                    $scope.message = "Success! Please remember your new password.";
+                }, function (error) {
+                    $scope.error = error.toString();
+                });
+            } else {
+                $scope.error = "Your new passwords do not match."
+            }
+        };
+
     });
+

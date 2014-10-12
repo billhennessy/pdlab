@@ -23,22 +23,15 @@ app.controller('AuthCtrl',
 
         $scope.register = function () {
             Auth.register($scope.user).then(function (authUser) {
-                User.create(authUser, $scope.user.username, $scope.user.fname, $scope.user.lname,$scope.user.cell).then(function() {
+                User.create(authUser, $scope.user.username, $scope.user.fname, $scope.user.lname, $scope.user.cell).then(function () {
                     $scope.login($scope.user);
                     $location.path('/');
                 }, function (error) {
                     $scope.error = error.toString();
                 });
-                });
+            });
 
 
         };
-        $scope.changePassword = function(email, password) {
-            Auth.changePassword(email, password).then(function() {
-                $location.path('/');
-            },function(error) {
-                $scope.error = error.toString();
-            } );
 
-        };
     });

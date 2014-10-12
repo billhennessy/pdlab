@@ -31,6 +31,8 @@ app.factory('User',
                     user.cell = cell;
                     user.points = 0;
 
+                    user.email = authUser.email;
+
                     user.md5_hash = authUser.md5_hash;
 
                     user.$priority = authUser.uid;
@@ -76,6 +78,11 @@ app.factory('User',
 
             comments: function (username) {
                 return $firebase(new Firebase(FIREBASE_URL + 'user_comments/' + username));
+            },
+
+            update: function (user) {
+                var users = $firebase(ref).$asArray();
+                return users.$save(user);
             },
 
             labs: function (username) {
