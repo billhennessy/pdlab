@@ -11,23 +11,23 @@ app.controller('FeatureCtrl', function ($scope, $location, Feature, User) {
     $scope.submitFeature = function () {
         Feature.create($scope.feature).then(function (featureId) {
             $scope.feature = {title: '', description: '', reporter: '', priority: 2, status: 'New'};
-           // $location.path('/features/' + featureId);
-           //TODO: create a showfeature page to manage individual features
+            // $location.path('/features/' + featureId);
+            //TODO: create a showfeature page to manage individual features
             $location.path('/features/' + featureId);
         });
     };
 
 
-    $scope.selectFeature = function(featureId){
+    $scope.selectFeature = function (featureId) {
 
         $scope.feature = Feature.find(featureId);
     };
-    $scope.deleteFeature = function(feature){
+    $scope.deleteFeature = function (feature) {
 
         $scope.feature = Feature.delete(feature);
     };
 
-    $scope.updateFeature = function(feature){
+    $scope.updateFeature = function (feature) {
         $scope.feature = Feature.update(feature);
     };
 

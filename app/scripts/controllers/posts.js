@@ -7,7 +7,7 @@ app.controller('PostsCtrl', function ($scope, $location, Post) {
     if ($location.path() === '/') {
         $scope.posts = Post.all;
     }
-     $scope.post = {url: 'http://', title: ''};
+    $scope.post = {url: 'http://', title: ''};
 
     $scope.submitPost = function () {
         Post.create($scope.post).then(function (ref) {

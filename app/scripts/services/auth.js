@@ -24,6 +24,9 @@ app.factory('Auth',
             },
             logout: function () {
                 auth.$logout();
+            },
+            resetPassword: function (email) {
+                return auth.$sendPasswordResetEmail(email);
             }
 
 

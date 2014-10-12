@@ -4,33 +4,32 @@
 'use strict';
 
 
-
 app.controller('ProfileCtrl',
     function ($scope, $location, $routeParams, Challenge, Auth, User) {
 
-       $scope.user = User.findByUsername($routeParams.username);
+        $scope.user = User.findByUsername($routeParams.username);
 
         $scope.updateUser = function (user) {
             return User.update(user);
         }
 
         $scope.challenges = {};
-       // $scope.posts = {};
+        // $scope.posts = {};
         $scope.commentedChallenges = {};
         $scope.comments = {};
         $scope.points = 0;
 
-        $scope.user.$loaded(function() {
+        $scope.user.$loaded(function () {
             populateChallenges();
-           // populatePoints();
+            // populatePoints();
         });
 
 
-        function populateChallenges () {
+        function populateChallenges() {
             var challenges = User.challenges($routeParams.username).$asArray();
 
-            challenges.$loaded(function (){
-                angular.forEach(challenges, function (challenge){
+            challenges.$loaded(function () {
+                angular.forEach(challenges, function (challenge) {
                     $scope.challenges[challenge.$id] = Challenge.find(challenge.$id);
                     $scope.points += challenge[1];
                 });
@@ -39,7 +38,7 @@ app.controller('ProfileCtrl',
         };
 
 
-        function populateComments () {
+        function populateComments() {
             var comments = User.comments($routeParams.username).$asArray();
 
             comments.$loaded(function () {

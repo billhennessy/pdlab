@@ -12,7 +12,7 @@ app.controller('PostViewCtrl', function ($scope, $routeParams, Post) {
     $scope.addComment = function () {
 
         Post.addComment($routeParams.postId, $scope.comment);
-       // console.log($routeParams.postId +": " + $scope.comment.text);
+        // console.log($routeParams.postId +": " + $scope.comment.text);
         $scope.comment = '';
     };
 });

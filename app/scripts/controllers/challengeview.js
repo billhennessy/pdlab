@@ -16,13 +16,13 @@ app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge, $
         $scope.comment = '';
     };
 
-    $scope.completeChallenge = function(challengeId, points){
+    $scope.completeChallenge = function (challengeId, points) {
         //console.log(challengeId);
         Challenge.userChallenge(challengeId, points);
 
     }
 
-    $scope.trustSrc = function(src) {
+    $scope.trustSrc = function (src) {
         return $sce.trustAsResourceUrl(src);
     }
 
