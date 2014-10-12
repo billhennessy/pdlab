@@ -47,7 +47,7 @@
             <input type="text" ng-model="user.lname" placeholder="Last Name" class="form-control"><br>
             <input type="tel" ng-model="user.cell" placeholder="Cell Phone (for text alerts)" class="form-control"><br>
         </div>
-        <div class="btn-group-lg pull-right">
+        <div class="btn-group-lg pull-right" ng-show="user.username === currentUser.username">
             <!-- Button trigger modal Change Password -->
             <button class="btn btn-default" data-toggle="modal" data-target="#myModal">
                 Change Password

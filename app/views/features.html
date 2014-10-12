@@ -1,14 +1,25 @@
-<h3>Features <span class="badge">{{ features.length }}</span></h3>
+<row>
+    <div class="col-md-8"><h3>Features <span class="badge">{{ features.length }}</span></h3></div>
+    <div class="col-md-4"><!-- Button trigger modal -->
+        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
+            Submit Feature Request
+        </button>
+    </div>
+</row>
+
 
 <div class="btn-group btn-group-justified">
     <div class="btn-group">
-        <button class="btn btn-default" id="new-btn" ng-click="status='New'">New</button>
+        <button class="btn btn-default" id="new-btn" ng-click="status='New'">New <span class="badge">{{statusCount('New')}}</span>
+        </button>
     </div>
     <div class="btn-group">
-        <button class="btn btn-default" id="inprogress-btn" ng-click="status='In Progress'">In Progress</button>
+        <button class="btn btn-default" id="inprogress-btn" ng-click="status='In Progress'">In Progress <span
+                class="badge">{{statusCount('In Progress')}}</span></button>
     </div>
     <div class="btn-group">
-        <button class="btn btn-default" id="complete-btn" ng-click="status='Complete'">Complete</button>
+        <button class="btn btn-default" id="complete-btn" ng-click="status='Complete'">Complete <span class="badge">{{statusCount('Complete')}}</span>
+        </button>
     </div>
 </div>
 <br>
@@ -29,39 +40,43 @@
 </div>
 
 
-<h2>Request a Feature
-    <small>or report a bug</small>
-</h2>
-<form role="form" ng-submit="submitFeature()">
-    <div class="form-group">
-        <label for="featureReporter">Email address</label>
-        <input type="email" class="form-control" id="featureReporter" ng-model="feature.reporter"
-               placeholder="Enter email">
-    </div>
-    <div class="form-group">
-        <label for="featureTitle">Name your feature</label>
-        <input type="text" class="form-control" id="featureTitle" ng-model="feature.title" placeholder="Name Feature">
-    </div>
-    <div class="form-group">
-        <label for="featureDescription">What else can you tell us about this feature?</label>
-        <textarea class="form-control" id="featureDescription" ng-model="feature.description"
-                  placeholder="Details"></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-primary" data-toggle="modal">Save changes</button>
-</form>
-
-
 <!-- Modal -->
-<div class="modal fade" ak-modal="showModal" data-backdrop="static" id="myModal" tabindex="-1" role="dialog">
+<!-- Small modal -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
                         class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel">Request a Feature
+                    <small>or report a bug</small>
+                </h4>
             </div>
+            <div class="modal-body">
+                <p ng-show="success" class="text-success">{{success}}</p>
 
+                <p ng-show="error" class="text-danger">{{error}}</p>
+
+                <form>
+                    <div class="form-group">
+                        <label for="featureTitle">Name your feature</label>
+                        <input type="text" class="form-control" id="featureTitle" ng-model="feature.title"
+                               placeholder="Name Feature">
+                    </div>
+                    <div class="form-group">
+                        <label for="featureDescription">What else can you tell us about this feature?</label>
+                        <textarea class="form-control" id="featureDescription" ng-model="feature.description"
+                                  placeholder="Details"></textarea>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="submitFeature(feature)">Submit Feature</button>
+            </div>
         </div>
     </div>
-</div>
+    </div>

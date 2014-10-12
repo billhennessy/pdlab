@@ -9,14 +9,28 @@ app.controller('FeatureCtrl', function ($scope, $location, Feature, User) {
 
 
     $scope.submitFeature = function () {
+        $scope.feature.reporter = User.getCurrent().username;
         Feature.create($scope.feature).then(function (featureId) {
             $scope.feature = {title: '', description: '', reporter: '', priority: 2, status: 'New'};
-            // $location.path('/features/' + featureId);
+            $scope.success = "Thank you. May I have another?";
             //TODO: create a showfeature page to manage individual features
-            $location.path('/features/' + featureId);
+            //$location.path('/features/' + featureId);
+        }, function (error) {
+            $scope.error = error.toString();
         });
     };
 
+    $scope.statusCount = function (status) {
+        var stat = 0;
+
+        angular.forEach($scope.features, function (feature) {
+            if (feature.status === status) {
+                stat += 1;
+            }
+            ;
+        });
+        return stat;
+    };
 
     $scope.selectFeature = function (featureId) {
 
