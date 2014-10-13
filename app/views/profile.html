@@ -32,64 +32,112 @@
 
     </div>
     <div class="tab-pane container posts-page" id="profile">
+        <br>
 
-        <input type="email" ng-model="user.email" placeholder="Email" class="form-control" value="user.email"
-               ng-disabled="true"><br>
-        <input type="text" ng-model="user.username" placeholder="Username" name="username" check-username
-               class="form-control"><br>
-        <input type="password" ng-model="user.labcode" placeholder="Lab Code (from email)" class="form-control"
-               value="user.labcode"><br>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="email" class="col-sm-2">Email</label>
 
-        <div class="=panel">
-            <h3>About You</h3>
-            <input type="text" ng-model="user.fname" placeholder="First Name" class="form-control"
-                   value="user.fname"><br>
-            <input type="text" ng-model="user.lname" placeholder="Last Name" class="form-control"><br>
-            <input type="tel" ng-model="user.cell" placeholder="Cell Phone (for text alerts)" class="form-control"><br>
-        </div>
-        <div class="btn-group-lg pull-right" ng-show="user.username === currentUser.username">
-            <!-- Button trigger modal Change Password -->
-            <button class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                Change Password
-            </button>
-            <!-- save button -->
-            <button class="btn btn-primary btn-lg" ng-click="updateUser(user)">Save Changes</button>
-        </div>
+                <div class="col-sm-10">
+                    <input type="email" ng-model="user.email" id="email" disabled="true" placeholder="Email"
+                           class="form-control" value="user.email"
+                           ng-disabled="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="username" class="col-sm-2">Username</label>
+
+                <div class="col-sm-10">
+                    <input type="text" id="username" ng-model="user.username" placeholder="Username" name="username"
+                           check-username
+                           class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lab" class="col-sm-2">Lab</label>
+
+                <div class="col-sm-10">
+                    <input type="password" id="lab" disabled="true" ng-model="user.labcode"
+                           placeholder="Lab Code (from email)"
+                           class="form-control"
+                           value="user.labcode"></div>
+            </div>
+            <div class="=panel">
+                <h3>About You</h3>
+
+                <div class="form-group">
+                    <label for="fname" class="col-sm-2">First Name</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" id="fname" ng-model="user.fname" placeholder="First Name"
+                               class="form-control"
+                               value="user.fname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lname" class="col-sm-2">Last Name</label>
+
+                    <div class="col-sm-10">
+
+                        <input type="text" id="lname" ng-model="user.lname" placeholder="Last Name"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cell" class="col-sm-2">Cell</label>
+
+                    <div class="col-sm-10">
+                        <input type="tel" id="cell" ng-model="user.cell" placeholder="Cell Phone (for text alerts)"
+                               class="form-control">
+                    </div>
+                </div>
+                <div class="btn-group-lg pull-right" ng-show="user.username === currentUser.username">
+                    <!-- Button trigger modal Change Password -->
+                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                        Change Password
+                    </button>
+                    <!-- save button -->
+                    <button class="btn btn-primary btn-lg" ng-click="updateUser(user)">Save Changes</button>
+                </div>
+
+            </div>
+        </form>
     </div>
-</div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Change Password</h4>
-            </div>
-            <div class="modal-body">
-                <p ng-show="message" class="text-success">{{message}}</p>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-show="message" class="text-success">{{message}}</p>
 
-                <p ng-show="error" class="text-danger">{{error}}</p>
+                    <p ng-show="error" class="text-danger">{{error}}</p>
 
-                <form>
-                    <label for="old_pwd">Current Password</label>
-                    <input class="form-control" type="password" id="old_pwd" ng-model="oldpassword"
-                           placeholder="Current Password">
-                    <label for="pwd">New Password</label>
-                    <input class="form-control" type="password" id="pwd" ng-model="newpassword"
-                           placeholder="New Password">
-                    <label for="pwd2">Retype New Password</label>
-                    <input class="form-control" type="password" id="pwd2" ng-model="newpassword2"
-                           placeholder="Retype New Password">
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary"
-                        ng-click="changePassword(currentUser.email,oldpassword, newpassword, newpassword2);">Save
-                </button>
+                    <form>
+                        <label for="old_pwd">Current Password</label>
+                        <input class="form-control" type="password" id="old_pwd" ng-model="oldpassword"
+                               placeholder="Current Password">
+                        <label for="pwd">New Password</label>
+                        <input class="form-control" type="password" id="pwd" ng-model="newpassword"
+                               placeholder="New Password">
+                        <label for="pwd2">Retype New Password</label>
+                        <input class="form-control" type="password" id="pwd2" ng-model="newpassword2"
+                               placeholder="Retype New Password">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-primary"
+                            ng-click="changePassword(currentUser.email,oldpassword, newpassword, newpassword2);">Save
+                    </button>
+                </div>
             </div>
         </div>
     </div>

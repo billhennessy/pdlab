@@ -4,14 +4,17 @@
 
     <form ng-submit="register()" name="form">
         <div ng-show="error || form.username.$error">
-            <p ng-show="error" class="text-danger"></p>
+            <p ng-show="error" class="text-danger">{{error}}</p>
+
             <p ng-show="form.username.$error.taken" class="text-danger">Username is already taken.</p>
+
             <p ng-show="form.username.$error.invalid" class="text-danger">Username contains invalid characters.</p>
         </div>
         <input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
-        <input type="text" ng-model="user.username" placeholder="Username" name="username" check-username class="form-control"><br>
+        <input type="text" ng-model="user.username" placeholder="Username" name="username" check-username
+               class="form-control"><br>
         <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
-        <input type="text" ng-disabled="true" ng-model="user.labcode" placeholder="Lab Code (from email)" class="form-control" ><button class="btn btn-sm" data-toggle="popover" title="Popover title" data-content="This is randomly-generated 6-digit code you received in your Welcome email." >?</button><br>
+        <input type="text" ng-model="user.labcode" placeholder="Lab Code (from email)" class="form-control"><br>
 
         <div class="=panel">
             <h3>About You</h3>
@@ -20,7 +23,7 @@
             <input type="tel" ng-model="user.cell" placeholder="Cell Phone (for text alerts)" class="form-control"><br>
 
         </div>
-        <input type="submit" value="Register" class="btn btn-primary" />
+        <input type="submit" value="Register" class="btn btn-primary"/>
     </form>
 
 </div>

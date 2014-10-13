@@ -9,18 +9,14 @@ app.controller('ProgressCtrl',
         $scope.user = function (username) {
             return User.findByUsername(username);
         };
-//        if(User.signedIn()) {
-//            $scope.user = User.getPoints();
-//        }
-//        console.log(User.signedIn());
-//        console.log($scope.user);
-//        $scope.challenges = {};
-        // $scope.points = 0;
-        /* $scope.user.$loaded(function() {
 
-         populateChallenges();
-         // populatePoints();
-         });*/
+        $scope.isCollapsed = true;
+
+        $scope.style = function (player, user) {
+            if (player === user) {
+                return 'text-warning';
+            }
+        }
 
         function populateChallenges() {
             var challenges = User.challenges('billhennessy').$asArray();

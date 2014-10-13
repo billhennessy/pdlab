@@ -1,31 +1,36 @@
 <div ng-class="container">
-<table class="table table-bordered table-striped table-responsive">
+    <table class="table table-bordered table-striped table-responsive">
 
-    <thead>
+        <thead>
 
-    <tr>
-        <th></th>
-        <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a>
-        (<a href="" ng-click="predicate = '-name'; reverse=false">^</a>)</th>
-        <th><a href="" ng-click="predicate = 'username'; reverse=false">User Name</a>
-        </th>
-        <th><a href="" ng-click="predicate = 'lab'; reverse=false">Lab</a>
-        (<a href="" ng-click="predicate = '-lab'; reverse=false">^</a>)</th>
-        <th><a href="" ng-click="predicate = 'points'; reverse=!reverse">Points</a></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="user in users | orderBy:predicate:reverse ">
-        <td><img ng-src="http://www.gravatar.com/avatar/{{ user.md5_hash }}" class="prof-img" /></td>
-        <td>{{user.fname}}&NonBreakingSpace;{{user.lname}}</td>
-        <td><a href="#/users/{{ user.username }}">{{user.username}}</a></td>
-        <td>{{user.lab}} Verizon</td>
-        <td><div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="{{user.points}}" aria-valuemin="0" aria-valuemax="100" style="width: {{user.points}}%;">
-                {{user.points}} points
-            </div>
-        </div></td>
-    </tr>
-    </tbody>
-</table>
+        <tr>
+            <th></th>
+            <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a>
+                (<a href="" ng-click="predicate = '-name'; reverse=false">^</a>)
+            </th>
+            <th><a href="" ng-click="predicate = 'username'; reverse=false">User Name</a>
+            </th>
+            <th><a href="" ng-click="predicate = 'lab'; reverse=false">Lab</a>
+                (<a href="" ng-click="predicate = '-lab'; reverse=false">^</a>)
+            </th>
+            <th><a href="" ng-click="predicate = 'points'; reverse=!reverse">Points</a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users | orderBy:predicate:reverse ">
+            <td><img ng-src="http://www.gravatar.com/avatar/{{ user.md5_hash }}" class="prof-img"/></td>
+            <td>{{user.fname}}&NonBreakingSpace;{{user.lname}}</td>
+            <td><a href="#/users/{{ user.username }}">{{user.username}}</a></td>
+            <td>{{user.lab}} Verizon</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{user.points}}" aria-valuemin="0"
+                         aria-valuemax="100" style="width: {{user.points}}%;">
+                        {{user.points}} points
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>

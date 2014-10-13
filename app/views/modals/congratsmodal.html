@@ -1,0 +1,14 @@
+<div ng-controller="ChallengeViewCtrl">
+    <div class="modal-header">
+        <h2 class="modal-title">Congratulations {{currentUser.fname}}!</h2>
+    </div>
+    <div class="modal-body">
+        <h3>You just completed the {{challenge.title}} challenge and earned {{challenge.points}} points.</h3>
+
+        <h3>You now have {{currentUser.points}} points.</h3>
+    </div>
+    <div class="modal-footer">
+
+        <button class="btn btn-lg btn-warning" ng-click="$dismiss()">Ok</button>
+    </div>
+</div>

@@ -20,7 +20,7 @@ app.factory('Challenge',
                     return challenges.$add(challenge).then(function (ref) {
                         var challengeId = ref.name();
 
-                       // User.challenges(user.username).$set(challengeId, '');
+                        // User.challenges(user.username).$set(challengeId, '');
 
                         return challengeId;
                     });
@@ -31,12 +31,12 @@ app.factory('Challenge',
                 return $firebase(ref.child(challengeId)).$asObject();
             },
             delete: function (challenge) {
-                if (User.signedIn()){
+                if (User.signedIn()) {
                     var user = User.getCurrent();
                     if (user.username === challenge.owner) {
                         challenges.$remove(challenge).then(function () {
 
-                         //   User.challenges(user.username).$remove(challenge.$id);
+                            //   User.challenges(user.username).$remove(challenge.$id);
                         });
                     }
                 }
@@ -47,16 +47,17 @@ app.factory('Challenge',
                     var user = User.getCurrent();
                     var challenge = Challenge.find(challengeId);
 //TODO: test to see if user has already performed this challenge and skip point increment if so.
-                    User.challenges(user.username).$set(challengeId, points).then(function() {
+                    return  User.challenges(user.username).$set(challengeId, points).then(function () {
                         var score = parseInt(user.points) + parseInt(points);
                         user.points = score;
-                        user.$save().then(function(){
+                        user.$save().then(function () {
                             ref.name() === user.$id;
                         });
                     });
 
 
-                };
+                }
+                ;
             },
 
             comments: function (challengeId) {
@@ -69,7 +70,7 @@ app.factory('Challenge',
 
                     comment.username = user.username;
 
-                    Challenge.comments(challengeId).$push(comment).then(function(ref){
+                    Challenge.comments(challengeId).$push(comment).then(function (ref) {
                         var commentId = ref.name();
                         User.comments(user.username).$push({challenge: challengeId, comment: commentId});
                     });

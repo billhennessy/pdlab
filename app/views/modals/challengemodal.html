@@ -1,0 +1,25 @@
+<div ng-controller="ChallengeViewCtrl">
+    <div class="modal-header">
+        <h2 class="modal-title">{{challenge.title}}</h2>
+    </div>
+    <div class="modal-body">
+        <p>{{challenge.description}}</p>
+
+        <p>This challenge is worth {{challenge.points}} points.</p>
+        <a href="{{challenge.link}}" ng-show="challenge.linktype==='url'" target="_blank">Click to Open</a>
+        <br>
+
+        <div class="embed-responsive embed-responsive-16by9" ng-show="challenge.linktype==='video'">
+            <iframe class="embed-responsive-item" src="{{trustSrc(challenge.link)}}"></iframe>
+            <br>
+        </div>
+        <div ng-show="challenge.linktype==='pdf'">
+            <embed ng-src="{{trustSrc(challenge.link)}}" width="740" height="800" alt="pdf"
+                   pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+        </div>
+    </div>
+    <div class="modal-footer">
+
+        <button class="btn btn-lg btn-warning" ng-click="$dismiss()">Ok</button>
+    </div>
+</div>

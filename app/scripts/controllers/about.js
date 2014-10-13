@@ -8,10 +8,6 @@
  * Controller of the angNewsApp
  */
 angular.module('angNewsApp')
-    .controller('AboutCtrl', function ($scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+    .controller('AboutCtrl', function ($scope, $modal, $modalinstance) {
+
     });

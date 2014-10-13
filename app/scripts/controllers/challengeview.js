@@ -3,9 +3,11 @@
  */
 'use strict';
 
-app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge, $sce) {
+app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge, $modal, $sce) {
 
     $scope.challenge = Challenge.find($routeParams.challengeId);
+
+    $scope.challengeDone =
 
     $scope.comments = Challenge.comments($routeParams.challengeId).$asArray();
 
@@ -17,13 +19,22 @@ app.controller('ChallengeViewCtrl', function ($scope, $routeParams, Challenge, $
     };
 
     $scope.completeChallenge = function (challengeId, points) {
-        //console.log(challengeId);
-        Challenge.userChallenge(challengeId, points);
+
+        Challenge.userChallenge(challengeId, points).then(function () {
+            $scope.open('large', '../../views/modals/congratsmodal.html');
+        });
 
     }
 
     $scope.trustSrc = function (src) {
         return $sce.trustAsResourceUrl(src);
     }
+    $scope.open = function (size, templateUrl) {
+        var modalInstance = $modal.open({
+            templateUrl: templateUrl,
+            size: size
+        })
+    }
+
 
 });

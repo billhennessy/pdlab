@@ -1,14 +1,27 @@
 <div class="panel panel-success">
-    <div class="panel-title">Your Progress</div>
-    <div class="panel-body">
+    <div class="panel-title" ng-click="isCollapsed = !isCollapsed">Your Progress
+        <i class="glyphicon glyphicon-chevron-down" ng-show="isCollapsed"></i>
+        <i class="glyphicon glyphicon-chevron-up" ng-show="!isCollapsed"></i>
+    </div>
+    <!--<a class="pull-right" ng-click="isCollapsed = !isCollapsed"> Leaders</a>-->
+    <div class="panel-body" collapse="isCollapsed">
         <div class="progress" ng-controller="ProgressCtrl">
 
             <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{currentUser.points}}"
                  aria-valuemin="0" aria-valuemax="100" style="width: {{currentUser.points}}%;">
                 {{currentUser.points}} points
-    </div>
-</div>
+            </div>
+        </div>
+        <!--
+            <h4>Point Leaders</h4>
+            <div ng-controller="UsersCtrl" collapse="isCollapsed">
+                <ul class="list-group">
 
-    </div>
+                    <li class="list-group-item" ng-repeat="user in users | orderBy:'-points'"><a href="#/users/{{user.username}}">{{user.username}} <span class="badge pull-right">{{user.points}}</span></a></li>
 
+                </ul>
+            </div>
+            </div>
+        -->
+    </div>
 </div>

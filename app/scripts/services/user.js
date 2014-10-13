@@ -18,7 +18,7 @@ app.factory('User',
 
             all: users.$asArray(),
 
-            create: function (authUser, username, fname, lname, cell) {
+            create: function (authUser, username, fname, lname, labcode, cell) {
 
                 var user = $firebase(ref.child(username)).$asObject();
 
@@ -28,7 +28,8 @@ app.factory('User',
                     user.username = username;
                     user.fname = fname;
                     user.lname = lname;
-                    user.cell = cell;
+                    user.labcode = labcode;
+                    user.cell;
                     user.points = 0;
 
                     user.email = authUser.email;
@@ -69,7 +70,6 @@ app.factory('User',
             posts: function (username) {
                 return $firebase(new Firebase(FIREBASE_URL + 'user_posts/' + username));
             },
-
 
             challenges: function (username) {
                 return $firebase(new Firebase(FIREBASE_URL + 'user_challenges/' + username));
