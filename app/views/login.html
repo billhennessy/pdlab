@@ -3,48 +3,10 @@
     <h2>Log In</h2>
 
     <form ng-submit="login()">
-        <p ng-show="error" class="text-danger">{{error}}</p>
+        <p ng-show="error" class="text-danger"></p>
         <input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
         <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
         <input type="submit" value="Log in" class="btn btn-primary"/>
     </form>
-    <!-- Button trigger modal Change Password -->
-    <br><a data-toggle="modal" data-target="#myModal">
 
-    Forgot Password
-</a>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Forgot Password</h4>
-            </div>
-            <div class="modal-body">
-                <p ng-show="success" class="text-success">{{success}}</p>
-
-                <p ng-show="error" class="text-danger">{{error}}</p>
-
-                <p class="text-info">Enter the email address you used to register. If it matches an address we have
-                    on file, we'll email a temporary password.</p>
-
-                <form>
-                    <label for="email">Email</label>
-                    <input class="form-control" type="email" id="email" ng-model="email"
-                           placeholder="Email">
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary"
-                        ng-click="resetPassword(email);">Send Email
-                </button>
-            </div>
-        </div>
-    </div>
 </div>

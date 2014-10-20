@@ -7,8 +7,10 @@
         <div class="panel-heading">
             <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" data-target="{{'#' + challenge.$id}}">
-                    {{challenge.title}}
+                    <span class="glyphicon glyphicon-check"
+                          ng-show="isComplete(currentUser.username, challenge.$id)"></span> {{challenge.title}}
                     <span class="caret pull-right"></span>
+
                 </a>
             </h4>
         </div>

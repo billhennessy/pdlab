@@ -3,13 +3,13 @@
  */
 'use strict';
 
-app.controller('FeatureCtrl', function ($scope, $location, Feature, User) {
+app.controller('FeatureCtrl', function ($scope, $location, Feature, Auth) {
     $scope.feature = {title: '', description: '', reporter: '', priority: 2, status: 'New'};
     $scope.features = Feature.all;
-
+    $scope.user = Auth.user;
 
     $scope.submitFeature = function () {
-        $scope.feature.reporter = User.getCurrent().username;
+        $scope.feature.reporter = $scope.user.profile.username;
         Feature.create($scope.feature).then(function (featureId) {
             $scope.feature = {title: '', description: '', reporter: '', priority: 2, status: 'New'};
             $scope.success = "Thank you. May I have another?";

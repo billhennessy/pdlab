@@ -1,0 +1,18 @@
+<div ng-controller="ProgressCtrl">
+    <div class="modal-header">
+        <h2 class="modal-title">Point Leaders</h2>
+    </div>
+    <div class="modal-body">
+        <ul class="list-group">
+
+            <li class="list-group-item" ng-repeat="user in users | orderBy:'-points'"><a
+                    href="#/users/{{user.username}}" ng-click="$dismiss()">{{user.username}} <span
+                    class="badge pull-right">{{user.points}}</span></a></li>
+
+        </ul>
+    </div>
+    <div class="modal-footer">
+
+        <button class="btn btn-lg btn-warning" ng-click="$dismiss()">Ok</button>
+    </div>
+</div>

@@ -2,6 +2,23 @@
 
     <h2>Register</h2>
 
+    <form ng-submit="register()">
+        <p ng-show="error" class="text-danger"></p>
+
+        <input type="text" ng-model="user.username" placeholder="Username" class="form-control"><br>
+        <input type="text" ng-model="user.lab" placeholder="Lab Id" class="form-control"><br>
+        <input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
+        <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+        <input type="submit" value="Register" class="btn btn-primary"/>
+    </form>
+
+</div>
+
+<!--
+<div class="auth-forms">
+
+    <h2>Register</h2>
+
     <form ng-submit="register()" name="form">
         <div ng-show="error || form.username.$error">
             <p ng-show="error" class="text-danger">{{error}}</p>
@@ -26,4 +43,4 @@
         <input type="submit" value="Register" class="btn btn-primary"/>
     </form>
 
-</div>
+</div>-->

@@ -5,32 +5,17 @@
 
 
 app.controller('ProgressCtrl',
-    function ($scope, $location, Challenge, User) {
-        $scope.user = function (username) {
-            return User.findByUsername(username);
-        };
+    function ($scope, $location, Challenge, Lab, Auth, Profile) {
+
+
+        $scope.user = Auth.user;
+        $scope.users = Profile.all;
+        /*if($scope.user){
+         $scope.users =  Lab.users($scope.user.labcode).$asArray();
+         };*/
+
 
         $scope.isCollapsed = true;
-
-        $scope.style = function (player, user) {
-            if (player === user) {
-                return 'text-warning';
-            }
-        }
-
-        function populateChallenges() {
-            var challenges = User.challenges('billhennessy').$asArray();
-            var pts = 0;
-            challenges.$loaded(function () {
-                angular.forEach(challenges, function (challenge) {
-                    // $scope.challenges[challenge.$id] = Challenge.find(challenge.$id);
-                    //console.log(challenge.$value);
-                    pts += parseInt(challenge.$value);
-                });
-                $scope.points = pts;
-            });
-
-        };
 
 
     });

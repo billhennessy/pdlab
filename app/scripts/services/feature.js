@@ -4,7 +4,7 @@
 'use strict';
 
 app.factory('Feature',
-    function ($firebase, FIREBASE_URL, User) {
+    function ($firebase, FIREBASE_URL) {
         var ref = new Firebase(FIREBASE_URL + 'features');
 
         var features = $firebase(ref).$asArray();

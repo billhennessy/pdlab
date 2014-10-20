@@ -4,48 +4,50 @@
 'use strict';
 
 app.factory('Lab',
-    function ($firebase, FIREBASE_URL, User) {
+    function ($firebase, FIREBASE_URL) {
         var ref = new Firebase(FIREBASE_URL + 'labs');
 
         var labs = $firebase(ref).$asArray();
 
         var Lab = {
             all: labs,
-          
+
             create: function (lab) {
 
-               if (User.signedIn()) {
-                    var user = User.getCurrent();
 
-                    lab.owner = user.username;
+                return labs.$add(lab).then(function (ref) {
+                    var labId = ref.name();
 
-                    return labs.$add(lab).then(function (ref) {
-                        var labId = ref.name();
-                        User.labs(user.username).$set(labId, '');
-                        return labId;
-                    });
-                }
+                    return labId;
+                });
+
             },
 
             find: function (labId) {
                 return $firebase(ref.child(labId)).$asObject();
             },
-            delete: function (lab) {
-                if (User.signedIn()){
-                    var user = User.getCurrent();
-                    if (user.username === lab.owner) {
-                        labs.$remove(lab).then(function () {
 
-                            User.labs(user.username).$remove(lab.$id);
-                        });
-                    }
-                }
+            findByClient: function (client) {
+                return $firebase(ref.child(client)).$asObject();
             },
-            update: function(lab) {
-               return labs.$save(lab);
-            }
-}
 
-            return Lab;
+            delete: function (lab) {
+
+                labs.$remove(lab).then(function () {
+
+                });
+
+            },
+            update: function (lab) {
+                return labs.$save(lab);
+            },
+
+            users: function (labId) {
+                return $firebase(new Firebase(FIREBASE_URL + 'lab_users/' + labId));
+            }
+
+        }
+
+        return Lab;
     }
 );

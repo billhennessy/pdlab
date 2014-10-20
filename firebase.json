@@ -1,9 +1,9 @@
 {
-  "firebase": "pdlab",
-  "public": "app",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ]
+    "firebase": "pdlab",
+    "public": "dist",
+    "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+    ]
 }
