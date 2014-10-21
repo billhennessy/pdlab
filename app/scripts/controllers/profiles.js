@@ -24,3 +24,8 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, Auth, 
         $scope.posts = posts;
     });
 });
+
+//TODO:  Change password
+
+//TODO:  Update own profile (but not points)
+

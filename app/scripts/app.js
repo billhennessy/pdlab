@@ -10,7 +10,7 @@
  * Main module of the application.
  */
 
-var app = angular.module('angNewsApp', [
+var app = angular.module('pdlab', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -54,10 +54,11 @@ var app = angular.module('angNewsApp', [
                     }
                 }
             })
-            /* .when('/register', {
-             templateUrl: 'views/register.html',
-             controller: 'AuthCtrl'
-             })
+            .when('/progress', {
+                templateUrl: 'views/progress.html',
+                controller: 'ProgressCtrl'
+            })
+            /*
              .when('/login', {
              templateUrl: 'views/login.html',
              controller: 'AuthCtrl'

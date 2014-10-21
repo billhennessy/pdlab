@@ -1,10 +1,10 @@
-<row>
+<div class="row">
     <div class="col-md-8">
         <h2>Labs</h2>
 
         <div class="list-group" ng-repeat="lab in labs | orderBy:'day1'"
              ng-click="selectLab(lab.$id); lab_users(lab.$id)">
-            <h4 class="list-group-item-heading"><a ng-click="selectLab(lab.$id); lab_users(lab.$id)">{{lab.client}}</a>
+            <h4 class="list-group-item-heading"><a ng-click="selectLab(lab.$id)">{{lab.client}}</a>
             </h4>
 
             <p class="list-group-item-text">Dates: {{lab.day1}} & {{lab.day2}}</p>
@@ -15,14 +15,9 @@
             <hr>
         </div>
     </div>
-    <div class="col-md-4">
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="user in lab_users"><a href="#/users/{{user.$id}}">{{user.$id}}</a>
-            </li>
-        </ul>
-    </div>
-</row>
-<row>
+
+</div>
+<div class="row">
     <div class="post-page panel">
 
 
@@ -59,4 +54,4 @@
         </div>
     </div>
 
-</row>
+</div>

@@ -13,13 +13,14 @@ app.factory('Auth', function ($firebaseSimpleLogin, $firebase, FIREBASE_URL, $ro
             return auth.$createUser(user.email, user.password);
         },
         createProfile: function (user) {
+            user.$priority = user.uid;
 
             var profile = {
+
                 username: user.username,
                 md5_hash: user.md5_hash,
                 lab: user.lab,
-                points: user.points,
-                $priority: user.uid
+                points: user.points
 
             };
 

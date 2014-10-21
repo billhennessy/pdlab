@@ -32,6 +32,12 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
     };
 });
 
+//TODO:  Reset password
+
+//TODO:  Forgot password email
+
+//TODO:  Stop logins for halfway registered users
+
 /*
  app.controller('AuthCtrl',
  function ($scope, $location, $routeParams, Auth, User) {

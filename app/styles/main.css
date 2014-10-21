@@ -196,3 +196,8 @@ body {
     margin-right: 15px;
     margin-bottom: 15px;
 }
+
+.modal-header {
+    font-size: 20px;
+    color: #5cb85c;
+}

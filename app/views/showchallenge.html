@@ -41,7 +41,7 @@
         <p>{{ comment.text }}</p>
 
         <p class="author">posted by <a href="#/users/{{ comment.username }}">{{ comment.username }}</a>
-            <a ng-click="removeComment(comment)" ng-show="signedIn() && comment.username === currentUser.username">(delete)</a>
+            <a ng-click="deleteComment(comment)" ng-show="signedIn() && comment.username === currentUser.username">(delete)</a>
         </p>
     </div>
 </div>
@@ -53,7 +53,7 @@
     </div>
 
     <form ng-show="signedIn()">
-        <textarea ng-model="comment.text" placeholder="Post a Comment" class="form-control"></textarea><br/>
+        <textarea ng-model="commentText" placeholder="Post a Comment" class="form-control"></textarea><br/>
         <input type="submit" ng-click="addComment()" value="Post Comment" class="btn btn-primary"/>
     </form>
 </div>

@@ -25,26 +25,4 @@ app.controller('NavCtrl', function ($scope, $location, $modal, Post, Auth) {
         })
     }
 });
-
-
-/*
- app.controller('NavCtrl', function ($scope, $location,$modal, Auth, Post, User) {
- //$scope.currentUser = User.currentUser;
- */
-/* $scope.submitPost = function () {
- Post.create($scope.post).then(function (postId) {
- $scope.post = {url: 'http://', title: ''};
-            $location.path('/posts/' + postId);
-        });
- };*//*
-
- $scope.logout = function () {
- Auth.logout();
-    };
- $scope.open = function (size, templateUrl) {
- var modalInstance = $modal.open({
- templateUrl: templateUrl,
- size: size
- })
- }
- });*/
+//TODO: Click on username to open profile.

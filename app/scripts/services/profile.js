@@ -58,7 +58,7 @@ app.factory('Profile', function ($window, FIREBASE_URL, $firebase, Post, Challen
         },
 
         update: function (user) {
-            user.$priority = user.$id;
+
             return user.$save();
         }
 

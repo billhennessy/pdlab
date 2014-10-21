@@ -25,9 +25,7 @@
 <br>
 <div class="list-group" ng-repeat="feature in features | orderBy:'status'" ng-show="feature.status === status">
     <a class="list-group-item">
-        <h4 class="list-group-item-heading">{{feature.title}} <span class="glyphicon glyphicon-thumbs-up pull-right"
-                                                                    ng-show="feature.status === 'Complete'"></span>
-        </h4>
+        <h4 class="list-group-item-heading">{{feature.title}}</h4>
 
         <p class="list-group-item-text">{{feature.description}}</p>
 

@@ -9,8 +9,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="feature in features">
-            <td><b>{{feature.title}}</b><br>{{feature.description | orderBy:'priority'}}</td>
+        <tr ng-repeat="feature in features | orderBy: 'priority'">
+            <td><b>{{feature.title}}</b><br>{{feature.description}}</td>
             <td>
                 <select id="priority" ng-model="feature.priority">
                     <option ng-selected="feature.priority==='1'">1</option>

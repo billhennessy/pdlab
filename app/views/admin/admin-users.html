@@ -7,19 +7,20 @@
     <table class="table table-bordered table-responsive table-striped">
         <thead>
         <tr>
-            <th></th>
+
             <th>Username</th>
             <th>Points</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="(uid, user) in users | orderBy:predicate:reverse ">
-            <td><img ng-src="http://www.gravatar.com/avatar/{{ user.md5_hash }}" class="prof-img"/></td>
 
-            <td><a href="#/users/{{ uid }}">{{user.username}}</a></td>
+            <td><img ng-src="http://www.gravatar.com/avatar/{{ user.md5_hash }}" style="width: 40px; height: 40px"
+                     class="prof-img pull-left"/>&nbsp;<a href="#/users/{{ uid }}"><h3>{{user.username}}</h3></a></td>
 
 
             </td>
+            <td><h3>{{user.points}}</h3></td>
         </tr>
         </tbody>
     </table>
