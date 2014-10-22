@@ -21,7 +21,8 @@
             <div class="col-md-6 col-xs-8">
                 <div class="info">
                     <a ng-href="#/challenges/{{ challenge.$id }}">
-                        {{ challenge.title }}
+                        <img ng-src="images/portfolio/{{challenge.icon}}.png" class="prof-img pull-left">
+                        <span class="panel-title"> {{ challenge.title }}</span>
                         <span class="url">Points ({{ challenge.points}})</span>
                     </a>
                 </div>

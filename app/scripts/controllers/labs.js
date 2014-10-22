@@ -9,6 +9,8 @@ app.controller('LabCtrl', function ($scope, $location, Auth, Lab) {
     $scope.labs = Lab.all;
     $scope.lab_users = "";
 
+    $scope.lab = Lab.findByClient('ajsdfkj9');
+    console.log($scope.lab);
 
     //$scope.currentUser = User.currentUser;
     $scope.submitLab = function () {

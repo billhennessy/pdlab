@@ -201,3 +201,21 @@ body {
     font-size: 20px;
     color: #5cb85c;
 }
+
+.odd {
+    color: #fff;
+    background: #18bc9c;
+}
+
+/* spinner */
+#floatingCirclesG {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    -moz-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+}
+

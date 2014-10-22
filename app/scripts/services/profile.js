@@ -8,7 +8,7 @@ app.factory('Profile', function ($window, FIREBASE_URL, $firebase, Post, Challen
 
 
     var profile = {
-        all: $firebase(ref.child('profile')).$asObject(),
+        all: $firebase(ref.child('profile')).$asArray(),
 
         get: function (userId) {
             //console.log(userId);

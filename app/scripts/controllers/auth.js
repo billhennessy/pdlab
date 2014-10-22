@@ -7,12 +7,13 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
     if (user) {
         $location.path('challenges');
     }
-
+    $scope.typing = true;
     $scope.login = function () {
         Auth.login($scope.user).then(function () {
             $location.path('challenges');
         }, function (error) {
             $scope.error = error.toString();
+            $scope.typing = true;
         });
     };
 
@@ -28,15 +29,20 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
             });
         }, function (error) {
             $scope.error = error.toString();
+            $scope.typing = true;
         });
     };
 
     $scope.resetPassword = function (email) {
-        console.log(email);
+        $scope.typing = false;
         Auth.resetPassword(email).then(function () {
             $scope.success = "Your email has been sent."
+            $scope.error = "";
+            $scope.typing = true;
         }, function (error) {
             $scope.error = error.toString();
+            $scope.success = "";
+            $scope.typing = true;
         });
     };
 });

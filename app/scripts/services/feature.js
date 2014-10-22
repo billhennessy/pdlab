@@ -4,7 +4,7 @@
 'use strict';
 
 app.factory('Feature',
-    function ($firebase, FIREBASE_URL) {
+    function ($firebase, FIREBASE_URL, Auth) {
         var ref = new Firebase(FIREBASE_URL + 'features');
 
         var features = $firebase(ref).$asArray();
@@ -27,7 +27,7 @@ app.factory('Feature',
                 return $firebase(ref.child(featureId)).$asObject();
             },
             delete: function (feature) {
-                if (User.signedIn()) {
+                if (Auth.signedIn()) {
 
                     features.$remove(feature);
                 }

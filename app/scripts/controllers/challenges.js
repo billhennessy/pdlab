@@ -9,7 +9,7 @@ app.controller('ChallengesCtrl', function ($scope, $location, $routeParams, $mod
     $scope.challenges = Challenge.all;
     $scope.user = Auth.user;
     //$scope.challenge = $routeParams.challengeId;
-
+    $scope.challenge = "";
 
     $scope.submitChallenge = function () {
         $scope.challenge.creator = $scope.user.profile.username;

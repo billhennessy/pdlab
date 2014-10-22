@@ -1,12 +1,28 @@
-<row>
-    <div class="col-md-8"><h3>Features <span class="badge">{{ features.length }}</span></h3></div>
+<div class="row">
+<div class="col-md-8"><h3>Features <span class="badge">{{ features.length }}</span></h3></div>
     <div class="col-md-4"><!-- Button trigger modal -->
         <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
             Submit Feature Request
         </button>
     </div>
-</row>
+</div>
 
+<ul class="list-unstyled">
+    <li ng-repeat="(id, feature) in features | orderBy:status">
+        <div class="row" ng-class-odd="'odd'">
+            <div class="col-md-4"><h4>{{feature.title}}</h4></div>
+            <div class="col-md-8">
+                <p>{{feature.description}}</p>
+
+                <p><b>Status:</b> {{feature.status}} | <b>Priority:</b> {{feature.priority}}</p>
+            </div>
+
+        </div>
+        <hr>
+    </li>
+</ul>
+
+<!--
 
 <div class="btn-group btn-group-justified">
     <div class="btn-group">
@@ -36,6 +52,7 @@
         </p>
     </a>
 </div>
+-->
 
 
 <!-- Modal -->

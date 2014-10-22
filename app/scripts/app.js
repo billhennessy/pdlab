@@ -113,6 +113,10 @@ var app = angular.module('pdlab', [
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl'
             })
+            .when('/leaders', {
+                templateUrl: 'views/leaders.html',
+                controller: 'UsersCtrl'
+            })
 
             .otherwise({
                 redirectTo: '/'

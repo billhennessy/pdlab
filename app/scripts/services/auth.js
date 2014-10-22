@@ -20,7 +20,8 @@ app.factory('Auth', function ($firebaseSimpleLogin, $firebase, FIREBASE_URL, $ro
                 username: user.username,
                 md5_hash: user.md5_hash,
                 lab: user.lab,
-                points: user.points
+                points: user.points,
+                priority: user.$priority
 
             };
 

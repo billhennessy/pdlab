@@ -6,6 +6,7 @@
         <th>Link Type</th>
         <th>Points</th>
         <th>Action</th>
+        <th>Icon</th>
     </tr>
     </thead>
     <tbody>
@@ -16,30 +17,120 @@
         <td>{{challenge.link | limitTo:20}}<a href="">...</a></td>
         <td>{{challenge.linktype}}</td>
         <td>{{ challenge.points }}</td>
-        <td><a class="btn btn-sm">edit</a></td>
+        <td><img ng-src="images/portfolio/{{challenge.icon}}.png" class="prof-img"></td>
+        <td><a ng-click="challenge=challenge.$id" data-toggle="modal" data-target="#editChallenge" class="btn btn-sm">edit</a>
+        </td>
     </tr>
-    <tr>
-        <td colspan="5">New Challenge</td>
-    </tr>
-    <tr>
-        <td><b><input type="text" class="form-control" ng-model="challenge.title" placeholder="Title"></b>
 
-            <p><textarea class="form-control" ng-model="challenge.description" placeholder="Description"></textarea></p>
-        </td>
-        <td><input type="text" class="form-control" ng-model="challenge.link" placeholder="Link"></td>
-        <td>
-            <select class="dropdown form-control" id="linktype" ng-model="challenge.linktype">
-
-                <option selected>url</option>
-                <option>video</option>
-                <option>pdf</option>
-            </select>
-            <br>Link Type
-        </td>
-        <td><input type="text" class="form-control" size="10" ng-model="challenge.points" placeholder=""><br>Points</td>
-        <td>
-            <button class="btn btn-default" ng-click="submitChallenge(challenge)">Submit</button>
-        </td>
-    </tr>
     </tbody>
 </table>
+
+
+<!-- Edit/New -->
+<!-- Contact Section -->
+
+<!-- Edit Challenge Modal -->
+
+<div class="portfolio-modal modal fade" id="editChallenge" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Edit Challenge</h2>
+
+                        <p class="danger" ng-show="error">{{error}}</p>
+
+                        <p class="success" ng-show="success">{{success}}</p>
+                        <hr class="star-primary">
+                        <img ng-src="images/portfolio/{{challenge.icon}}.png" class="img-responsive img-centered"
+                             alt="">
+
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                                <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                                <form name="editChallenge" id="contactForm" novalidate>
+                                    <div class="row control-group">
+                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" placeholder="Challenge Title"
+                                                   id="title" ng-model="challenge.title" required
+                                                   data-validation-required-message="Please give your challenge a name.">
+
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row control-group">
+                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                            <label>Description</label>
+                                            <textarea class="form-control" ng-model="challenge.description"
+                                                      placeholder="Description" id="description" required
+                                                      data-validation-required-message="Please describe what users need to do and how it will help them."></textarea>
+
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row control-group">
+                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                            <label>Link</label>
+
+                                            <div class="input-group">
+                                                <input type="url" ng-model="challenge.link" placeholder="Link URL"
+                                                       required
+                                                       data-validation-required-message="Please include the link for more information. (Must be HTTPS.)"
+                                                       class="form-control">
+
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                                            data-toggle="dropdown">Link Type <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                                        <li><a ng-model="challenge.linktype">pdf</a></li>
+                                                        <li><a ng-model="challenge.linktype">video</a></li>
+                                                        <li><a ng-model="challenge.linktype">url</a></li>
+
+                                                    </ul>
+                                                </div>
+                                                <!-- /btn-group -->
+                                            </div>
+                                            <!-- /input-group -->
+                                            <!--<input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">-->
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row control-group">
+                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                            <label>Icon</label>
+                                            <input type="text" class="form-control" ng-model="challenge.icon"
+                                                   placeholder="Icon" required
+                                                   data-validation-required-message="Please include the name of the icon you want use. (See Bill Henenssy for list.">
+
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <div id="success"></div>
+                                    <div class="row">
+                                        <div class="form-group col-xs-12">
+                                            <button ng-click="updateChallenge(challenge)"
+                                                    class="btn btn-success btn-lg">Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

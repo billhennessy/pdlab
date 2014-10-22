@@ -3,9 +3,16 @@
     <h2>Log In</h2>
 
     <form ng-submit="login()">
-        <p ng-show="error" class="text-danger"></p>
-        <input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
-        <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+        <p ng-show="error" class="text-danger">{{error}}</p>
+
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+            <input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+            <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+        </div>
         <input type="submit" value="Log in" class="btn btn-primary"/>
     </form>
     <br>
@@ -32,6 +39,10 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
                         <h2>Forgot Password</h2>
+
+                        <p class="danger" ng-show="error">{{error}}</p>
+
+                        <p class="success" ng-show="success">{{success}}</p>
                         <hr class="star-primary">
                         <img src="images/portfolio/safe.png" class="img-responsive img-centered" alt="">
 

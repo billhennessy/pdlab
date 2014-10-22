@@ -1,0 +1,39 @@
+<div ng-class="container">
+
+    <h3>Leaders</h3>
+
+    <!--<h3><a href="#/admin/labs"><i class="glyphicon glyphicon-chevron-left"></i>back</a></h3>-->
+
+    <table class="table table-bordered table-responsive table-striped">
+        <thead>
+        <tr>
+
+            <th colspan="2">Username</th>
+            <th>Points</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="(uid, user) in users | orderBy:predicate:reverse ">
+
+            <td>
+                <img ng-src="http://www.gravatar.com/avatar/{{ user.md5_hash }}" class="prof-img pull-left"/></td>
+            <td><a href="#/users/{{ user.$id }}"><h3>{{user.username}}</h3></a>
+                <br>
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+                         aria-valuenow="user.points"
+                         aria-valuemin="0" aria-valuemax="100" style="width: {{user.points}}%;">
+
+                    </div>
+
+                </div>
+            </td>
+
+
+            </td>
+            <td><h3>{{user.points}}</h3></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
