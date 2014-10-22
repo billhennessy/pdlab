@@ -54,8 +54,18 @@ app.factory('Profile', function ($window, FIREBASE_URL, $firebase, Post, Challen
 
         challenges: function (userId) {
             //return $firebase(new Firebase(FIREBASE_URL + 'user_challenges/' + userId));
-            return ref.child('user_challenges').child(userId).$asObject();
+            return $firebase(ref.child('user_challenges').child(userId)).$asObject();
         },
+
+        findChallenge: function (userId, challengeId) {
+            return $firebase(ref.child('user_challenges').child(userId))
+                .startAt(challengeId)
+                .endAt(challengeId)
+                .once('value', function (snap) {
+                    return snap.val();
+                });
+        },
+
 
         update: function (user) {
 

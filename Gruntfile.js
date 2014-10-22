@@ -178,7 +178,7 @@ module.exports = function (grunt) {
                 src: [
                     '<%= yeoman.dist %>/scripts/{,*/}*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
-                    '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    // '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
                 ]
             }
@@ -335,6 +335,14 @@ module.exports = function (grunt) {
                         cwd: 'bower_components/bootstrap/dist',
                         src: 'fonts/*',
                         dest: '<%= yeoman.dist %>'
+                    },
+                    {
+                        //for font-awesome
+                        expand: true,
+                        dot: true,
+                        cwd: 'bower_components/font-awesome',
+                        src: ['fonts/*.*'],
+                        dest: '<%= yeoman.dist %>'
                     }
                 ]
             },
@@ -370,7 +378,7 @@ module.exports = function (grunt) {
         }
     });
 
-
+    grunt.loadNpmTasks('grunt-font-awesome-vars');
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'connect:dist:keepalive']);

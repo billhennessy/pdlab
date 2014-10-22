@@ -3,17 +3,17 @@
 <div class="container">
     <div class="panel">
         <div class="row">
-        <div class="col-sm-1">
-            <img ng-src="https://www.gravatar.com/avatar/{{ profile.md5_hash }}" class="prof-img"/>
-        </div>
+            <div class="col-sm-1">
+                <img ng-src="https://www.gravatar.com/avatar/{{ profile.md5_hash }}" class="prof-img"/>
+            </div>
 
-        <div class="col-sm-10">
+            <div class="col-sm-10">
       <span class="name">
         {{ profile.username }}
       </span>
+            </div>
         </div>
-    </div>
-    <h2>Points: {{profile.points}}</h2>
+        <h2>Points: {{profile.points}}</h2>
 
         <h3>Challenges Complete</h3>
 
@@ -25,46 +25,51 @@
                         <span class="url">Points ({{ challenge.points}})</span>
                     </a>
                 </div>
-            <div>
-                <a ng-href="#/challenges/{{ challenge.$id }}">comments</a>
+                <div>
+                    <a ng-href="#/challenges/{{ challenge.$id }}">comments</a>
+                </div>
             </div>
         </div>
-    </div>
 
         <h3>Posts</h3>
 
         <div class="post row" ng-repeat="(key,post) in posts">
-        <div class="col-md-8 col-xs-10">
-            <div class="info">
-                <a ng-href="{{ post.url }}">
-                    {{ post.title }}
-                    <span class="url">({{ post.url | hostnameFromUrl }})</span>
-                </a>
-            </div>
-            <div>
-                <a ng-href="#/posts/{{ post.$id }}">comments</a>
+            <div class="col-md-8 col-xs-10">
+                <div class="info">
+                    <a ng-href="{{ post.url }}">
+                        {{ post.title }}
+                        <span class="url">({{ post.url | hostnameFromUrl }})</span>
+                    </a>
+                </div>
+                <div>
+                    <a ng-href="#/posts/{{ post.$id }}">comments</a>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <h2>Edit</h2>
 
     <div class="panel panel-body" ng-show="user.profile.lab === 'admin' ">
-    <form>
-        <div class="form-group">
-            <label for="username">User Name</label>
-            <input id="username" type="text" class="form-control" ng-model="profile.username">
-        </div>
-        <div class="form-group">
-            <label for="lab">Lab Code</label>
-            <input id="lab" type="text" class="form-control" ng-model="profile.lab">
-        </div>
-        <div class="form-group">
-            <label for="points">Points</label>
-            <input id="points" type="number" class="form-control" ng-model="profile.points">
-        </div>
-        <button class="btn" ng-click="update(profile)">Update</button>
-    </form>
-</div>
+        <form>
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input id="username" type="text" class="form-control" ng-model="profile.username">
+            </div>
+            <div class="form-group">
+                <label for="lab">Lab Code</label>
+                <input id="lab" type="text" class="form-control" ng-model="profile.lab">
+            </div>
+            <div class="form-group">
+                <label for="points">Points</label>
+                <input id="points" type="number" class="form-control" ng-model="profile.points">
+            </div>
+            <div class="btn-group">
+                <button class="btn" ng-click="update(profile)">Update</button>
+                <button class="btn" ng-click="open('lg','views/modals/changepasswordmodal.html')">Change Password
+                </button>
+            </div>
+        </form>
+
+    </div>
 
 </div>

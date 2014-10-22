@@ -39,6 +39,15 @@ app.factory('Auth', function ($firebaseSimpleLogin, $firebase, FIREBASE_URL, $ro
         signedIn: function () {
             return !!Auth.user.provider;
         },
+
+        changePassword: function (email, oldpassword, newpassword) {
+            return auth.$changePassword(email, oldpassword, newpassword);
+        },
+
+        resetPassword: function (email) {
+            return auth.$sendPasswordResetEmail(email);
+        },
+
         user: {}
     };
 

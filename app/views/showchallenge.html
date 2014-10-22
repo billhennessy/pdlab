@@ -1,6 +1,7 @@
 <div class="container posts-page">
     <ul class="nav">
-        <li class="active"><a href="#/challenges"><i class="glyphicon glyphicon-chevron-left"></i> back</a></li>
+        <li class="active"><a href="#/challenges"><h2><i class="glyphicon glyphicon-chevron-left"></i> back</a></h2>
+        </li>
 
     </ul>
     <div class="post row">
@@ -10,10 +11,10 @@
         <div class="col-md-9 col-xs-11">
 
             <div class="info">
-                {{challenge.title}}
+                <h3>{{challenge.title}}</h3>
             </div>
             <div>
-                {{challenge.description}}
+                <p>{{challenge.description}}</p>
             </div>
             <a href="{{challenge.link}}" ng-show="challenge.linktype==='url'" target="_blank">Click to Open</a>
             <br>
@@ -23,18 +24,23 @@
                 <br>
             </div>
             <div ng-show="challenge.linktype==='pdf'">
-                <embed ng-src="{{trustSrc(challenge.link)}}" width="600" height="800" alt="pdf"
+                <embed ng-src="{{trustSrc(challenge.link)}}" width="900" height="1000" alt="pdf"
                        pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
             </div>
 
 
         </div>
     </div>
+    <br>
+
     <div class="col-md-2">
-        <button class="btn btn-default" ng-click="completeChallenge(challenge.$id, challenge.points)">Complete</button>
+        <button class="btn btn-default btn-lg btn-warning"
+                ng-click="completeChallenge(challenge.$id, challenge.points)">Complete
+        </button>
     </div>
 
 </div>
+<h2>Comments</h2>
 
 <div ng-repeat="comment in comments" class="row cmt">
     <div class="col-md-12">
@@ -48,6 +54,7 @@
 
 
 <div class="cmt-form">
+
     <div ng-hide="signedIn()">
         <p><a href="#/login">Sign in</a> to post a comment</p>
     </div>

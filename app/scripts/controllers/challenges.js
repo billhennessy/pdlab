@@ -3,19 +3,13 @@
  */
 'use strict';
 
+//TODO: Fix the Congratulations Modal.
 
-app.controller('ChallengesCtrl', function ($scope, $location, Challenge, Auth) {
+app.controller('ChallengesCtrl', function ($scope, $location, $routeParams, $modal, $sce, Challenge, Profile, Auth) {
     $scope.challenges = Challenge.all;
     $scope.user = Auth.user;
+    //$scope.challenge = $routeParams.challengeId;
 
-    $scope.challange = {
-        title: '',
-        description: '',
-        link: '',
-        linktype: '',
-        points: 0
-
-    };
 
     $scope.submitChallenge = function () {
         $scope.challenge.creator = $scope.user.profile.username;
@@ -28,58 +22,69 @@ app.controller('ChallengesCtrl', function ($scope, $location, Challenge, Auth) {
         });
     };
 
+    $scope.userChallenges = function (challengeId) {
+        var uchallenges = Profile.findChallenge('simplelogin:11', challengeId);
+        console.log(uchallenges);
+    };
+
     $scope.deleteChallenge = function (challenge) {
         Challenge.delete(challenge);
     };
+    $scope.open = function (size, challenge) {
+        $scope.challenge = challenge;
+        var modalInstance = $modal.open({
+            templateUrl: 'challengesmodal.html',
+            controller: 'ModalInstanceCtrl',
+            size: size,
+            resolve: {
+                challenge: function () {
+                    return $scope.challenge;
+                }
+            }
+        })
+    };
+
 
 });
 
 
-/*
- app.controller('ChallengesCtrl', function ($scope, $location, Challenge) {
- if ($location.path() === '/challenges' || $location.path() === '/admin/challenges') {
- $scope.challenges = Challenge.all;
- console.log($scope.challenges);
+app.controller('ModalInstanceCtrl', function ($scope, $sce, $modal, $modalInstance, Auth, Challenge, Profile, challenge) {
 
+    $scope.challenge = challenge;
+    $scope.user = Auth.user;
 
+    $scope.ok = function () {
 
- }
- $scope.challange = {
- title: '',
- description: '',
- link: '',
- linktype: '',
- points: 0
+        $modalInstance.close();
+    };
 
- };
- $scope.sumPoints = function (challenges) {
- var point = 0;
- angular.forEach(challenges, function (challenge) {
- point += parseInt(challenge.points);
- });
- return point;
- };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
 
+    $scope.trustSrc = function (src) {
+        return $sce.trustAsResourceUrl(src);
+    };
 
- $scope.submitChallenge = function () {
- Challenge.create($scope.challenge).then(function (ref) {
- $scope.challange = {
- title: '',
- description: '',
- link: '',
- linktype: '',
- points: 0
- }
- $location.path('/admin/challenges/');
- });
- };
+    $scope.complete = function (challengeId) {
+        var userId = $scope.user.uid;
+        var challenge = Challenge.get(challengeId);
+        var prePoints = parseInt($scope.user.profile.points);
+        Challenge.completeChallenge(challengeId, userId).then(function () {
+            var score = prePoints + parseInt(challenge.points);
+            $scope.user.profile.points = score;
+            $scope.user.profile.$save().then(function () {
+                $scope.open('large', 'views/modals/congratsmodal.html');
+            });
 
- $scope.deleteChallenge = function (challenge) {
- Challenge.delete(challenge);
- };
+        });
 
- $scope.removeComment = function (comment) {
- Challenge.deleteComment($scope.challenge, comment);
- };
+    };
 
- });*/
+    $scope.open = function (size, templateUrl) {
+        var modalInstance = $modal.open({
+            templateUrl: templateUrl,
+            size: size
+        })
+    }
+});

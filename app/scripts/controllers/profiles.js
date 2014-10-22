@@ -4,7 +4,7 @@
 
 'use strict';
 
-app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, Auth, Profile) {
+app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal, Auth, Profile) {
     var uid = $routeParams.userId;
     $scope.user = Auth.user;
 
@@ -23,6 +23,32 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, Auth, 
     Profile.getPosts(uid).then(function (posts) {
         $scope.posts = posts;
     });
+
+    $scope.changePassword = function (email, oldpassword, newpassword, newpassword2) {
+
+        if (newpassword === newpassword2) {
+            Auth.changePassword(email, oldpassword, newpassword).then(function () {
+                $scope.error = "";
+                $scope.message = "Success! Please remember your new password.";
+
+            }, function (error) {
+                $scope.error = error.toString();
+            }).then(function () {
+                $scope.email = "";
+                $scope.oldpassword = "";
+                $scope.newpassword = "";
+            });
+        } else {
+            $scope.error = "Your new passwords do not match."
+        }
+    };
+
+    $scope.open = function (size, templateUrl) {
+        var modalInstance = $modal.open({
+            templateUrl: templateUrl,
+            size: size
+        })
+    }
 });
 
 //TODO:  Change password

@@ -17,6 +17,7 @@ app.factory('Challenge',
                 });
             },
             get: function (challengeId) {
+
                 return $firebase(ref.child('challenges').child(challengeId)).$asObject();
             },
             delete: function (post) {

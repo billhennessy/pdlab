@@ -5,12 +5,12 @@
 
 app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
     if (user) {
-        $location.path('/');
+        $location.path('challenges');
     }
 
     $scope.login = function () {
         Auth.login($scope.user).then(function () {
-            $location.path('/');
+            $location.path('challenges');
         }, function (error) {
             $scope.error = error.toString();
         });
@@ -24,8 +24,17 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
                 user.points = 0;
                 return Auth.createProfile(user);
             }).then(function () {
-                $location.path('/');
+                $location.path('#/challenges');
             });
+        }, function (error) {
+            $scope.error = error.toString();
+        });
+    };
+
+    $scope.resetPassword = function (email) {
+        console.log(email);
+        Auth.resetPassword(email).then(function () {
+            $scope.success = "Your email has been sent."
         }, function (error) {
             $scope.error = error.toString();
         });

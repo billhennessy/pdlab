@@ -1,36 +1,119 @@
-<!--main body-->
-<h3>Challenges</h3>
-
-
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default" ng-repeat="challenge in challenges">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" data-target="{{'#' + challenge.$id}}">
-                    <span class="glyphicon glyphicon-check"
-                          ng-show="isComplete(currentUser.username, challenge.$id)"></span> {{challenge.title}}
-                    <span class="caret pull-right"></span>
-
-                </a>
-            </h4>
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Challenges</h2>
+                <hr class="star-primary">
+            </div>
         </div>
-        <div id="{{challenge.$id}}" class="panel-collapse collapse">
-            <div class="panel-body">
-                <a class="pull-left" href="#/challenges/{{challenge.$id}}">
-
-                    <img class="media-object check-img" src="images/nxt-checkbox-checked-ok-md.png" alt="Complete">
+        <div class="row">
+            <div class="col-sm-4 portfolio-item" ng-repeat="challenge in challenges">
+                <a ng-click="open('lg',challenge)" class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                            <h5>{{challenge.title}} for {{challenge.points}} points</h5>
+                        </div>
+                    </div>
+                    <img ng-src="images/portfolio/{{challenge.icon}}.png" class="img-responsive" alt="">
                 </a>
+            </div>
 
-                <p>{{challenge.description}}</p>
+        </div>
+    </div>
+</section>
 
-                <h3>{{challenge.points}}
-                    <small>points</small>
-                </h3>
-                <a href="#/challenges/{{challenge.$id}}" class="btn btn-primary btn-lg  pull-right">GO!</a>
-                &mdash;
-                <a href="#/challenges/{{ challenge.$id }}">{{challenge.comments.length}} comments</a>
+<a ng-click="userChallenges('-JYbC8lDekt8t-IvfScI')">click</a>
+
+
+<script type="text/ng-template" id="challengesmodal.html">
+    <div class="portfolio-modal">
+        <div class="modal-content">
+
+            <div class="container-narrow">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{challenge.title}}</h2>
+                            <hr class="star-primary">
+                            <img ng-src="images/portfolio/{{challenge.icon}}.png" class="img-responsive img-centered"
+                                 alt="">
+
+                            <p>{{challenge.description}}</p>
+
+                            <p>This challenge is worth {{challenge.points}} points.</p>
+
+                            <h3>Teh Challenge</h3>
+
+                            <div class="portfolio-item" ng-show="challenge.linktype==='url'">
+                                <iframe ng-src="{{trustSrc(challenge.link)}}" width="600" height="600"></iframe>
+
+                                <p>If your device can't read this:</p>
+                                <a href="{{challenge.link}}" target="_blank">Click to
+                                    Open</a>
+                                <br>
+                            </div>
+
+                            <div class="portfolio-item" ng-show="challenge.linktype==='video'">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="{{trustSrc(challenge.link)}}"></iframe>
+                                    <br>
+                                </div>
+                                <p>If your device can't read this:</p>
+                                <a href="{{challenge.link}}" target="_blank">Click to
+                                    Open</a>
+                                <br>
+                            </div>
+                            <div class="portfolio-item" ng-show="challenge.linktype==='pdf'">
+
+                                <div ng-class="challenge.linktype">
+                                    <embed ng-src="{{trustSrc(challenge.link)}}" width="680" height="800" alt="pdf"
+                                           pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                                </div>
+                                <a href="{{challenge.link}}" target="_blank">Click to
+                                    Open</a>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-lg btn-primary" ng-click="complete(challenge.$id)">Complete</button>
+                            <button class="btn btn-lg btn-warning" ng-click="$dismiss()"><i class="fa fa-times"></i>Ok
+                            </button>
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+
+    <!--  <div class="modal-header">
+              <h2 class="modal-title">{{challenge.title}}</h2>
+          </div>
+          <div class="modal-body">
+              <p>{{challenge.description}}</p>
+
+              <p>This challenge is worth {{challenge.points}} points.</p>
+              <a href="{{challenge.link}}" ng-show="challenge.linktype==='url'" target="_blank">Click to Open</a>
+              <br>
+
+              <div class="embed-responsive embed-responsive-16by9" ng-show="challenge.linktype==='video'">
+                  <iframe class="embed-responsive-item" src="{{trustSrc(challenge.link)}}"></iframe>
+                  <br>
+              </div>
+              <div ng-show="challenge.linktype==='pdf'">
+                  <embed ng-src="{{trustSrc(challenge.link)}}" width="800" height="800" alt="pdf"
+                         pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+              </div>
+          </div>
+          <div class="modal-footer">
+
+             <button class="btn btn-lg btn-primary" ng-click="complete(challenge.$id)">Complete</button>
+                              <button class="btn btn-lg btn-warning" ng-click="$dismiss()"> <i class="fa fa-times"></i>Ok</button>
+
+          </div>
+      </div>-->
+</script>
 
