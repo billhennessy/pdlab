@@ -1,20 +1,25 @@
-<nav class="navbar navbar-default">
-    <div class="container">
+<nav enter="navbar-shrink" leave class="navbar navbar-default navbar-fixed-top navbar-shrink">
+    <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#"><img src="images/small3-recolor-flat.png" class="img-responsive"></a>
+            <a href="#page-top" target="_top" class="navbar-brand">
+                <img src="images/small3-recolor-white-flat.png" class="img-responsive nav-pic">
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div ng-controller="NavCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
 
                 <li ng-show="signedIn()">
                     <a href="#/challenges">Challenges</a>
@@ -22,23 +27,24 @@
                 <li ng-show="signedIn()">
                     <a href="#/leaders">Leaders</a>
                 </li>
-                <li>
-                    <a href="#/about">About</a>
-                </li>
+
                 <li>
                     <a href="#/features">Features</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">About</a>
                 </li>
 
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
                 <li ng-show="signedIn()">
-                    <a href="#/users/{{ user.profile.$id }}" class="navbar-link">{{ user.profile.username }}</a>
+                    <a ng-href="#/users/{{ user.profile.$id }}" class="navbar-link">{{ user.profile.username }}</a>
                 </li>
                 <li ng-show="signedIn()">
                     <a ng-href="#/users/{{ user.profile.$id }}">
-                        <img ng-src="https://www.gravatar.com/avatar/{{ user.profile.md5_hash }}" class="nav-pic"/>
-                        {{ currentUser.username }}
+                        <img ng-src="https://www.gravatar.com/avatar/{{ user.profile.md5_hash }}" class="nav-prof-img"/>{{
+                        currentUser.username }}
                     </a>
                 </li>
                 <li ng-show="signedIn()">
@@ -50,12 +56,9 @@
                 <li ng-hide="signedIn()">
                     <a href="#/register">Register</a>
                 </li>
-            </ul>
 
-            <!-- Admin Tools -->
-            <ul class="nav navbar-nav navbar-right" ng-show="user.profile.lab === 'admin'">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
+                <li class="dropdown" ng-show="user.profile.lab === 'admin'">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu" ng-controller="AdminCtrl">
                         <li ng-repeat="item in menuItems">
                             <a href="#/admin/{{item | lowercase}}">{{item}}</a>
@@ -63,18 +66,7 @@
 
                     </ul>
                 </li>
-
             </ul>
-            <!-- /.dropdown-->
         </div>
-        <!-- /.navbar-collapse -->
-        <div class="progress" ng-controller="ProgressCtrl">
-            <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar"
-                 aria-valuenow="{{user.profile.points}}"
-                 aria-valuemin="0" aria-valuemax="100" style="width: {{user.profile.points}}%;">
-                {{user.profile.points}} points
-            </div>
-
         </div>
-    </div>
 </nav>

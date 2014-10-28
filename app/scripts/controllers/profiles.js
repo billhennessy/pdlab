@@ -7,8 +7,10 @@
 app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal, Auth, Profile) {
     var uid = $routeParams.userId;
     $scope.user = Auth.user;
-
+    $scope.currentUser = Auth.user;
     $scope.profile = Profile.get(uid);
+    // $scope.values = Profile.values(uid);
+
 
     $scope.update = function (user) {
         return Profile.update(user).then(function () {
@@ -49,6 +51,13 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
             size: size
         })
     }
+
+    $scope.assignChallenges = function () {
+        var d = Profile.assignChallenges('simplelogin:52');
+        console.log(d);
+    };
+
+
 });
 
 //TODO:  Change password

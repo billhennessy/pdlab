@@ -1,57 +1,161 @@
-<div class="row">
-    <div class="col-md-8">
-        <h2>Labs</h2>
-
-        <div class="list-group" ng-repeat="lab in labs | orderBy:'day1'"
-             ng-click="selectLab(lab.$id); lab_users(lab.$id)">
-            <h4 class="list-group-item-heading"><a ng-click="selectLab(lab.$id)">{{lab.client}}</a>
-            </h4>
-
-            <p class="list-group-item-text">Dates: {{lab.day1}} & {{lab.day2}}</p>
-
-            <p class="list-group-item-text">Track: {{lab.track}}</p>
-
-            <p class="list-group-item-text">Client Contact: {{lab.contact}}</p>
-            <hr>
+<!-- Portfolio Grid Section -->
+<section id="labs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Lab Admin <span class="badge">{{labs.length}}</span></h2>
+                <hr class="star-primary">
+            </div>
         </div>
-    </div>
 
-</div>
-<div class="row">
-    <div class="post-page panel">
+        <a data-target="#labModal" data-toggle="modal"><h3>New Lab</h3></a><br>
 
+        <div class="row">
+            <div class="col-md-8">
+                <div class="list-group" ng-repeat="lab in labs | orderBy:'day1'"
+                     ng-click="selectLab(lab.$id); lab_users(lab.$id)">
+                    <h4 class="list-group-item-heading"><a ng-click="selectLab(lab.$id)" data-target="#labModal"
+                                                           data-toggle="modal">{{lab.client}}</a>
+                    </h4>
 
-        <div class="col-md-12">
-            <h2>Lab Details</h2>
+                    <p class="list-group-item-text">Dates: {{lab.day1}} & {{lab.day2}}</p>
 
-            <form ng-submit="submitLab()" name="form">
-                <div ng-show="error || form.labname.$error">
-                    <p ng-show="error" class="text-danger"></p>
+                    <p class="list-group-item-text">Track: {{lab.track}}</p>
 
-                    <p ng-show="form.labname.$error.taken" class="text-danger">Username is already taken.</p>
-
-                    <p ng-show="form.labname.$error.invalid" class="text-danger">Username contains invalid
-                        characters.</p>
+                    <p class="list-group-item-text">Client Contact: {{lab.contact}}</p>
+                    <hr>
                 </div>
-                <input type="text" ng-model="lab.client" placeholder="Client" class="form-control"><br>
-                <input type="text" ng-model="lab.code" placeholder="Lab Code" name="labcode" check-labcode
-                       class="form-control"><br>
-                <input type="email" ng-model="lab.contact" placeholder="Client Contact Email" class="form-control"><br>
-                <input type="text" ng-model="lab.projectmgr" placeholder="Project Manager" class="form-control"><br>
-                <input type="text" ng-model="lab.ae" placeholder="AE" class="form-control"><br>
-                <input type="text" ng-model="lab.facilitator" placeholder="Facilitator" class="form-control"><br>
-                <input type="datetime" ng-model="lab.day1" placeholder="Session 1" class="form-control"><br>
-                <input type="datetime" ng-model="lab.day2" placeholder="Session 2" class="form-control"><br>
-                <select class="form-control" ng-model="lab.track">
-                    <option>Consumer</option>
-                    <option>Channel</option>
-                    <option>Direct</option>
-                    <option>Employee</option>
-                </select>
-                <input type="submit" value="Register" class="btn btn-primary" ng-show="signedIn()"/>
-                <input type="button" ng-click="labClear()" value="Reset" class="btn">
-            </form>
+            </div>
+
         </div>
     </div>
+</section>
 
+<div class="portfolio-modal modal fade" id="labModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>{{lab.client}}
+                            <small>{{lab.day1}} and {{lab.day2}}</small>
+                        </h2>
+                        <form ng-submit="submitLab()" name="form">
+                            <div ng-show="error || form.labname.$error">
+                                <p ng-show="error" class="text-danger"></p>
+
+                                <p ng-show="success" class="text-success"></p>
+
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Client</label>
+                                    <input type="text" ng-model="lab.client" class="form-control" placeholder="Client"
+                                           id="client" required
+                                           data-validation-required-message="Please enter your client name.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Lab Id</label>
+                                    <input ng-model="lab.code" type="text" class="form-control" placeholder="Lab Id"
+                                           id="labId" required
+                                           data-validation-required-message="Please enter your lab id.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Client Contact Email</label>
+                                    <input ng-model="lab.contact" type="email" class="form-control"
+                                           placeholder="Client Contact Email" id="clientemail" required
+                                           data-validation-required-message="Please enter the client contact's email.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Project Manager</label>
+                                    <input ng-model="lab.projectmgr" type="text" class="form-control"
+                                           placeholder="Project Manager" id="pm" required
+                                           data-validation-required-message="Please enter the name of the project manager.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Account Executive</label>
+                                    <input ng-model="lab.ae" type="text" class="form-control"
+                                           placeholder="Account Executive" id="ae" required
+                                           data-validation-required-message="Please enter the AE's name.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Facilitator</label>
+                                    <input ng-model="lab.facilitator" type="text" class="form-control"
+                                           placeholder="Facilitator" id="facilitator" required
+                                           data-validation-required-message="Please enter facilitator's name.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Day One</label>
+                                    <input ng-model="lab.day1" type="datetime" class="form-control" placeholder="Day 1"
+                                           id="day1" required
+                                           data-validation-required-message="Please enter the date of lab session one.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="row control-group">
+                                <div class="form-group col-xs-12 floating-label-form-group controls">
+                                    <label>Day Two</label>
+                                    <input ng-model="lab.day2" type="datetime" class="form-control" placeholder="Day 2"
+                                           id="day2" required
+                                           data-validation-required-message="Please enter the date of lab session two.">
+
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <select class="form-control" ng-model="lab.track">
+                                <option>Consumer</option>
+                                <option>Channel</option>
+                                <option>Direct</option>
+                                <option>Employee</option>
+                            </select>
+                            <input type="submit" value="Register" class="btn btn-primary btn-default"
+                                   data-dismiss="modal">
+                            <button type="button" ng-click="labClear()" class="btn btn-default" data-dismiss="modal"><i
+                                    class="fa fa-times"></i> Close
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
+

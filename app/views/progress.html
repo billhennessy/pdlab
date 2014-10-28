@@ -1,15 +1,18 @@
-<div class="panel panel-success">
-    <div class="panel-title" ng-click="isCollapsed = !isCollapsed">Your Progress
-        <i class="glyphicon glyphicon-chevron-down" ng-show="isCollapsed"></i>
-        <i class="glyphicon glyphicon-chevron-up" ng-show="!isCollapsed"></i>
-    </div>
-    <div class="panel-body" collapse="isCollapsed">
-        <div class="progress" ng-controller="ProgressCtrl">
+<!-- /.navbar-collapse -->
+<div class="progress-widget">
+    <div class="row" ng-controller="NavCtrl">
+        <div class="col-md-2 navbar-text"></div>
+        <div class="col-md-4"><span class="navbar-text">Your Points</span>
 
-            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{user.profile.points}}"
-                 aria-valuemin="0" aria-valuemax="100" style="width: {{user.profile.points}}%;">
-                {{user.profile.points}} points
+            <div class="progress " ng-controller="ProgressCtrl ">
+                <div class="progress-bar progress-bar-warning progress-bar-striped " role="progressbar "
+                     aria-valuenow="{{user.profile.points}} " aria-valuemin="0 " aria-valuemax="100 "
+                     style="width: {{user.profile.points}}%; ">
+                    {{user.profile.points}} points
+                </div>
+
             </div>
         </div>
+        <div class="col-md-2 navbar-text"></div>
     </div>
 </div>

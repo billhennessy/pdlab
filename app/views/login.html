@@ -1,28 +1,61 @@
-<div class="auth-forms">
-
-    <h2>Log In</h2>
-
-    <form ng-submit="login()">
-        <p ng-show="error" class="text-danger">{{error}}</p>
-
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-            <input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Log In</h2>
+                <hr class="star-primary">
+            </div>
         </div>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-            <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
-        </div>
-        <input type="submit" value="Log in" class="btn btn-primary"/>
-    </form>
-    <br>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form ng-submit="login()">
+                    <p ng-show="error" class="text-danger">{{error}}</p>
 
-    <div>
-        <a data-target="#portfolioModal5" class="portfolio-link" data-toggle="modal">Forgot Password</a>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Email Address</label>
+
+                            <div class="input-group">
+
+                                <input pdlabFocus type="email" ng-model="user.email" placeholder="Email"
+                                       class="form-control input-lg" required
+                                       data-validation-required-message="Please enter your email address.">
+                                <br>
+                                <span class="input-group-addon"><i class="fa fa-envelope-o fa-2x"></i>
+                                </span>
+                            </div>
+
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Password</label>
+
+                            <div class="input-group">
+
+                                <input type="password" ng-model="user.password" placeholder="Password"
+                                       class="form-control input-lg" required
+                                       data-validation-required-message="Please make up a password.">
+                                <br>
+                                <span class="input-group-addon"><i class="fa fa-key fa-2x"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit" value="Log in" class="btn btn-primary"/>
+                </form>
+                <br>
+
+                <div>
+                    <a data-target="#portfolioModal5" class="portfolio-link" data-toggle="modal">Forgot Password</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-
-</div>
-
+</section>
 
 <!-- Forgot Password Modal -->
 
@@ -44,7 +77,7 @@
 
                         <p class="success" ng-show="success">{{success}}</p>
                         <hr class="star-primary">
-                        <img src="images/portfolio/safe.png" class="img-responsive img-centered" alt="">
+                        <img src="images/portfolio/safe.png" class="img-responsive img-centered img-small" alt="">
 
                         <p>Enter your email address for a chance to win a temporary password!</p>
                         <input type="email" class="form-control" ng-model="email" placeholder="Email">

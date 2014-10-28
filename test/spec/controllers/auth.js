@@ -3,7 +3,16 @@
 describe('Controller: AuthCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('angNewsApp'));
+    beforeEach(module('pdlab', [
+        'ngAnimate',
+        'ngCookies',
+        'ngResource',
+        'ngRoute',
+        'ngSanitize',
+        'ngTouch',
+        'firebase',
+        'ui.bootstrap'
+    ]));
 
     var AuthCtrl,
         scope;

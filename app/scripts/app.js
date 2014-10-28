@@ -27,10 +27,10 @@ var app = angular.module('pdlab', [
                 templateUrl: 'views/publichome.html',
                 controller: 'AboutCtrl'
             })
-            .when('/about', {
-                templateUrl: 'views/about.html',
-                controller: 'AboutCtrl'
-            })
+            /*.when('/about', {
+             templateUrl: 'views/about.html',
+             controller: 'AboutCtrl'
+             })*/
             .when('/posts/:postId', {
                 templateUrl: 'views/showpost.html',
                 controller: 'PostViewCtrl'
@@ -86,7 +86,7 @@ var app = angular.module('pdlab', [
             })
             .when('/features', {
                 templateUrl: 'views/features.html',
-                controller: 'FeatureCtrl'
+                controller: 'FeaturesCtrl'
             })
             .when('/admin/challenges', {
                 templateUrl: 'views/admin/admin-challenges.html',
@@ -94,7 +94,7 @@ var app = angular.module('pdlab', [
             })
             .when('/admin/features', {
                 templateUrl: 'views/admin/admin-features.html',
-                controller: 'FeatureCtrl'
+                controller: 'FeaturesCtrl'
             })
 
             .when('/challenges', {
@@ -106,8 +106,8 @@ var app = angular.module('pdlab', [
                 controller: 'ChallengeViewCtrl'
             })
             .when('/features/:featureId', {
-                templateUrl: 'views/features.html',
-                controller: 'FeatureCtrl'
+                templateUrl: 'views/showfeature.html',
+                controller: 'FeatureViewCtrl'
             })
             .when('/about', {
                 templateUrl: 'views/about.html',

@@ -10,7 +10,7 @@
                     <hr class="star-light">
                     <span class="skills">Persuasive Design—efficiently practiced in our exclusive Persuasive Design Lab—produces
                     program designs that help people get what they want, in the context of your business.</span><br>
-                    <a class="btn btn-lg btn-warning" ng-click="open('lg','views/modals/videomodal.html')">Learn
+                    <a class="btn btn-lg btn-warning" data-toggle="modal" data-target="#videoModal">Learn
                         more</a>
                 </div>
             </div>
@@ -18,3 +18,30 @@
     </div>
 </header>
 
+<div class="portfolio-modal modal fade" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Persuasive Design Lab in 30 Seconds</h2>
+                        <hr class="star-primary">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe src="https://www.ccv.adobe.com/v1/player/Nn3o5-7UQju/embed" width="760" height="518"
+                                    frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

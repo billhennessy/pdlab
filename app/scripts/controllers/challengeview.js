@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.controller('ChallengeViewCtrl', function ($scope, $routeParams, $modal, $sce, Challenge, Profile, Auth) {
+app.controller('ChallengeViewCtrl', function ($scope, $anchorScroll, $location, $routeParams, $modal, $sce, Challenge, Profile, Auth) {
     $scope.challenge = Challenge.get($routeParams.challengeId);
     $scope.comments = Challenge.comments($routeParams.challengeId);
 
@@ -29,20 +29,30 @@ app.controller('ChallengeViewCtrl', function ($scope, $routeParams, $modal, $sce
         $scope.comments.$remove(comment);
     };
 
-    $scope.completeChallenge = function (challengeId) {
-        var userId = $scope.user.uid;
-        var challenge = Challenge.get(challengeId);
-        var prePoints = parseInt($scope.user.profile.points);
-        Challenge.completeChallenge(challengeId, userId).then(function () {
-            var score = prePoints + parseInt(challenge.points);
-            $scope.user.profile.points = score;
-            $scope.user.profile.$save().then(function () {
-                $scope.open('large', 'views/modals/congratsmodal.html');
-            });
+    $anchorScroll.yOffset = -100;
+    $scope.scroll = function (location) {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash(location);
 
-        });
-
+        // call $anchorScroll()
+        $anchorScroll();
     };
+
+    /*  $scope.completeChallenge = function (challengeId) {
+     var userId = $scope.user.uid;
+     var challenge = Challenge.get(challengeId);
+     var prePoints = parseInt($scope.user.profile.points);
+     Challenge.completeChallenge(challengeId, userId).then(function () {
+     var score = prePoints + parseInt(challenge.points);
+     $scope.user.profile.points = score;
+     $scope.user.profile.$save().then(function () {
+     $scope.open('large', 'views/modals/congratsmodal.html');
+     });
+
+     });
+
+     };*/
 
     $scope.trustSrc = function (src) {
         return $sce.trustAsResourceUrl(src);

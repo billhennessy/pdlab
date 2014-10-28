@@ -20,6 +20,10 @@ app.factory('Challenge',
 
                 return $firebase(ref.child('challenges').child(challengeId)).$asObject();
             },
+            update: function (challenge) {
+                return challenges.$save(challenge);
+            },
+
             delete: function (post) {
                 return challenges.$remove(challenge);
             },
@@ -33,6 +37,15 @@ app.factory('Challenge',
                     .$push(challengeId);
 
 
+            },
+
+            test: function () {
+                return new Firebase(FIREBASE_URL + "/user_challenges")
+                    .startAt("simplelogin:11")
+                    .endAt("simplelogin:11")
+                    .once('value', function (snap) {
+                        console.log('accounts matching challenge title', snap.val())
+                    });
             }
         };
 

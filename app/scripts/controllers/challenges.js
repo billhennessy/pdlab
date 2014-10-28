@@ -9,17 +9,17 @@ app.controller('ChallengesCtrl', function ($scope, $location, $routeParams, $mod
     $scope.challenges = Challenge.all;
     $scope.user = Auth.user;
     //$scope.challenge = $routeParams.challengeId;
-    $scope.challenge = "";
+    $scope.challenge = {title: '', description: '', link: '', linktype: '', points: 0};
 
     $scope.submitChallenge = function () {
-        $scope.challenge.creator = $scope.user.profile.username;
-        $scope.challenge.creatorUID = $scope.user.uid;
-        Challenge.create($scope.challenge).then(function (ref) {
-            $location.path('/challenges/' + ref.name());
-            $scope.challange = {title: '', description: '', link: '', linktype: '', points: 0
-
-            };
-        });
+        $scope.m_challenge.creator = $scope.user.profile.username;
+        $scope.m_challenge.creatorUID = $scope.user.uid;
+        Challenge.create($scope.m_challenge).then(function (ref) {
+            $scope.m_challenge = {title: '', description: '', link: '', linktype: '', points: 0};
+            $scope.success = "You've created a new challenge called " + ref.title;
+        }), function (error) {
+            $scope.error = error.toString();
+        };
     };
 
     $scope.userChallenges = function (challengeId) {
@@ -30,7 +30,26 @@ app.controller('ChallengesCtrl', function ($scope, $location, $routeParams, $mod
     $scope.deleteChallenge = function (challenge) {
         Challenge.delete(challenge);
     };
+
+    $scope.editChallenge = function (challenge) {
+        $scope.m_challenge = Challenge.get(challenge.$id);
+    }, function (error) {
+        $scope.error = error.toString();
+    };
+
+    $scope.updateChallenge = function (challenge) {
+        $scope.error = "";
+        $scope.success = "";
+        return Challenge.update(challenge).then(function () {
+            $scope.success = "Updated";
+        });
+    }, function (error) {
+        $scope.error = error.toString();
+    };
+
+
     $scope.open = function (size, challenge) {
+
         $scope.challenge = challenge;
         var modalInstance = $modal.open({
             templateUrl: 'challengesmodal.html',
@@ -49,9 +68,11 @@ app.controller('ChallengesCtrl', function ($scope, $location, $routeParams, $mod
 
 
 app.controller('ModalInstanceCtrl', function ($scope, $sce, $modal, $modalInstance, Auth, Challenge, Profile, challenge) {
-
+    console.log('ModalInstanceCtrl called.')
     $scope.challenge = challenge;
     $scope.user = Auth.user;
+
+    console.log($scope.challenge);
 
     $scope.ok = function () {
 
@@ -71,15 +92,20 @@ app.controller('ModalInstanceCtrl', function ($scope, $sce, $modal, $modalInstan
         var challenge = Challenge.get(challengeId);
         var prePoints = parseInt($scope.user.profile.points);
         Challenge.completeChallenge(challengeId, userId).then(function () {
-            var score = prePoints + parseInt(challenge.points);
-            $scope.user.profile.points = score;
-            $scope.user.profile.$save().then(function () {
-                $scope.open('large', 'views/modals/congratsmodal.html');
+            addPoints($scope.user, challenge.points).then(function () {
+                $scope.open('large', 'views/modals/addChallengeModal.html');
             });
 
         });
 
     };
+
+    function addPoints(user, points) {
+        var prePoints = parseInt(user.profile.points);
+        var score = prePoints + parseInt(points);
+        user.profile.points = score;
+        return user.profile.$save();
+    }
 
     $scope.open = function (size, templateUrl) {
         var modalInstance = $modal.open({

@@ -1,103 +1,18 @@
-/* Space out content a bit */
-body {
-    padding-top: 12px;
-    padding-bottom: 20px;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-/* Customize container */
-/*@media (min-width: 768px) {
-    .container {
-        max-width: 900px;
-    }
-}
-*/
 .container-narrow > hr {
     margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
-}
-
-body {
-    /*background: #F3F3F3;*/
-    background-color: #F3F3F3;
-}
-
-/* NAV BAR */
-
-.nav {
-    /* text-shadow: 0 1px 3px rgba(0, 0, 0, .5); */
-}
-
 .nav-pic {
     margin: -2px 5px 0 0;
-    max-height: 20px;
+    max-height: 60px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+
+.nav-prof-img {
+    margin: -2px 2px 0 0;
+    max-height: 40px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
@@ -112,36 +27,11 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.panel {
-    padding: 15px 15px 10px 10px;
-}
-
-.panel-title {
-    color: #5cb85c;
-}
-
-.btn {
-    border: 1px 1px 1px 1px;
-    border-color: #555555;
-
-}
-
-.info {
-    font-weight: bolder;
-    font-size: 16px;
-}
-
-.info .url {
-    font-weight: normal;
-    color: #999;
-    font-size: 13px;
-    margin-left: 5px;
-}
-
 /* PROFILE PAGE */
 .prof-img {
     width: 100%;
-    max-width: 100px;
+    max-width: 50px;
+    max-height: 50px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
@@ -152,26 +42,9 @@ body {
     font-size: 1.5em;
 }
 
-.nav-tabs {
-    margin-top: 30px;
-}
-
 .vote {
     height: 20px;
     cursor: pointer;
-}
-
-.auth-forms {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 1px 25px 25px 25px;
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
 }
 
 .cmt-form {
@@ -189,33 +62,21 @@ body {
     color: #bbb;
 }
 
-/* format checkbox images */
-.check-img {
-    width: 100px;
-    height: 100px;
-    margin-right: 15px;
-    margin-bottom: 15px;
+.gravatar-td {
+    max-width: 30px;
 }
 
-.modal-header {
-    font-size: 20px;
-    color: #5cb85c;
+.img-small {
+    max-height: 180px;
 }
 
-.odd {
-    color: #fff;
-    background: #18bc9c;
+.progress-widget {
+    position: static;
+    top: 100px;
+    left: auto;
+    right: auto;
 }
 
-/* spinner */
-#floatingCirclesG {
-    position: relative;
-    width: 128px;
-    height: 128px;
-    -moz-transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -o-transform: scale(0.6);
-    transform: scale(0.6);
-}
+.nav {
 
+}

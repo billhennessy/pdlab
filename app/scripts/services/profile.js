@@ -57,6 +57,11 @@ app.factory('Profile', function ($window, FIREBASE_URL, $firebase, Post, Challen
             return $firebase(ref.child('user_challenges').child(userId)).$asObject();
         },
 
+        values: function (userId) {
+            console.log(userId);
+            return $firebase(ref.child('user_values').child('uid').$valueAt(userId).$asObject());
+        },
+
         findChallenge: function (userId, challengeId) {
             return $firebase(ref.child('user_challenges').child(userId))
                 .startAt(challengeId)

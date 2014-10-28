@@ -1,0 +1,14 @@
+<div ng-controller="ChallengesCtrl">
+    <div class="modal-header">
+        <h2 class="modal-title">Nice work, {{user.profile.username}}!</h2>
+    </div>
+    <div class="modal-body">
+        <h3>You just add the {{challenge.title}} challenge to your mission. You earned {{challenge.points}} points in the process. We'll credit those points to you when you complete your mission.</h3>
+
+        <h3>You now have {{user.profile.points}} points.</h3>
+    </div>
+    <div class="modal-footer">
+
+        <button class="btn btn-lg btn-warning" ng-click="$dismiss()">Ok</button>
+    </div>
+</div>

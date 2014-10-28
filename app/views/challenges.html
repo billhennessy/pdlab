@@ -24,9 +24,7 @@
     </div>
 </section>
 
-<a ng-click="userChallenges('-JYbC8lDekt8t-IvfScI')">click</a>
-
-
+<!-- Challenge Detail Modal -->
 <script type="text/ng-template" id="challengesmodal.html">
     <div class="portfolio-modal">
         <div class="modal-content">
@@ -44,23 +42,34 @@
 
                             <p>This challenge is worth {{challenge.points}} points.</p>
 
-                            <h3>Teh Challenge</h3>
+                            <h3>The Challenge</h3>
 
                             <div class="portfolio-item" ng-show="challenge.linktype==='url'">
                                 <iframe ng-src="{{trustSrc(challenge.link)}}" width="600" height="600"></iframe>
 
-                                <p>If your device can't read this:</p>
-                                <a href="{{challenge.link}}" target="_blank">Click to
+                                <p>If your device complains:</p>
+                                <a ng-href="{{challenge.link}}" target="_blank">Click to
+                                    Open</a>
+                                <br>
+                            </div>
+
+                            <div class="portfolio-item" ng-show="challenge.linktype==='typeform'">
+                                <iframe ng-src="{{trustSrc(challenge.link) + uid}}" width="600" height="600"></iframe>
+
+                                <p>If your device complains:</p>
+                                <a ng-href="{{challenge.link + uid}}" target="_blank">Click to
                                     Open</a>
                                 <br>
                             </div>
 
                             <div class="portfolio-item" ng-show="challenge.linktype==='video'">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="{{trustSrc(challenge.link)}}"></iframe>
+                                    <iframe class="embed-responsive-item"
+                                            ng-src="{{trustSrc(challenge.link)}}"></iframe>
                                     <br>
+
                                 </div>
-                                <p>If your device can't read this:</p>
+                                <p>If your device complains:</p>
                                 <a href="{{challenge.link}}" target="_blank">Click to
                                     Open</a>
                                 <br>
@@ -76,8 +85,10 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-lg btn-primary" ng-click="complete(challenge.$id)">Complete</button>
-                            <button class="btn btn-lg btn-warning" ng-click="$dismiss()"><i class="fa fa-times"></i>Ok
+                            <button class="btn btn-lg btn-primary" ng-click="complete(challenge.$id); $dismiss()">I Will
+                                Do This!
+                            </button>
+                            <button class="btn btn-lg btn-warning" ng-click="$dismiss()"><i class="fa fa-times"></i>Close
                             </button>
 
 
@@ -87,33 +98,5 @@
             </div>
         </div>
     </div>
-
-
-    <!--  <div class="modal-header">
-              <h2 class="modal-title">{{challenge.title}}</h2>
-          </div>
-          <div class="modal-body">
-              <p>{{challenge.description}}</p>
-
-              <p>This challenge is worth {{challenge.points}} points.</p>
-              <a href="{{challenge.link}}" ng-show="challenge.linktype==='url'" target="_blank">Click to Open</a>
-              <br>
-
-              <div class="embed-responsive embed-responsive-16by9" ng-show="challenge.linktype==='video'">
-                  <iframe class="embed-responsive-item" src="{{trustSrc(challenge.link)}}"></iframe>
-                  <br>
-              </div>
-              <div ng-show="challenge.linktype==='pdf'">
-                  <embed ng-src="{{trustSrc(challenge.link)}}" width="800" height="800" alt="pdf"
-                         pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
-              </div>
-          </div>
-          <div class="modal-footer">
-
-             <button class="btn btn-lg btn-primary" ng-click="complete(challenge.$id)">Complete</button>
-                              <button class="btn btn-lg btn-warning" ng-click="$dismiss()"> <i class="fa fa-times"></i>Ok</button>
-
-          </div>
-      </div>-->
 </script>
-
+    

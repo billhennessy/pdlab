@@ -1,68 +1,81 @@
-<div class="container posts-page">
-    <ul class="nav">
-        <li class="active"><a href="#/challenges"><h2><i class="glyphicon glyphicon-chevron-left"></i> back</a></h2>
-        </li>
-
-    </ul>
-    <div class="post row">
-        <div class="col-xs-1">
-
+<section id="showChallenge">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Challenge Discussion</h2>
+                <hr class="star-primary">
+            </div>
         </div>
-        <div class="col-md-9 col-xs-11">
 
-            <div class="info">
-                <h3>{{challenge.title}}</h3>
+        <div class="container posts-page">
+            <a class="page-scroll" ng-click="scroll('comments')"> Jump to Comments</a>
+
+            <div class="post row">
+                <div class="col-xs-1">
+
+                </div>
+                <div class="col-md-9 col-xs-11">
+
+                    <div class="info">
+                        <h3>{{challenge.title}}</h3>
+                    </div>
+                    <div>
+                        <p>{{challenge.description}}</p>
+                    </div>
+                    <a href="{{challenge.link}}" ng-show="challenge.linktype==='url'" target="_blank">Click to Open</a>
+                    <br>
+
+                    <div class="embed-responsive embed-responsive-16by9" ng-show="challenge.linktype==='video'">
+                        <iframe class="embed-responsive-item" src="{{trustSrc(challenge.link)}}"></iframe>
+                        <br>
+                    </div>
+                    <div ng-show="challenge.linktype==='pdf'">
+                        <embed ng-src="{{trustSrc(challenge.link)}}" width="900" height="1000" alt="pdf"
+                               pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                    </div>
+
+
+                </div>
             </div>
-            <div>
-                <p>{{challenge.description}}</p>
-            </div>
-            <a href="{{challenge.link}}" ng-show="challenge.linktype==='url'" target="_blank">Click to Open</a>
             <br>
 
-            <div class="embed-responsive embed-responsive-16by9" ng-show="challenge.linktype==='video'">
-                <iframe class="embed-responsive-item" src="{{trustSrc(challenge.link)}}"></iframe>
-                <br>
-            </div>
-            <div ng-show="challenge.linktype==='pdf'">
-                <embed ng-src="{{trustSrc(challenge.link)}}" width="900" height="1000" alt="pdf"
-                       pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
-            </div>
-
+            <!-- <div class="col-md-2">
+                 <button class="btn btn-default btn-lg btn-warning"
+                         ng-click="completeChallenge(challenge.$id, challenge.points)">Complete
+                 </button>
+             </div>-->
 
         </div>
+
+        <a id="comments"></a>
+
+        <h2>Comments</h2>
+
+        <div ng-repeat="comment in comments" class="row cmt">
+            <div class="col-md-12">
+                <p>{{ comment.text }}</p>
+
+                <p class="author">posted by <a href="#/users/{{ comment.username }}">{{ comment.username }}</a>
+                    <a ng-click="deleteComment(comment)"
+                       ng-show="signedIn() && comment.username === currentUser.username">(delete)</a>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="cmt-form">
+
+            <div ng-hide="signedIn()">
+                <p><a href="#/login">Sign in</a> to post a comment</p>
+            </div>
+
+            <form ng-show="signedIn()">
+                <textarea ng-model="commentText" placeholder="Post a Comment" class="form-control"></textarea><br/>
+                <input type="submit" ng-click="addComment()" value="Post Comment" class="btn btn-primary"/>
+            </form>
+        </div>
+
     </div>
-    <br>
-
-    <div class="col-md-2">
-        <button class="btn btn-default btn-lg btn-warning"
-                ng-click="completeChallenge(challenge.$id, challenge.points)">Complete
-        </button>
     </div>
-
-</div>
-<h2>Comments</h2>
-
-<div ng-repeat="comment in comments" class="row cmt">
-    <div class="col-md-12">
-        <p>{{ comment.text }}</p>
-
-        <p class="author">posted by <a href="#/users/{{ comment.username }}">{{ comment.username }}</a>
-            <a ng-click="deleteComment(comment)" ng-show="signedIn() && comment.username === currentUser.username">(delete)</a>
-        </p>
     </div>
-</div>
-
-
-<div class="cmt-form">
-
-    <div ng-hide="signedIn()">
-        <p><a href="#/login">Sign in</a> to post a comment</p>
-    </div>
-
-    <form ng-show="signedIn()">
-        <textarea ng-model="commentText" placeholder="Post a Comment" class="form-control"></textarea><br/>
-        <input type="submit" ng-click="addComment()" value="Post Comment" class="btn btn-primary"/>
-    </form>
-</div>
-
-</div>
+</section>

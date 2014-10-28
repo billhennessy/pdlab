@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
+app.controller('AuthCtrl', function ($scope, $location, Auth, Profile, user) {
     if (user) {
         $location.path('challenges');
     }
@@ -11,6 +11,8 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, user) {
     $scope.login = function () {
         Auth.login($scope.user).then(function () {
             $location.path('challenges');
+
+
         }, function (error) {
             $scope.error = error.toString();
             $scope.typing = true;

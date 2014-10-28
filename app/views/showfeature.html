@@ -1,0 +1,71 @@
+<section id="showfeature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Feature Discussion</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+
+<div class="container posts-page">
+    <p><a class="btn btn-primary btn-success" ng-href="#/features"><i class="fa fa-hand-o-left"></i> Back to the Features</a></p>
+    <div class="post row">
+        <div class="col-xs-1">
+        </div>
+        <div class="col-md-9 col-xs-11">
+            <div class="info">
+                
+                   <h3> {{ feature.title }} </h3>
+                   <p>  {{ feature.description }} </p>
+                   <span>
+                   Status: {{feature.status}} | Priority: {{ feature.priority }}
+                   </span>
+                
+            </div>
+            <div>
+        <span>
+          submitted by
+          <a ng-href="#/users/{{ feature.creatorUID }}">
+              {{ feature.creator }}
+          </a>
+        </span>
+            </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+    <h2>Comments</h2>
+    <div ng-repeat="comment in comments" class="row cmt">
+        <div class="col-md-12">
+            <p>{{ comment.text }}</p>
+            <p class="author">posted by
+                <a ng-href="#/users/{{ comment.creatorUID }}">
+                    {{ comment.creator }}
+                </a>
+                <a ng-href=""
+                   ng-click="deleteComment(comment)"
+                   ng-show="signedIn() && comment.creatorUID === user.uid">
+                    (delete)
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <div class="cmt-form">
+        <div ng-hide="signedIn()">
+            <p><a href="#/login">Sign in</a> to post a comment</p>
+        </div>
+
+        <form ng-show="signedIn()" ng-submit="addComment()">
+            <textarea
+                    ng-model="commentText"
+                    placeholder="Post a Comment"
+                    class="form-control"></textarea><br />
+            <input type="submit" value="Post Comment" class="btn btn-primary" />
+        </form>
+    </div>
+
+</div>
+
+</div>
+</section>
