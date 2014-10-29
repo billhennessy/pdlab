@@ -4,7 +4,7 @@
 
 'use strict';
 
-app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal, Auth, Profile) {
+app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal, Auth, Profile, Lab) {
     var uid = $routeParams.userId;
     $scope.user = Auth.user;
     $scope.currentUser = Auth.user;
@@ -13,9 +13,15 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
 
 
     $scope.update = function (user) {
-        return Profile.update(user).then(function () {
+      return Profile.update(user)
+        .then(function (ref) {
+          return Lab.addUser(user.lab, user.uid);
+        })
+        .then(function () {
             $location.path('admin/users');
         });
+    }, function (error) {
+      $scope.error = error.toString();
     };
 
     Profile.getChallenges(uid).then(function (challenges) {
@@ -57,6 +63,12 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
         console.log(d);
     };
 
+  $scope.assignLab = function (labId, userId) {
+    return Lab.addUser(labId, userId);
+  }, function (error) {
+    $scope.error = error.toString();
+
+  };
 
 });
 

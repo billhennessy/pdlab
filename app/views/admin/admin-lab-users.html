@@ -1,0 +1,58 @@
+<section id="Lab Users" ng-controller="LabsCtrl">
+  <div class="container">
+    <p class="success" ng-show="success">{{success}}</p>
+
+    <p class="danger" ng-show="error">{{error}}</p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Labs</h3>
+        <ul>
+          <li ng-repeat="lab in labs">
+            <a ng-click="selectLab( lab.$id )"> {{lab.client}}</a> begins {{lab.day1}}
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-md-4">
+        <h3>Participants</h3>
+
+        <p ng-class="warning" ng-show="users.length<1">No participants registered.</p>
+        <ul>
+          <li ng-repeat="user in users">{{user.username}}</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>Details</h3>
+        <!-- client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ' -->
+        <form id="contact-form">
+          <div class="control-group">
+            <label>Client</label><br>
+            <input type="text" class="form-control" ng-model="lab.client">
+          </div>
+          <div class="control-group">
+            <label>AE</label><br>
+            <input type="text" class="form-control" ng-model="lab.ae">
+          </div>
+          <div class="control-group">
+            <label>Client Contact</label><br>
+            <input type="text" class="form-control" ng-model="lab.contact">
+          </div>
+          <div class="control-group">
+            <label>PM</label><br>
+            <input type="text" class="form-control" ng-model="lab.pm">
+          </div>
+          <div class="control-group">
+            <label>Facilitator</label><br>
+            <input type="text" class="form-control" ng-model="lab.facilitator">
+          </div>
+          <div class="control-group">
+            <label>Track</label><br>
+            <input type="text" class="form-control" ng-model="lab.track">
+          </div>
+          <button class="btn btn-default" ng-click="updateLab(lab)">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

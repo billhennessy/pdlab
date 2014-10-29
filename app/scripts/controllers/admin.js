@@ -4,7 +4,7 @@
 app.controller('AdminCtrl', function ($scope, Lab) {
 
 
-    $scope.menuItems = ['Labs', 'Users', 'Challenges', 'Features'];
+  $scope.menuItems = ['Labs', 'Users', 'Challenges', 'Features', 'Lab-users'];
 
 
 });

@@ -73,7 +73,7 @@ var app = angular.module('pdlab', [
             })
             .when('/admin/labs', {
                 templateUrl: 'views/admin/admin-labs.html',
-                controller: 'LabCtrl'
+            controller: 'LabsCtrl'
             })
             .when('/admin/labs/:labId', {
                 templateUrl: 'views/admin/admin-users.html',
@@ -117,6 +117,9 @@ var app = angular.module('pdlab', [
                 templateUrl: 'views/leaders.html',
                 controller: 'UsersCtrl'
             })
+          .when('/admin/lab-users', {
+            templateUrl: 'views/admin/admin-lab-users.html'
+          })
 
             .otherwise({
                 redirectTo: '/'

@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.controller('AuthCtrl', function ($scope, $location, Auth, Profile, user) {
+app.controller('AuthCtrl', function ($scope, $location, Auth, Profile, Lab, user) {
     if (user) {
         $location.path('challenges');
     }
@@ -26,6 +26,8 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, Profile, user) {
                 user.lab = $scope.user.lab;
                 user.points = 0;
                 return Auth.createProfile(user);
+            }).then(function () {
+              return Lab.addUser($scope.user.lab, $scope.uid);
             }).then(function () {
                 $location.path('#/challenges');
             });
