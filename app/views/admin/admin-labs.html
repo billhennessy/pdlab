@@ -64,16 +64,7 @@
                                 </div>
                             </div>
 
-                            <div class="row control-group">
-                                <div class="form-group col-xs-12 floating-label-form-group controls">
-                                    <label>Lab Id</label>
-                                    <input ng-model="lab.code" type="text" class="form-control" placeholder="Lab Id"
-                                           id="labId" required
-                                           data-validation-required-message="Please enter your lab id.">
 
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label>Client Contact Email</label>
@@ -88,7 +79,7 @@
                             <div class="row control-group">
                                 <div class="form-group col-xs-12 floating-label-form-group controls">
                                     <label>Project Manager</label>
-                                    <input ng-model="lab.projectmgr" type="text" class="form-control"
+                                  <input ng-model="lab.pm" type="text" class="form-control"
                                            placeholder="Project Manager" id="pm" required
                                            data-validation-required-message="Please enter the name of the project manager.">
 
@@ -145,8 +136,8 @@
                                 <option>Direct</option>
                                 <option>Employee</option>
                             </select>
-                            <input type="submit" value="Register" class="btn btn-primary btn-default"
-                                   data-dismiss="modal">
+                          <input type="submit" value="Create" class="btn btn-primary btn-default"
+                            >
                           <button type="button" ng-click="resetLab()" class="btn btn-default" data-dismiss="modal"><i
                                     class="fa fa-times"></i> Close
                             </button>

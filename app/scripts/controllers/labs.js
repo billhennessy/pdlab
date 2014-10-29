@@ -11,18 +11,39 @@ app.controller('LabsCtrl', function ($scope, $location, Lab, Profile, Auth) {
 
   $scope.lab = {client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ''};
 
+  $scope.submitLab = function () {
+
+    $scope.error = '';
+    $scope.success = '';
+    $scope.lab.creator = $scope.user.profile.username;
+    $scope.lab.creatorUID = $scope.user.uid;
+    console.log($scope.lab);
+    console.log($scope.lab);
+    Lab.create($scope.lab).then(function (ref) {
+      $scope.success = 'Thank you, may we have another?';
+      // $location.path('/features/' + ref.name());
+      $scope.lab = {client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ''};
+    }, function (error) {
+      $scope.error = error.toString();
+      $log(error);
+    });
+  };
+
   $scope.resetLab = function () {
     $scope.lab = {client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ''};
   };
 
   $scope.updateLab = function (lab) {
-    console.log(lab.id);
-    return Lab.update(lab).then(function () {
+    console.log(lab);
+    Lab.update(lab);
       $scope.success = "Lab updated.";
-    });
+    console.log($scope.success);
+
   }, function (error) {
     $scope.error = error.toString();
+    console.log(error.toString());
   };
+
 
   $scope.deleteLab = function (lab) {
     Lab.delete(lab);
