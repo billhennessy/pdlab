@@ -19,11 +19,11 @@ app.factory('Lab',
       },
 
       update: function (lab) {
-        return labs.$save(lab);
+        return lab.$save();
       },
 
       delete: function (lab) {
-        return labs.$remove(lab);
+        return lab.$remove();
       },
       comments: function (labId) {
         return $firebase(ref.child('comments').child(labId)).$asArray();
