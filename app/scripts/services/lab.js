@@ -23,7 +23,10 @@ app.factory('Lab',
       },
 
       delete: function (lab) {
-        return labs.$remove(lab);
+        return labs.$remove(lab).then(function () {
+          console.log('here');
+          Lab.users(lab.$id).$remove();
+        });
       },
       comments: function (labId) {
         return $firebase(ref.child('comments').child(labId)).$asArray();

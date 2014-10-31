@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.directive('checkUsername', function (User) {
+app.directive('checkUsername', function (Profile) {
     var usernameRegexp = /^[^.$\[\]#\/\s]+$/;
 
     return {
@@ -11,15 +11,18 @@ app.directive('checkUsername', function (User) {
         link: function (scope, elm, attrs, ctrl) {
             ctrl.$parsers.push(function (viewValue) {
                 if (usernameRegexp.test(viewValue)) {
-                    User.findByUsername(viewValue).$loaded(function (user) {
+                  Profile.findByUsername(viewValue).$loaded(function (user) {
+
                         if (user.$value === null) {
                             ctrl.$setValidity('taken', true);
                             ctrl.$setValidity('invalid', true);
                         } else {
+                          console.log('false');
                             ctrl.$setValidity('taken', false);
                             ctrl.$setValidity('invalid', true);
                         }
-                    });
+
+                  });
 
                     return viewValue;
                 } else {

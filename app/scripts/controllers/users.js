@@ -11,6 +11,12 @@ app.controller('UsersCtrl', function ($scope, $location, $routeParams, Profile, 
 
     $scope.users = Profile.all; // Lab.users($routeParams.labId).$asArray();
 
+  $scope.updatePriority = function (user) {
+    console.log(user.username);
+
+    Profile.setPriority(user.username);
+    console.log('done');
+  }
     $scope.predicate = '-points';
 
 

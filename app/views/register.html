@@ -12,16 +12,24 @@
                 <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                 <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
 
-                <form ng-submit="register()" ng-keydown="typing=true">
-                    <p ng-show="error" class="text-danger">{{error}}</p>
+              <form ng-submit="register()" name="form" ng-keydown="typing=true">
 
+                <div ng-show="error || form.username.$error">
+                  <p ng-show="error" class="text-danger">{{ error }}</p>
+
+                  <p ng-show="form.username.$error.taken" class="text-danger">Username is already taken.</p>
+
+                  <p ng-show="form.username.$error.invalid" class="text-danger">Username contains invalid
+                    characters.</p>
+                </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>User name</label>
 
                             <div class="input-group">
 
-                                <input pdlabFocus type="text" ng-model="user.username" placeholder="Username"
+                              <input check-username name="username" id="username" type="text" ng-model="user.username"
+                                     placeholder="Username"
                                        class="form-control input-lg" required
                                        data-validation-required-message="Please enter a user name.">
                                 <br>

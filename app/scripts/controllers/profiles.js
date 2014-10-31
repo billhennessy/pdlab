@@ -13,9 +13,11 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
 
 
     $scope.update = function (user) {
+      user.$priority = user.username;
       return Profile.update(user)
+
         .then(function (ref) {
-          return Lab.addUser(user.lab, user.uid);
+          ref.setPriority(user.username);
         })
         .then(function () {
             $location.path('admin/users');

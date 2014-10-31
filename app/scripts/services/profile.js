@@ -14,6 +14,20 @@ app.factory('Profile', function ($window, FIREBASE_URL, $firebase, Post, Challen
             //console.log(userId);
             return $firebase(ref.child('profile').child(userId)).$asObject();
         },
+      findByUsername: function (username) {
+        if (username) {
+
+          var queryRef = ref.child('profile').startAt(username).endAt(username);
+
+          return $firebase(queryRef).$asObject();
+        }
+        ;
+      },
+
+      setPriority: function (username) {
+        var user = new Firebase(FIREBASE_URL + 'profile/' + username);
+        user.setPriority(username);
+      },
         getPosts: function (userId) {
             var defer = $q.defer();
 

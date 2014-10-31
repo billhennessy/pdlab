@@ -3,7 +3,7 @@
 describe('Controller: LabCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('angNewsApp'));
+  beforeEach(module('pdlab'));
 
     var LabCtrl,
         scope;

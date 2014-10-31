@@ -71,14 +71,11 @@ var app = angular.module('pdlab', [
                 templateUrl: 'views/profile.html',
                 controller: 'ProfilesCtrl'
             })
-            .when('/admin/labs', {
-                templateUrl: 'views/admin/admin-labs.html',
-            controller: 'LabsCtrl'
-            })
-            .when('/admin/labs/:labId', {
+
+          /*.when('/admin/labs/:labId', {
                 templateUrl: 'views/admin/admin-users.html',
                 controller: 'UsersCtrl'
-            })
+           })*/
 
             .when('/admin/users', {
                 templateUrl: 'views/admin/admin-users.html',
@@ -117,7 +114,7 @@ var app = angular.module('pdlab', [
                 templateUrl: 'views/leaders.html',
                 controller: 'UsersCtrl'
             })
-          .when('/admin/lab-users', {
+          .when('/admin/labs', {
             templateUrl: 'views/admin/admin-lab-users.html'
           })
 

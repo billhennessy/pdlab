@@ -32,101 +32,132 @@
                     // the value of "points" must be a number between 0 and 99
                     ".validate": "newData.isNumber() &&
                     newData.val() >= 0 &&
-newData.val() <= 99"
-},
-// icon must be a string with length>0
-"icon": {
-".validate": "newData.isString() && newData.val().length > 0"
-}
-}
-},
-"labs": {
-".read": "auth != null",
-".write": "auth.email.endsWith('@maritz.com')"
-},
-"profile": {
-".read": true,
-
-"$uid": {
-".write": "!data.exists() && auth.uid === $uid"
-}
-},
-"users":{
-".read": true,
-".write": true,
-"$user":{
-"cell":{
-".read": true, //"auth.email.endsWith('@maritz.com')",
-".write": true
-},
-"fname": {
-".read": true,
-".write": true
-},
-"lname": {
-".read": true,
-".write": true
-},
-"md5_hash": {
-".read": true,
-".write": true
-},
-"username": {
-".read": true,
-".write": true
-}
-}
-},
-"posts":{
-".read": true,
-".write": true
-},
-"comments": {
-".read": true,
-".write": true
-},
-"user_challenges":{
-".read": true,
-".write": true
-},
-"user_comments":{
-".read": true,
-".write": true
-},
-"user_labs":{
-".read": true,
-".write": true
-},
-"lab_users": {
-".read": true,
-".write": true
-},
-"user_posts":{
-".read": true,
-".write": true
-},
-"features": {
-// anyone can view features
-".read": true,
-
-"$id": {
-// auth can't be null to make/edit post
-// if the post exists, auth.uid must match creatorUID
-".write": "(auth != null && !data.exists())",
-
-// We want to make sure that all 4 fields are present before saving a new post
-".validate": "newData.hasChildren(['title','description'])",
-
-// title must be a string with length>0
-"title": {
-".validate": "newData.isString() && newData.val().length > 0"
-},
-"description": {
-".validate": "newData.isString() && newData.val().length <= 1000"
-}
-}
-}
-
-
-}
+                  newData
+                  .
+                  val
+                  (
+                  )
+                  <
+                  =
+                  99
+                  "
+                },
+              // icon must be a string with length>0
+              "icon": {
+                ".validate": "newData.isString() && newData.val().length > 0"
+              }
+            }
+        },
+      "labs": {
+        ".read": "auth != null",
+        ".write": "auth.email.endsWith('@maritz.com')"
+      },
+      "profile": {
+        ".read": true,
+        "$uid": {
+          ".write": "!data.exists() && auth.uid === $uid"
+        }
+      },
+      "users": {
+        ".read": true,
+        ".write": true,
+        "$user": {
+          "cell": {
+            ".read": true,
+            //"auth.email.endsWith('@maritz.com')",
+            ".write": true
+          },
+          "fname": {
+            ".read": true,
+            ".write": true
+          },
+          "lname": {
+            ".read": true,
+            ".write": true
+          },
+          "md5_hash": {
+            ".read": true,
+            ".write": true
+          },
+          "username": {
+            ".read": true,
+            ".write": true
+          }
+        }
+      },
+      "posts": {
+        // anyone can view posts
+        ".read": true,
+        "$id": {
+          // auth can't be null to make/edit post
+          // if the post exists, auth.uid must match creatorUID
+          ".write": "(auth != null && !data.exists()) || data.child('creatorUID').val() === auth.uid",
+          // We want to make sure that all 4 fields are present before saving a new post
+          ".validate": "newData.hasChildren(['title','url','creator','creatorUID'])",
+          // title must be a string with length>0
+          "title": {
+            ".validate": "newData.isString() && newData.val().length > 0"
+          },
+          "url": {
+            ".validate": "newData.isString()"
+          },
+          "creator": {
+            ".validate": "newData.isString()"
+          },
+          "creatorUID": {
+            ".validate": "auth.uid === newData.val() && root.child('profile/'+newData.val()).exists()"
+          }
+        }
+      },
+      "comments": {
+        ".read": true,
+        "$post_id": {
+          // make sure the post we're adding comments to exists
+          ".validate": "root.child('posts/'+$post_id).exists() || root.child('challenges/'+$challenge_id).exists()",
+          "$comment_id": {
+            // same write rules as for Post
+            ".write": "(auth != null && !data.exists()) || data.child('creatorUID').val() === auth.uid",
+            ".validate": "!data.exists() || data.child('creatorUID').val() === auth.uid"
+          }
+        }
+      },
+      "user_challenges": {
+        ".read": true,
+        ".write": true
+      },
+      "user_comments": {
+        ".read": true,
+        ".write": true
+      },
+      "user_labs": {
+        ".read": true,
+        ".write": true
+      },
+      "lab_users": {
+        ".read": true,
+        ".write": true
+      },
+      "user_posts": {
+        ".read": true,
+        ".write": true
+      },
+      "features": {
+        // anyone can view features
+        ".read": true,
+        "$id": {
+          // auth can't be null to make/edit post
+          // if the post exists, auth.uid must match creatorUID
+          ".write": "(auth != null && !data.exists())",
+          // We want to make sure that all 4 fields are present before saving a new post
+          ".validate": "newData.hasChildren(['title','description'])",
+          // title must be a string with length>0
+          "title": {
+            ".validate": "newData.isString() && newData.val().length > 0"
+          },
+          "description": {
+            ".validate": "newData.isString() && newData.val().length <= 1000"
+          }
+        }
+      }
+    }
 }
