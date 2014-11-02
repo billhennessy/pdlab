@@ -5,11 +5,12 @@
 
 
 app.controller('ProgressCtrl',
-    function ($scope, $location, Challenge, Lab, Auth, Profile) {
+  function ($scope, $routeParams, $location, Profile) {
 
-
-        $scope.user = Auth.user;
-        $scope.users = Profile.all;
+    var uid = $routeParams.userId;
+    console.log(uid);
+    $scope.user = Profile.get(uid);
+    //$scope.users = Profile.all;
         /*if($scope.user){
          $scope.users =  Lab.users($scope.user.labcode).$asArray();
          };*/

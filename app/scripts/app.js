@@ -11,17 +11,18 @@
  */
 
 var app = angular.module('pdlab', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'firebase',
-    'ui.bootstrap'
+  'ngAnimate',
+  'ngCookies',
+  'ngResource',
+  'ngRoute',
+  'ngSanitize',
+  'ngTouch',
+  'firebase',
+  'ui.bootstrap',
+  'ngOrderObjectBy'
 ])
     .constant('FIREBASE_URL', 'https://pdlab.firebaseIO.com/')
-    .config(function ($routeProvider) {
+  .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/publichome.html',
@@ -36,11 +37,11 @@ var app = angular.module('pdlab', [
                 controller: 'PostViewCtrl'
             })
 
-            .when('/register', {
+          .when('/register', {
                 templateUrl: 'views/register.html',
                 controller: 'AuthCtrl',
                 resolve: {
-                    user: function (Auth) {
+                  user: function (Auth) {
                         return Auth.resolveUser();
                     }
                 }
@@ -49,7 +50,7 @@ var app = angular.module('pdlab', [
                 templateUrl: 'views/login.html',
                 controller: 'AuthCtrl',
                 resolve: {
-                    user: function (Auth) {
+                  user: function (Auth) {
                         return Auth.resolveUser();
                     }
                 }
@@ -66,37 +67,72 @@ var app = angular.module('pdlab', [
             .when('/users/:userId', {
                 templateUrl: 'views/profile.html',
                 controller: 'ProfilesCtrl'
-            })
-            .when('/users/:labId/:userId', {
-                templateUrl: 'views/profile.html',
-                controller: 'ProfilesCtrl'
+            /*,
+             resolve: {
+             challenges: function (loadChallengesService) {
+             return loadChallengesService.getChallenges();
+             },
+             profile: function (loadChallengesService) {
+             return loadChallengesService.getProfile();
+             }
+             }*/
+
             })
 
-          /*.when('/admin/labs/:labId', {
-                templateUrl: 'views/admin/admin-users.html',
-                controller: 'UsersCtrl'
-           })*/
+          .when('/users/:labId/:userId', {
+            templateUrl: 'views/profile.html',
+            controller: 'ProfilesCtrl'
+          })
 
-            .when('/admin/users', {
+          .when('/newprof/:userId', {
+            templateUrl: 'views/profile.html'
+          })
+
+          .when('/admin/users', {
                 templateUrl: 'views/admin/admin-users.html',
-                controller: 'UsersCtrl'
+            controller: 'UsersCtrl',
+            resolve: {
+              leaders: function (Profile) {
+                return Profile.all;
+              }
+            }
             })
             .when('/features', {
                 templateUrl: 'views/features.html',
-                controller: 'FeaturesCtrl'
+            controller: 'FeaturesCtrl',
+            resolve: {
+              features: function (Feature) {
+                return Feature.all;
+              }
+            }
             })
             .when('/admin/challenges', {
                 templateUrl: 'views/admin/admin-challenges.html',
-                controller: 'ChallengesCtrl'
+            controller: 'ChallengesCtrl',
+            resolve: {
+              challenges: function (Challenge) {
+                return Challenge.all;
+              }
+            }
             })
             .when('/admin/features', {
                 templateUrl: 'views/admin/admin-features.html',
-                controller: 'FeaturesCtrl'
+            controller: 'FeaturesCtrl',
+            resolve: {
+              features: function (Feature) {
+                return Feature.all;
+              }
+            }
             })
 
-            .when('/challenges', {
+          .when('/challenges', {
                 templateUrl: 'views/challenges.html',
-                controller: 'ChallengesCtrl'
+            controller: 'ChallengesCtrl',
+            resolve: {
+              challenges: function (Challenge) {
+                return Challenge.all;
+              }
+            }
             })
             .when('/challenges/:challengeId', {
                 templateUrl: 'views/showchallenge.html',
@@ -112,13 +148,13 @@ var app = angular.module('pdlab', [
             })
             .when('/leaders', {
                 templateUrl: 'views/leaders.html',
-                controller: 'UsersCtrl'
+            controller: 'LeadersCtrl'
             })
           .when('/admin/labs', {
             templateUrl: 'views/admin/admin-lab-users.html'
           })
 
-            .otherwise({
-                redirectTo: '/'
-            });
+          .otherwise({
+            redirectTo: '/'
+          });
     });

@@ -4,12 +4,12 @@
 
 'use strict';
 
-app.controller('UsersCtrl', function ($scope, $location, $routeParams, Profile, Lab) {
+app.controller('UsersCtrl', function ($scope, $location, $routeParams, Profile, Lab, leaders) {
 
     //TODO: Order by points descending
 
 
-    $scope.users = Profile.all; // Lab.users($routeParams.labId).$asArray();
+  $scope.users = leaders; // Lab.users($routeParams.labId).$asArray();
 
   $scope.updatePriority = function (user) {
     console.log(user.username);

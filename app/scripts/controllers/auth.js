@@ -9,8 +9,11 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, Profile, Lab, user
     }
     $scope.typing = true;
     $scope.login = function () {
-        Auth.login($scope.user).then(function () {
-            $location.path('challenges');
+      Auth.login($scope.user).then(function (user) {
+        console.log(user.uid);
+        return Profile.actions(user.uid).$add({login: Date.now()});
+      }).then(function () {
+        $location.path('challenges')
 
 
         }, function (error) {
@@ -25,11 +28,11 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, Profile, Lab, user
                 user.username = $scope.user.username;
                 user.lab = $scope.user.lab;
                 user.points = 0;
-                return Auth.createProfile(user);
+              user.$priority = user.username;
+              var uid = user.uid;
+              return Auth.createProfile(user)
             }).then(function () {
-              return Lab.addUser($scope.user.lab, $scope.uid);
-            }).then(function () {
-                $location.path('#/challenges');
+              $location.path('challenges');
             });
         }, function (error) {
             $scope.error = error.toString();
@@ -49,6 +52,8 @@ app.controller('AuthCtrl', function ($scope, $location, Auth, Profile, Lab, user
             $scope.typing = true;
         });
     };
+
+
 });
 
 //TODO:  Reset password

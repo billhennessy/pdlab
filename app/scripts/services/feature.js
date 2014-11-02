@@ -3,13 +3,15 @@
  */
 
 app.factory('Feature',
-    function ($firebase, FIREBASE_URL) {
+  function ($firebase, FIREBASE_URL, $q) {
         var ref = new Firebase(FIREBASE_URL);
         var features = $firebase(ref.child('features')).$asArray();
 
         var Feature = {
-            all: features,
-            create: function (feature) {
+
+          all: features,
+
+          create: function (feature) {
                 return features.$add(feature).then(function (featureRef) {
                     $firebase(ref.child('user_features').child(feature.creatorUID))
                         .$push(featureRef.name());

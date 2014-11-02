@@ -1,18 +1,16 @@
 <!-- /.navbar-collapse -->
-<div class="progress-widget">
-    <div class="row" ng-controller="NavCtrl">
-        <div class="col-md-2 navbar-text"></div>
-        <div class="col-md-4"><span class="navbar-text">Your Points</span>
+<div>
+  <div class="row">
+    <p>Progress</p>
 
-            <div class="progress " ng-controller="ProgressCtrl ">
+    <div class="progress">
                 <div class="progress-bar progress-bar-warning progress-bar-striped " role="progressbar "
-                     aria-valuenow="{{user.profile.points}} " aria-valuemin="0 " aria-valuemax="100 "
-                     style="width: {{user.profile.points}}%; ">
-                    {{user.profile.points}} points
+                     aria-valuenow="{{profile.points}} " aria-valuemin="0 " aria-valuemax="100 "
+                     style="width: {{profile.points}}%; ">
+                  {{profile.points}} points
                 </div>
 
             </div>
         </div>
-        <div class="col-md-2 navbar-text"></div>
-    </div>
+</div>
 </div>

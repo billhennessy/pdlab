@@ -1,12 +1,15 @@
 <section id="Lab Users" ng-controller="LabsCtrl">
   <div class="container">
-    <a data-target="#labModal" data-toggle="modal"><h3>New Lab</h3></a><br>
+    <a data-target="#labModal" data-toggle="modal">
+      <h3>New Lab</h3>
+    </a>
+    <br>
 
     <div class="row">
       <div class="col-md-4">
         <h3>Labs</h3>
         <ul>
-          <li ng-repeat="lab in labs">
+          <li ng-repeat="lab in labs | orderBy:'day1'">
             <a ng-click="selectLab( lab.$id )"> {{lab.client}}</a> begins {{lab.day1}}
           </li>
         </ul>
@@ -17,54 +20,84 @@
 
         <p ng-class="warning" ng-show="users.length<1">No participants registered.</p>
         <ul>
-          <li ng-repeat="user in users"><a href="#/users/{{user.$id}}">{{user.username}}</a></li>
+          <li ng-repeat="user in users"><a href="#/users/{{user.$id}}">{{user.username}}</a>
+          </li>
         </ul>
       </div>
       <div class="col-md-4">
         <h3>Details</h3>
         <!-- client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ' -->
         <p>Lab Id: {{lab.$id}}</p>
+
         <form id="contact-form">
           <div class="control-group">
-            <label>Client</label><br>
+            <label>Client</label>
+            <br>
             <input type="text" class="form-control" ng-model="lab.client">
           </div>
+
           <div class="control-group">
-            <label>AE</label><br>
+            <label>Day 1</label>
+            <br>
+            <input type="text" class="form-control" ng-model="lab.day1">
+          </div>
+          <div class="control-group">
+            <label>Day 2</label>
+            <br>
+            <input type="text" class="form-control" ng-model="lab.day2">
+          </div>
+          <div class="control-group">
+            <label>Location</label>
+            <br>
+            <input type="text" class="form-control" ng-model="lab.location">
+          </div>
+
+
+          <div class="control-group">
+            <label>AE</label>
+            <br>
             <input type="text" class="form-control" ng-model="lab.ae">
           </div>
           <div class="control-group">
-            <label>Client Contact</label><br>
+            <label>Client Contact</label>
+            <br>
             <input type="text" class="form-control" ng-model="lab.contact">
           </div>
           <div class="control-group">
-            <label>PM</label><br>
+            <label>PM</label>
+            <br>
             <input type="text" class="form-control" ng-model="lab.pm">
           </div>
           <div class="control-group">
-            <label>Facilitator</label><br>
+            <label>Facilitator</label>
+            <br>
             <input type="text" class="form-control" ng-model="lab.facilitator">
           </div>
           <div class="control-group">
-            <label>Track</label><br>
+            <label>Track</label>
+            <br>
             <input type="text" class="form-control" ng-model="lab.track">
           </div>
           <buttton class="btn btn-danger" ng-click="deleteLab(lab)">Delete</buttton>
           <button class="btn btn-default" ng-click="updateLab(lab)">Update</button>
         </form>
         <div class="alert alert-success alert-dismissible" ng-show="success" role="alert">
-          <button type="button" class="close" data-dismiss="alert" ng-click="success=''"><span
-            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <strong>Success!</strong> {{success}}
+          <button type="button" class="close" data-dismiss="alert" ng-click="success=''">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <strong>Success!</strong>{{success}}
         </div>
 
         <div class="alert alert-warning alert-dismissible" ng-show="error" role="alert">
-          <button type="button" class="close" data-dismiss="alert" ng-click="error=''"><span
-            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <strong>Uh oh!</strong> {{error}}
+          <button type="button" class="close" data-dismiss="alert" ng-click="error=''">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <strong>Uh oh!</strong>{{error}}
         </div>
       </div>
-    </div>
+        </div>
 
   </div>
 </section>
@@ -79,7 +112,7 @@
         <div class="rl">
         </div>
       </div>
-    </div>
+        </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
@@ -97,9 +130,8 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Client</label>
-                  <input type="text" ng-model="lab.client" class="form-control" placeholder="Client"
-                         id="client" required
-                         data-validation-required-message="Please enter your client name.">
+                  <input type="text" ng-model="lab.client" class="form-control" placeholder="Client" id="client"
+                         required data-validation-required-message="Please enter your client name.">
 
                   <p class="help-block text-danger"></p>
                 </div>
@@ -109,8 +141,8 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Client Contact Email</label>
-                  <input ng-model="lab.contact" type="email" class="form-control"
-                         placeholder="Client Contact Email" id="clientemail" required
+                  <input ng-model="lab.contact" type="email" class="form-control" placeholder="Client Contact Email"
+                         id="clientemail" required
                          data-validation-required-message="Please enter the client contact's email.">
 
                   <p class="help-block text-danger"></p>
@@ -120,9 +152,8 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Project Manager</label>
-                  <input ng-model="lab.pm" type="text" class="form-control"
-                         placeholder="Project Manager" id="pm" required
-                         data-validation-required-message="Please enter the name of the project manager.">
+                  <input ng-model="lab.pm" type="text" class="form-control" placeholder="Project Manager" id="pm"
+                         required data-validation-required-message="Please enter the name of the project manager.">
 
                   <p class="help-block text-danger"></p>
                 </div>
@@ -131,9 +162,8 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Account Executive</label>
-                  <input ng-model="lab.ae" type="text" class="form-control"
-                         placeholder="Account Executive" id="ae" required
-                         data-validation-required-message="Please enter the AE's name.">
+                  <input ng-model="lab.ae" type="text" class="form-control" placeholder="Account Executive" id="ae"
+                         required data-validation-required-message="Please enter the AE's name.">
 
                   <p class="help-block text-danger"></p>
                 </div>
@@ -142,9 +172,8 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Facilitator</label>
-                  <input ng-model="lab.facilitator" type="text" class="form-control"
-                         placeholder="Facilitator" id="facilitator" required
-                         data-validation-required-message="Please enter facilitator's name.">
+                  <input ng-model="lab.facilitator" type="text" class="form-control" placeholder="Facilitator"
+                         id="facilitator" required data-validation-required-message="Please enter facilitator's name.">
 
                   <p class="help-block text-danger"></p>
                 </div>
@@ -153,8 +182,8 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Day One</label>
-                  <input ng-model="lab.day1" type="datetime" class="form-control" placeholder="Day 1"
-                         id="day1" required
+
+                  <input ng-model="lab.day1" type="date" class="form-control" placeholder="Day 1" id="day1" required
                          data-validation-required-message="Please enter the date of lab session one.">
 
                   <p class="help-block text-danger"></p>
@@ -164,8 +193,7 @@
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Day Two</label>
-                  <input ng-model="lab.day2" type="datetime" class="form-control" placeholder="Day 2"
-                         id="day2" required
+                  <input ng-model="lab.day2" type="date" class="form-control" placeholder="Day 2" id="day2" required
                          data-validation-required-message="Please enter the date of lab session two.">
 
                   <p class="help-block text-danger"></p>
@@ -177,16 +205,15 @@
                 <option>Direct</option>
                 <option>Employee</option>
               </select>
-              <input type="submit" value="Create" class="btn btn-primary btn-default"
-                >
+              <input type="submit" value="Create" class="btn btn-primary btn-default">
               <button type="button" ng-click="resetLab()" class="btn btn-default" data-dismiss="modal"><i
                 class="fa fa-times"></i> Close
               </button>
             </form>
           </div>
-        </div>
+                </div>
 
       </div>
     </div>
-  </div>
+    </div>
 </div>

@@ -2,8 +2,8 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                  data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -22,14 +22,14 @@
                 </li>
 
                 <li ng-show="signedIn()">
-                    <a href="#/challenges">Challenges</a>
+                  <a href="#challenges">Challenges</a>
                 </li>
                 <li ng-show="signedIn()">
-                    <a href="#/leaders">Leaders</a>
+                  <a href="#leaders">Leaders</a>
                 </li>
 
                 <li>
-                    <a href="#/features">Features</a>
+                  <a href="#features">Features</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#about">About</a>
@@ -39,34 +39,35 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li ng-show="signedIn()">
-                    <a ng-href="#/users/{{ user.profile.$id }}" class="navbar-link">{{ user.profile.username }}</a>
+                  <a ng-href="#users/{{ user.profile.$id }}" class="navbar-link">{{ user.profile.username }}</a>
                 </li>
                 <li ng-show="signedIn()">
                     <a ng-href="#/users/{{ user.profile.$id }}">
-                        <img ng-src="https://www.gravatar.com/avatar/{{ user.profile.md5_hash }}" class="nav-prof-img"/>{{
-                        currentUser.username }}
+                      <img ng-src="https://www.gravatar.com/avatar/{{ user.profile.md5_hash }}" class="nav-prof-img"/>{{
+                      currentUser.username }}
                     </a>
                 </li>
                 <li ng-show="signedIn()">
                     <a href="#" ng-click="logout()">Logout</a>
                 </li>
                 <li ng-hide="signedIn()">
-                    <a href="#/login">Login</a>
+                  <a href="#login">Login</a>
                 </li>
                 <li ng-hide="signedIn()">
-                    <a href="#/register">Register</a>
+                  <a href="#register">Register</a>
                 </li>
 
-                <li class="dropdown" ng-show="user.profile.lab === 'admin'">
+              <li class="dropdown" ng-show="user.profile.admin">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu" ng-controller="AdminCtrl">
                         <li ng-repeat="item in menuItems">
-                            <a href="#/admin/{{item | lowercase}}">{{item}}</a>
+                          <a href="#admin/{{item | lowercase}}">{{item}}</a>
                         </li>
 
                     </ul>
                 </li>
             </ul>
         </div>
-        </div>
+
+
 </nav>

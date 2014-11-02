@@ -1,5 +1,6 @@
 {
     "firebase": "pdlab",
+  "rules": "security-rules.json",
     "public": "dist",
     "ignore": [
         "firebase.json",

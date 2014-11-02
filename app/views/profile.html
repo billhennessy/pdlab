@@ -1,71 +1,113 @@
-<!--  <div class="row">
-<div class="col-xs="6" col-md-3">Your Mission</div>
-  <div class="col-xs-3 col-md-1" ng-repeat="challenge in challenges">
-    <a href="#" class="thumbnail">
-      <img ng-src="images/portfolio/{{challenge.icon}}.png" class="prof-img">
-    </a>
-  </div>
-
-</div> -->
-
 <section id="profile">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Profile of {{ profile.username }}</h2>
-                <hr class="star-primary">
+      <div class="row" ng-controller="ProfilesCtrl">
+        <div class="col-md-8">
+          <h3>
+            <img ng-src="https://www.gravatar.com/avatar/{{ profile.md5_hash }}" class="prof-img"/>{{profile.username}}
+          </h3>
+
+          <div class="row">
+            <div class="col-xs-6  col-md-3">Mission</div>
+            <div class="col-xs-3 col-md-1" ng-repeat="challenge in challenges">
+              <a href="#challenges/{{challenge.$id}}" class="thumbnail">
+                <img ng-src="images/portfolio/{{challenge.icon}}.png" class="prof-img">
+              </a>
+            </div>
+                </div>
+          <div ng-include="'views/progress.html'" scope="" onload=""></div>
+
+          <h4>My Values Type: Stablizer</h4>
+
+          <div class="row">
+            <div class="col-md-4">
+              <img src="images/portfolio/safe.png" style="max-height: 150px">
+            </div>
+            <div class="col-md-4">
+              <p>We like to drop safes from the third story of old brick buildings in run-down parts of decaying
+                industrial cities in the midwest.</p>
+            </div>
+                </div>
+            </div>
+        <!--/col -->
+
+        <div class="col-md-4">
+          <div class="well">
+            <h3>My Lab</h3>
+            <h4>{{lab.client}}</h4>
+
+            <p>Contact: {{lab.contact}}</p>
+
+            <p>Location: {{lab.location}}</p>
+
+            <p>Date: {{lab.day1}}</p>
+
+            <div style="display:inline-block; min-height:290px;">
+              <datepicker ng-model="lab.day1" show-weeks="false" class="well well-sm"></datepicker>
+            </div>
+            <p>My Lab Mates</p>
+
+            <div class="list-group">
+              <a href="#users/{{user.$id}}" class="list-group-item"
+                 ng-repeat="(key, user) in labmates | orderObjectBy:predicate:true">
+                <img ng-src="https://www.gravatar.com/avatar/{{ user.md5_hash }}" class="nav-prof-img"/>{{user.username}}
+                <span class='badge pull-right'>{{user.points}}</span>
+              </a>
+            </div>
+                </div>
             </div>
         </div>
 
-        <div class="panel">
-            <div class="row">
-                <div class="col-sm-1">
-                    <img ng-src="https://www.gravatar.com/avatar/{{ profile.md5_hash }}" class="prof-img"/>
-                </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Utilities</h3>
+          <button class="btn btn-default" ng-show="user.profile.admin" data-toggle="modal" data-target="#editProfile">
+            Edit
+          </button>
+          <div id="change-password" ng-show="user.uid === profile.$id">
+            <p>Change Password</p>
 
-                <div class="col-sm-10">
-                    <h2>{{profile.points}} Points</h2>
+            <form class="form">
+              <div class="control-group">
+                <label>Old Password</label>
+                <input type="password" class="form-control" ng-model="obj.oldpassword">
                 </div>
+              <div class="control-group">
+                <label>New Password</label>
+                <input type="password" class="form-control" ng-model="obj.newpassword">
+                </div>
+              <div class="control-group">
+                <label>Retype New Password</label>
+                <input type="password" class="form-control" ng-model="obj.newpassword2">
+              </div>
+              <button type="button" class="btn btn-default" ng-click="changePassword(user.email, obj)">Update</button>
+            </form>
+            <div class="alert alert-danger" ng-show="error">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <strong>Oops!</strong>{{error}}
             </div>
-
-
-            <h3>Challenges Complete</h3>
-
-            <div class="post row" ng-repeat="(key,challenge) in challenges">
-                <div class="col-md-2 col-xs-4">
-
-                    <a ng-href="#/challenges/{{ challenge.$id }}">
-                        <img ng-src="images/portfolio/{{challenge.icon}}.png" class="prof-img pull-left">
-                    </a>
-                </div>
-                <div class="col-md-10 col-xs-12">
-                    <a ng-href="#/challenges/{{ challenge.$id }}">
-                        <span class="panel-title">{{ challenge.title }}</span>
-                        <span class="url">Points ({{ challenge.points}})</span>
-                    </a>
-                </div>
-                <span><a ng-href="#/challenges/{{ challenge.$id }}">comments</a>
-                </span>
+            <div class="alert alert-success" ng-show="success">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <strong>You did it!</strong> {{success}}
             </div>
+          </div>
+
         </div>
+        <div class="col-md-6">
+          <h3>Join Lab</h3>
 
-        <h3>Posts</h3>
+          <p>Accept terms and conditions of this lab</p>
 
-        <div class="post row" ng-repeat="(key,post) in posts">
-            <div class="col-md-8 col-xs-10">
-                <div class="info">
-                    <a ng-href="{{ post.url }}">
-                        {{ post.title }}
-                        <span class="url">({{ post.url | hostnameFromUrl }})</span>
-                    </a>
-                </div>
-                <div>
-                    <a ng-href="#/posts/{{ post.$id }}">comments</a>
-                </div>
-            </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="" ng-model="user.accepted">I Accept
+            </label>
+          </div>
+
+          <button type="button" class="btn btn-default" ng-click="joinLab()">Accept</button>
         </div>
-      <button class="btn btn-default" data-toggle="modal" data-target="#editProfile">Edit</button>
+        </div>
     </div>
+
 </section>
 
 <div class="portfolio-modal modal fade" id="editProfile" tabindex="-1" role="dialog" aria-hidden="true">
@@ -76,11 +118,11 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+      <div class="container" ng-controller="ProfilesCtrl">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="modal-body">
-                        <div class="panel panel-body" ng-show="user.profile.lab === 'admin'">
+                      <div class="panel panel-body">
                             <h2>Edit</h2>
 
                             <form>
@@ -96,11 +138,15 @@
                                     <label for="points">Points</label>
                                     <input id="points" type="number" class="form-control" ng-model="profile.points">
                                 </div>
+                              <div class="form-group" ng-disabled="true">
+                                <label for="points">Admin</label>
+                                <input id="admin" type="checkbox" class="form-control" ng-model="profile.admin">
+                              </div>
                                 <div class="btn-group">
-                                  <button class="btn" ng-click="update(profile)" data-dismiss="modal">Update</button>
-                                    <button class="btn" ng-click="open('lg','views/modals/changepasswordmodal.html')">
-                                        Change Password
-                                    </button>
+                                  <button class="btn btn-default" ng-click="update(profile)" data-dismiss="modal">
+                                    Update
+                                  </button>
+                                  <button class="btn" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                                 </div>
                             </form>
 

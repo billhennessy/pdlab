@@ -3,8 +3,8 @@
  */
 'use strict';
 
-app.controller('FeaturesCtrl', function ($scope, $location, Feature, Auth) {
-    $scope.features = Feature.all;
+app.controller('FeaturesCtrl', function ($scope, $location, Feature, Auth, features) {
+  $scope.features = features;
     $scope.user = Auth.user;
 
     $scope.feature = {title: '', description: ''};

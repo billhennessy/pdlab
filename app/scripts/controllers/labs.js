@@ -9,7 +9,7 @@ app.controller('LabsCtrl', function ($scope, $location, Lab, Profile, Auth) {
   $scope.labs = Lab.all;
   $scope.user = Auth.user;
 
-  $scope.lab = {client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ''};
+  $scope.lab = {client: '', ae: '', contact: '', day1: '', day2: '', location: '', facilitator: '', pm: '', track: ''};
 
   $scope.submitLab = function () {
 
@@ -22,7 +22,17 @@ app.controller('LabsCtrl', function ($scope, $location, Lab, Profile, Auth) {
     Lab.create($scope.lab).then(function (ref) {
       $scope.success = 'Thank you, may we have another?';
       // $location.path('/features/' + ref.name());
-      $scope.lab = {client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ''};
+      $scope.lab = {
+        client: '',
+        ae: '',
+        contact: '',
+        day1: '',
+        day2: '',
+        location: '',
+        facilitator: '',
+        pm: '',
+        track: ''
+      };
     }, function (error) {
       $scope.error = error.toString();
       $log(error);
@@ -30,7 +40,17 @@ app.controller('LabsCtrl', function ($scope, $location, Lab, Profile, Auth) {
   };
 
   $scope.resetLab = function () {
-    $scope.lab = {client: '', ae: '', contact: '', day1: '', day2: '', facilitator: '', pm: '', track: ''};
+    $scope.lab = {
+      client: '',
+      ae: '',
+      contact: '',
+      day1: '',
+      day2: '',
+      location: '',
+      facilitator: '',
+      pm: '',
+      track: ''
+    };
   };
 
   $scope.updateLab = function (lab) {
@@ -60,6 +80,13 @@ app.controller('LabsCtrl', function ($scope, $location, Lab, Profile, Auth) {
     Lab.getUsers(labId).then(function (users) {
       $scope.users = users;
     });
+  };
+
+  $scope.open = function ($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
   };
 });
 

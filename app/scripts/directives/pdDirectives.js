@@ -3,25 +3,45 @@
  */
 'use strict';
 
-<!-- navbar shrink and grow -->
+/*navbar shrink and grow */
 app.directive("enter", function () {
-  return function (scope, element, attrs) {
+
+  return {
+    link: function (scope, element, attrs) {
     element.bind("mouseenter", function () {
       element.removeClass(attrs.enter);
     });
-  };
+    }
+  }
 });
 app.directive("leave", function () {
-  return function (scope, element, attrs) {
+  return {
+    link: function (scope, element, attrs) {
     element.bind("mouseleave", function () {
       element.addClass(attrs.enter);
     });
-  };
+    }
+  }
 });
 
-app.directive ('pdlabFocus', function() {
-  return function
-    (scope, element, attrs, controller) {
-      element[0].focus();
+app.directive('alerter', function ($timeout, alert) {
+  return {
+    templateUrl: 'app/directives/alerter/alerter.html',
+    restrict: 'E',
+    scope: {},
+    link: function ($scope) {
+      $scope.alerts = alert.alerts;
+
+      $scope.closeAlert = function (index, actualElement) {
+        alert.remove(index, actualElement);
+      };
+
+      $scope.$watchCollection('alerts', function (newAlerts) {
+        $timeout(function () {
+            $scope.closeAlert(newAlerts.length - 1, newAlerts[newAlerts.length - 1]);
+          },
+          10000);
+      });
+    }
   };
 });

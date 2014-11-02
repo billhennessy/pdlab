@@ -85,6 +85,10 @@ app.factory('Profile', function ($window, FIREBASE_URL, $firebase, Post, Challen
                 });
         },
 
+      actions: function (userId) {
+        return $firebase(ref.child('user_actions').child(userId)).$asArray();
+      },
+
 
         update: function (user) {
 

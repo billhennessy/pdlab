@@ -28,15 +28,20 @@
 <script type="text/ng-template" id="challengesmodal.html">
     <div class="portfolio-modal">
         <div class="modal-content">
-
-            <div class="container-narrow">
+          <div class="close-modal" ng-click="$dismiss()">
+            <div class="lr">
+              <div class="rl">
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <h2>{{challenge.title}}</h2>
                             <hr class="star-primary">
-                            <img ng-src="images/portfolio/{{challenge.icon}}.png" class="img-responsive img-centered"
-                                 alt="">
+                          <img ng-src="images/portfolio/{{challenge.icon}}.png" class="img-responsive img-centered"
+                               alt="">
 
                             <p>{{challenge.description}}</p>
 
@@ -64,8 +69,7 @@
 
                             <div class="portfolio-item" ng-show="challenge.linktype==='video'">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item"
-                                            ng-src="{{trustSrc(challenge.link)}}"></iframe>
+                                  <iframe class="embed-responsive-item" ng-src="{{trustSrc(challenge.link)}}"></iframe>
                                     <br>
 
                                 </div>
@@ -77,16 +81,16 @@
                             <div class="portfolio-item" ng-show="challenge.linktype==='pdf'">
 
                                 <div ng-class="challenge.linktype">
-                                    <embed ng-src="{{trustSrc(challenge.link)}}" width="680" height="800" alt="pdf"
-                                           pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+                                  <embed ng-src="{{trustSrc(challenge.link)}}" width="680" height="800" alt="pdf"
+                                         pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
                                 </div>
                                 <a href="{{challenge.link}}" target="_blank">Click to
                                     Open</a>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-lg btn-primary" ng-click="complete(challenge.$id); $dismiss()">I Will
-                                Do This!
+                          <button class="btn btn-lg btn-primary" ng-click="complete(challenge.$id); $dismiss()">I Will
+                            Do This!
                             </button>
                             <button class="btn btn-lg btn-warning" ng-click="$dismiss()"><i class="fa fa-times"></i>Close
                             </button>
