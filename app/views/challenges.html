@@ -13,7 +13,7 @@
                     <div class="caption">
                         <div class="caption-content">
                           <i class="fa fa-search-plus fa-3x"></i>
-                          <h5>{{challenge.title}} for {{challenge.points}} points</h5>
+                          <h5>{{challenge.title}} for {{challenge.commitPoints + challenge.completePoints}} points</h5>
                         </div>
                     </div>
                     <img ng-src="images/portfolio/{{challenge.icon}}.png" class="img-responsive" alt="">
@@ -45,7 +45,12 @@
 
                             <p>{{challenge.description}}</p>
 
-                            <p>This challenge is worth {{challenge.points}} points.</p>
+                          <p>This challenge is worth {{challenge.commitPoints + challenge.completePoints}} total points
+                            points:</p>
+                          <ul class="list-unstyled">
+                            <li> {{challenge.commitPoints}} points for adding it to your mission.</li>
+                            <li> {{challenge.completePoints}} points for completing the challenge.</li>
+                            <ul>
 
                             <h3>The Challenge</h3>
 

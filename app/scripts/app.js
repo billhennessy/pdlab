@@ -46,6 +46,18 @@ var app = angular.module('pdlab', [
                     }
                 }
             })
+
+          .when('/register/:labId/:email', {
+            templateUrl: 'views/register.html',
+            controller: 'AuthCtrl',
+            resolve: {
+              user: function (Auth) {
+                return Auth.resolveUser();
+              }
+            }
+
+          })
+
             .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'AuthCtrl',
@@ -55,6 +67,10 @@ var app = angular.module('pdlab', [
                     }
                 }
             })
+          .when('/accept/:userId', {
+            templateUrl: 'views/acceptterms.html',
+            controller: 'ProfilesCtrl'
+          })
             .when('/progress', {
                 templateUrl: 'views/progress.html',
                 controller: 'ProgressCtrl'
@@ -78,6 +94,7 @@ var app = angular.module('pdlab', [
              }*/
 
             })
+
 
           .when('/users/:labId/:userId', {
             templateUrl: 'views/profile.html',
@@ -152,6 +169,25 @@ var app = angular.module('pdlab', [
             })
           .when('/admin/labs', {
             templateUrl: 'views/admin/admin-lab-users.html'
+          })
+          .when('/survey/subjects', {
+            templateUrl: 'views/survey/subjects/list.html'
+          })
+          .when('/survey/subjects/:subjectId', {
+            templateUrl: 'views/survey/subjects/view.html'
+          })
+          .when('/survey/subjects/:subjectId/edit', {
+            templateUrl: 'views/survey/subjects/edit.html'
+          })
+
+          .when('/survey/tests', {
+            templateUrl: 'views/survey/tests/list.html'
+          })
+          .when('/survey/tests/:testId', {
+            templateUrl: 'views/survey/tests/view.html'
+          })
+          .when('/survey/tests/:testId/edit', {
+            templateUrl: 'views/survey/tests/edit.html'
           })
 
           .otherwise({

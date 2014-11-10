@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d9b6ae0-a13b-4e71-89f4-68bcf4fdfb94" name="Default" comment="Fixed build">
-      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\views\admin\admin-labs.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\views\leftprofile.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\views\modals\challengemodal.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\views\modals\changepasswordmodal.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\views\modals\pointleadersmodal.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\views\modals\videomodal.html" afterPath="" />
+    <list default="true" id="2d9b6ae0-a13b-4e71-89f4-68bcf4fdfb94" name="Default" comment="Improved lab isolation, removed obsolete files.">
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\lib\jqBootstrapValidation.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.jshintrc" afterPath="$PROJECT_DIR$/.jshintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/about.html" afterPath="$PROJECT_DIR$/app/views/about.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/modals/addChallengeModal.html" afterPath="$PROJECT_DIR$/app/views/modals/addChallengeModal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-challenges.html" afterPath="$PROJECT_DIR$/app/views/admin/admin-challenges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-features.html" afterPath="$PROJECT_DIR$/app/views/admin/admin-features.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-lab-users.html" afterPath="$PROJECT_DIR$/app/views/admin/admin-lab-users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-users.html" afterPath="$PROJECT_DIR$/app/views/admin/admin-users.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/auth.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/auth.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/auth.js" afterPath="$PROJECT_DIR$/app/scripts/services/auth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/controllers/auth.js" afterPath="$PROJECT_DIR$/test/spec/controllers/auth.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/challenges.html" afterPath="$PROJECT_DIR$/app/views/challenges.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/challenges.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/challenges.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/feature.js" afterPath="$PROJECT_DIR$/app/scripts/services/feature.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/challengeview.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/challengeview.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/checkusername.js" afterPath="$PROJECT_DIR$/app/scripts/directives/checkusername.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/lib/classie.js" afterPath="$PROJECT_DIR$/app/scripts/lib/classie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/features.html" afterPath="$PROJECT_DIR$/app/views/features.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/features.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/features.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/firebase.json" afterPath="$PROJECT_DIR$/firebase.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/freelancer.css" afterPath="$PROJECT_DIR$/app/styles/freelancer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/lib/freelancer.js" afterPath="$PROJECT_DIR$/app/scripts/lib/freelancer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/karma.conf.js" afterPath="$PROJECT_DIR$/test/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/controllers/lab.js" afterPath="$PROJECT_DIR$/test/spec/controllers/lab.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/labs.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/labs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leaders.html" afterPath="$PROJECT_DIR$/app/views/leaders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.html" afterPath="$PROJECT_DIR$/app/views/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/nav.html" afterPath="$PROJECT_DIR$/app/views/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/nav.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/nav.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/pdDirectives.js" afterPath="$PROJECT_DIR$/app/scripts/directives/pdDirectives.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile.html" afterPath="$PROJECT_DIR$/app/views/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/profile.js" afterPath="$PROJECT_DIR$/app/scripts/services/profile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/profiles.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/profiles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/progress.html" afterPath="$PROJECT_DIR$/app/views/progress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/progress.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/progress.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/publichome.html" afterPath="$PROJECT_DIR$/app/views/publichome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/register.html" afterPath="$PROJECT_DIR$/app/views/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/users.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/services/services.spec.js" afterPath="$PROJECT_DIR$/test/spec/services/services.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ang-news.iws" />
@@ -61,7 +65,7 @@
       <file leaf-file-name="lab.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/lab.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78061223" vertical-offset="0" max-vertical-offset="2023">
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2023">
               <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
               <folding />
             </state>
@@ -71,10 +75,14 @@
       <file leaf-file-name="checkusername.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/directives/checkusername.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="731">
+            <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="714">
               <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding>
-                <marker date="1414790636373" expanded="true" signature="209:1133" placeholder="{...}" />
+                <marker date="1415394088960" expanded="true" signature="484:1179" placeholder="{...}" />
+                <marker date="1415394088960" expanded="true" signature="300:1187" placeholder="{...}" />
+                <marker date="1415394088960" expanded="true" signature="357:1181" placeholder="{...}" />
+                <marker date="1415394088960" expanded="true" signature="411:1001" placeholder="{...}" />
+                <marker date="1415394088960" expanded="true" signature="513:939" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -85,10 +93,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1853">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <marker date="1414872642342" expanded="true" signature="292:2969" placeholder="{...}" />
-                <marker date="1414872642342" expanded="true" signature="333:2945" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,7 +104,7 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
               <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
               <folding>
-                <marker date="1414810449565" expanded="true" signature="147:457" placeholder="{...}" />
+                <marker date="1415394088855" expanded="true" signature="147:455" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -108,17 +113,11 @@
       <file leaf-file-name="profiles.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/profiles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2244">
-              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2516">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding>
-                <marker date="1414962324329" expanded="true" signature="268:3134" placeholder="{...}" />
-                <marker date="1414962324329" expanded="true" signature="381:820" placeholder="{...}" />
-                <marker date="1414962324329" expanded="true" signature="412:813" placeholder="{...}" />
-                <marker date="1414962324329" expanded="true" signature="1241:1842" placeholder="{...}" />
-                <marker date="1414962324329" expanded="true" signature="1251:1710" placeholder="{...}" />
-                <marker date="1414962324329" expanded="true" signature="1716:1800" placeholder="{...}" />
-                <marker date="1414962324329" expanded="true" signature="2243:2483" placeholder="{...}" />
-                <marker date="1414962324329" expanded="true" signature="2502:2588" placeholder="{...}" />
+                <marker date="1415394088042" expanded="true" signature="1538:1705" placeholder="{...}" />
+                <marker date="1415394088042" expanded="true" signature="1926:2045" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -127,8 +126,8 @@
       <file leaf-file-name="admin-users.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/admin-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="901">
-              <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="918">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -137,8 +136,8 @@
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1969" max-vertical-offset="2533">
-              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3652" max-vertical-offset="4471">
+              <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -147,7 +146,7 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2295">
+            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1785">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -157,8 +156,8 @@
       <file leaf-file-name=".jshintrc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.jshintrc">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="544">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="578">
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -167,9 +166,11 @@
       <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1921">
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2176">
               <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding />
+              <folding>
+                <marker date="1415561586643" expanded="true" signature="403:1131" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -506,14 +507,10 @@
       <ConfigurationWrapper RunnerId="NodeJS.run" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -521,6 +518,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -641,7 +642,13 @@
       <option name="project" value="LOCAL" />
       <updated>1414790793531</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Improved lab isolation, removed obsolete files.">
+      <created>1414966862370</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1414966862370</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -680,14 +687,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33006537" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3267974" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -717,7 +724,8 @@
     <MESSAGE value="Numerous updates" />
     <MESSAGE value="Fixes to Labs" />
     <MESSAGE value="Fixed build" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed build" />
+    <MESSAGE value="Improved lab isolation, removed obsolete files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved lab isolation, removed obsolete files." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -725,6 +733,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.jshintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="544">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1921">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <marker date="1415561586643" expanded="true" signature="403:1131" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Downloads/freelancer/freelancer/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.423077" vertical-offset="3723" max-vertical-offset="9299">
@@ -992,31 +1018,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
           <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
+          <folding>
+            <marker date="1415561586643" expanded="true" signature="403:1131" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/profiles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2244">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2516">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
-            <marker date="1414962324329" expanded="true" signature="268:3134" placeholder="{...}" />
-            <marker date="1414962324329" expanded="true" signature="381:820" placeholder="{...}" />
-            <marker date="1414962324329" expanded="true" signature="412:813" placeholder="{...}" />
-            <marker date="1414962324329" expanded="true" signature="1241:1842" placeholder="{...}" />
-            <marker date="1414962324329" expanded="true" signature="1251:1710" placeholder="{...}" />
-            <marker date="1414962324329" expanded="true" signature="1716:1800" placeholder="{...}" />
-            <marker date="1414962324329" expanded="true" signature="2243:2483" placeholder="{...}" />
-            <marker date="1414962324329" expanded="true" signature="2502:2588" placeholder="{...}" />
+            <marker date="1415394088042" expanded="true" signature="1538:1705" placeholder="{...}" />
+            <marker date="1415394088042" expanded="true" signature="1926:2045" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/admin-users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="469" max-vertical-offset="901">
-          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="918">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1026,7 +1048,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
-            <marker date="1414810449565" expanded="true" signature="147:457" placeholder="{...}" />
+            <marker date="1415394088855" expanded="true" signature="147:455" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1035,10 +1057,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1853">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1414872642342" expanded="true" signature="292:2969" placeholder="{...}" />
-            <marker date="1414872642342" expanded="true" signature="333:2945" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,7 +1066,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="731">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding>
-            <marker date="1414790636373" expanded="true" signature="209:1133" placeholder="{...}" />
+            <marker date="1415394088960" expanded="true" signature="484:1179" placeholder="{...}" />
+            <marker date="1415394088960" expanded="true" signature="300:1187" placeholder="{...}" />
+            <marker date="1415394088960" expanded="true" signature="357:1181" placeholder="{...}" />
+            <marker date="1415394088960" expanded="true" signature="411:1001" placeholder="{...}" />
+            <marker date="1415394088960" expanded="true" signature="513:939" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1062,23 +1085,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="182" max-vertical-offset="544">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="578">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1969" max-vertical-offset="2533">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3652" max-vertical-offset="4471">
+          <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/lab.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78061223" vertical-offset="0" max-vertical-offset="2023">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2023">
           <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
           <folding />
         </state>

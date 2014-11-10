@@ -8,6 +8,10 @@ module.exports = function (config) {
 
         basePath: '../',
 
+      exclude: [
+        'app/scripts/lib/*.js'
+      ],
+
         files: [
             'app/bower_components/angular/angular.js',
             'app/bower_components/angular-route/angular-route.js',
@@ -15,8 +19,9 @@ module.exports = function (config) {
             'app/bower_components/mockfirebase/dist/mockfirebase.js',
             'app/bower_components/angularfire/dist/angularfire.js',
             'test/spec/**/*.js',
-            'app/js/**/*.js'//,
-            //'test/unit/**/*.spec.js'
+          //'app/scripts/**/*.js'
+          'app/scripts/*/{*.js,!(lib)/**/*.js}'
+
         ],
 
         autoWatch: true,

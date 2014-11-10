@@ -1,6 +1,6 @@
 <section id="Lab Users" ng-controller="LabsCtrl">
   <div class="container">
-    <a data-target="#labModal" data-toggle="modal">
+    <a data-target=".portfolio-modal" data-toggle="modal">
       <h3>New Lab</h3>
     </a>
     <br>
@@ -103,16 +103,19 @@
 </section>
 
 
-<!-- new lab modal -->
-<div class="portfolio-modal modal fade" id="labModal" ng-controller="LabsCtrl" tabindex="-1" role="dialog"
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
      aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+<!-- new lab modal -->
+<div class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="labModal" aria-hidden="true">
   <div class="modal-content">
-    <div class="close-modal" ng-click="resetLab()" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-        </div>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
@@ -128,7 +131,7 @@
 
               </div>
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
+                <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Client</label>
                   <input type="text" ng-model="lab.client" class="form-control" placeholder="Client" id="client"
                          required data-validation-required-message="Please enter your client name.">
@@ -139,7 +142,7 @@
 
 
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
+                <div vclass="form-group col-xs-12 floating-label-form-group controls">
                   <label>Client Contact Email</label>
                   <input ng-model="lab.contact" type="email" class="form-control" placeholder="Client Contact Email"
                          id="clientemail" required
@@ -150,7 +153,7 @@
               </div>
 
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
+                <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Project Manager</label>
                   <input ng-model="lab.pm" type="text" class="form-control" placeholder="Project Manager" id="pm"
                          required data-validation-required-message="Please enter the name of the project manager.">
@@ -160,7 +163,7 @@
               </div>
 
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
+                <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Account Executive</label>
                   <input ng-model="lab.ae" type="text" class="form-control" placeholder="Account Executive" id="ae"
                          required data-validation-required-message="Please enter the AE's name.">
@@ -170,7 +173,7 @@
               </div>
 
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
+                <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Facilitator</label>
                   <input ng-model="lab.facilitator" type="text" class="form-control" placeholder="Facilitator"
                          id="facilitator" required data-validation-required-message="Please enter facilitator's name.">
@@ -180,7 +183,7 @@
               </div>
 
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
+                <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Day One</label>
 
                   <input ng-model="lab.day1" type="date" class="form-control" placeholder="Day 1" id="day1" required
@@ -191,7 +194,7 @@
               </div>
 
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group controls">
+                <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                   <label>Day Two</label>
                   <input ng-model="lab.day2" type="date" class="form-control" placeholder="Day 2" id="day2" required
                          data-validation-required-message="Please enter the date of lab session two.">

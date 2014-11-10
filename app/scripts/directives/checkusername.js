@@ -2,7 +2,6 @@
  * Created by billh_000 on 9/19/2014.
  */
 'use strict';
-
 app.directive('checkUsername', function (Profile) {
     var usernameRegexp = /^[^.$\[\]#\/\s]+$/;
 
@@ -12,7 +11,7 @@ app.directive('checkUsername', function (Profile) {
             ctrl.$parsers.push(function (viewValue) {
                 if (usernameRegexp.test(viewValue)) {
                   Profile.findByUsername(viewValue).$loaded(function (user) {
-
+                    console.log(viewValue);
                         if (user.$value === null) {
                             ctrl.$setValidity('taken', true);
                             ctrl.$setValidity('invalid', true);

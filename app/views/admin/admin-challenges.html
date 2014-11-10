@@ -1,5 +1,5 @@
 <!-- Portfolio Grid Section -->
-<section id="portfolio">
+<section id="admin-challenges">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -14,7 +14,7 @@
         <p class="success" ng-show="success">{{success}}</p>
 
         <div>
-            <a data-toggle="modal" data-target="#editChallenge">New Challenge</a>
+          <a data-toggle="modal" data-target=".portfolio-modal"><h3>New Challenge</h3></a>
         </div>
 
         <table class="table table-bordered table-striped table-hover">
@@ -74,16 +74,18 @@
 
                 <td>
 
-                    <input type="text" class="form-control input-sm" ng-model="challenge.points" placeholder="Icon"
+                  <input type="text" class="form-control input-sm"
+                         ng-model="challenge.commitPoints + challenge.completePoints" placeholder="Icon"
                            required
                            data-validation-required-message="Please include the number of points earned for this challenge. ">
-
+                  <input type="number" ng-model="challenge.commitPoints">
+                  <input type="number" ng-model="challenge.completePoints">
                     <p class="help-block text-danger"></p>
 
                 </td>
 
 
-                <td><a ng-click="update(challenge)">update</a>
+              <td><a ng-click="updateChallenge(challenge)">update</a>
                 </td>
             </tr>
 
@@ -125,7 +127,8 @@
 
                                 <form name="editChallenge" id="contactForm" novalidate>
                                     <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                      <div floating-label
+                                           class="form-group col-xs-12 floating-label-form-group controls">
                                             <label>Icon</label>
                                             <input type="text" class="form-control" ng-model="m_challenge.icon"
                                                    placeholder="Icon" required
@@ -136,7 +139,8 @@
                                     </div>
 
                                     <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                      <div floating-label
+                                           class="form-group col-xs-12 floating-label-form-group controls">
                                             <label>Title</label>
                                             <input type="text" class="form-control" placeholder="Challenge Title"
                                                    id="title" ng-model="m_challenge.title" required
@@ -146,7 +150,8 @@
                                         </div>
                                     </div>
                                     <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                      <div floating-label
+                                           class="form-group col-xs-12 floating-label-form-group controls">
                                             <label>Description</label>
                                             <textarea class="form-control" ng-model="m_challenge.description"
                                                       placeholder="Description" id="description" required
@@ -156,7 +161,8 @@
                                         </div>
                                     </div>
                                     <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                      <div floating-label
+                                           class="form-group col-xs-12 floating-label-form-group controls">
                                             <label>Link</label>
 
                                             <div class="input-group">
@@ -180,10 +186,32 @@
                                         </div>
                                     </div>
                                     <div class="row control-group">
-                                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                                      <div floating-label
+                                           class="form-group col-xs-12 floating-label-form-group controls">
+                                        <label>Commit Points</label>
+                                        <input type="number" class="form-control" ng-model="m_challenge.commitPoints"
+                                               placeholder="Points for committing" required
+                                               data-validation-required-message="Please include the point value of this challenge.">
+
+                                        <p class="help-block text-danger"></p>
+                                      </div>
+                                    </div>
+                                  <div class="row control-group">
+                                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
+                                      <label>Complete Points</label>
+                                      <input type="number" class="form-control" ng-model="m_challenge.completePoints"
+                                             placeholder="Points for completing" required
+                                             data-validation-required-message="Please include the point value of this challenge.">
+
+                                      <p class="help-block text-danger"></p>
+                                    </div>
+                                  </div>
+                                  <div class="row control-group">
+                                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                                             <label>Points</label>
-                                            <input type="text" class="form-control" ng-model="m_challenge.points"
-                                                   placeholder="Icon" required
+                                      <input type="number" class="form-control"
+                                             ng-model="m_challenge.commitPoints + m_challenge.completePoints"
+                                             placeholder="Points" required
                                                    data-validation-required-message="Please include the point value of this challenge.">
 
                                             <p class="help-block text-danger"></p>

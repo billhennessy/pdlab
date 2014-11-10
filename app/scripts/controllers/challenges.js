@@ -14,7 +14,9 @@ app.controller('ChallengesCtrl', function ($scope, $location, $routeParams, $mod
     description: '',
     link: '',
     linktype: '',
-    points: 0
+    points: 0,
+    commitPoints: 0,
+    completePoints: 0
   };
 
   $scope.submitChallenge = function () {
@@ -26,7 +28,9 @@ app.controller('ChallengesCtrl', function ($scope, $location, $routeParams, $mod
         description: '',
         link: '',
         linktype: '',
-        points: 0
+        points: 0,
+        commitPoints: 0,
+        completePoints: 0
       };
       $scope.success = "You've created a new challenge called " + ref.title;
     }),
@@ -106,7 +110,7 @@ app.controller('ModalInstanceCtrl', function ($scope, $sce, $modal, $modalInstan
         var challenge = Challenge.get(challengeId);
         var prePoints = parseInt($scope.user.profile.points);
     Challenge.completeChallenge(challengeId, userId).then(function () {
-      addPoints($scope.user, challenge.points).then(function () {
+      addPoints($scope.user, challenge.commitPoints).then(function () {
         $scope.open('large', 'views/modals/addChallengeModal.html', challenge, $scope.user);
             });
 

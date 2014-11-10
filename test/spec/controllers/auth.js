@@ -26,6 +26,6 @@ describe('Controller: AuthCtrl', function () {
     }));
 
     it('should have a user', function () {
-        expect(scope.user.username).toBe('');
+      expect(scope.user.username).toBe('whennessy');
     });
 });

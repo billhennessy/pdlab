@@ -7,6 +7,7 @@
 app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal, Auth, Profile, Lab) {
     var uid = $routeParams.userId;
     $scope.user = Auth.user;
+  //$scope.labs = Lab.all;
 
   $scope.predicate = 'points';
 
@@ -24,7 +25,7 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
 
 
   $scope.update = function (user) {
-    user.$priority = user.username;
+
     return Profile.update(user)
 
       .then(function (ref) {
@@ -38,8 +39,20 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
     };
 
   Profile.getChallenges(uid).then(function (challenges) {
+
         $scope.challenges = challenges;
+    /* var keys = challenges.$getIndex();
+     console.log("count: " + keys.length); */
+
     });
+
+  $scope.getCount = function (objs) {
+    var i = 0;
+    angular.forEach(objs, function (obj) {
+      i++;
+    })
+    return i;
+  }
 
   /*  Profile.getPosts(uid).then(function (posts) {
    $scope.posts = posts;
@@ -75,10 +88,11 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
         })
     }
 
-  $scope.assignChallenges = function () {
+  /* $scope.assignChallenges = function() {
         var d = Profile.assignChallenges('simplelogin:52');
         console.log(d);
-    };
+   };*/
+
 
   $scope.assignLab = function (labId, userId) {
     return Lab.addUser(labId, userId);
@@ -88,12 +102,16 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
 
     };
 
-  $scope.joinLab = function () {
+  $scope.joinLab = function (user) {
 
-    if ($scope.user.accepted) {
-      Lab.users($scope.user.profile.lab).$add($scope.user.uid);
-      $scope.message = "Welcome";
-      $location.url('users/' + $scope.user.$id);
+    if (user.accepted) {
+      Lab.users(user.profile.lab).$add(user.uid).then(function () {
+        user.$save();
+      });
+      $scope.success = "Welcome";
+      $location.url('users/' + user.uid);
+    } else {
+      $scope.error = "You have not accepted your commitment."
     }
   };
 
@@ -103,21 +121,22 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
 
 //TODO:  Update own profile (but not points)
 
-app.factory('loadChallengesService', function ($routeParams, Profile, $q) {
-  var uid = $routeParams.userId;
-  return {
-    getChallenges: function () {
-      return $q.when(
-        Profile.getChallenges($routeParams.userId).then(function (challenges) {
-          return challenges;
-        })
-      )
-    },
-    getProfile: function () {
-      return $q.when(profile.get($routeParams.userId));
-    }
+app
+  .factory('loadChallengesService', function ($routeParams, Profile, $q) {
+    var uid = $routeParams.userId;
+    return {
+      getChallenges: function () {
+        return $q.when(
+          Profile.getChallenges($routeParams.userId).then(function (challenges) {
+            return challenges;
+          })
+        )
+      },
+      getProfile: function () {
+        return $q.when(profile.get($routeParams.userId));
+      }
 
-  }
+    }
 
 
 });

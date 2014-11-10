@@ -1,22 +1,24 @@
 'use strict';
 
-describe('Controller: LabCtrl', function () {
+describe('Controller: LabsCtrl', function () {
 
     // load the controller's module
   beforeEach(module('pdlab'));
 
-    var LabCtrl,
+  var LabsCtrl,
         scope;
 
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope) {
         scope = $rootScope.$new();
-        LabCtrl = $controller('LabCtrl', {
+      LabsCtrl = $controller('LabsCtrl', {
             $scope: scope
         });
     }));
 
     it('should attach a list of Labs to the scope', function () {
-        expect(scope.labs.length).toBe('5');
+      expect(scope.labs.length).toBe(6);
     });
+
+
 });

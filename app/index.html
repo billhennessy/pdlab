@@ -12,14 +12,14 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/main.css   -->
-    <link rel="stylesheet" href="styles/main.css">
+
   <link href="styles/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/freelancer.css">
+  <link rel="stylesheet" href="styles/main.css">
 
     <!-- Custom Fonts -->
 
@@ -31,7 +31,7 @@
         type="text/css">
 </head>
 
-<body ng-app="pdlab" class="index" ng-strict-di>
+<body ng-app="pdlab" class="index">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -75,7 +75,6 @@
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/json3/lib/json3.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -87,6 +86,7 @@
 <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="bower_components/angular-order-object-by/src/ng-order-object-by.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -110,15 +110,21 @@
 <script src="scripts/controllers/modalinstance.js"></script>
 <script src="scripts/controllers/featureview.js"></script>
 <script src="scripts/controllers/leaders.js"></script>
+<script src="scripts/controllers/surveys/subjects.js"></script>
+<script src="scripts/controllers/surveys/questions.js"></script>
+<script src="scripts/controllers/surveys/tests.js"></script>
 
 <!-- Services -->
-<script src>= "scripts/services/alerter.js" ></script>
+<script src="scripts/services/alerter.js"></script>
 <script src="scripts/services/post.js"></script>
 <script src="scripts/services/auth.js"></script>
 <script src="scripts/services/lab.js"></script>
 <script src="scripts/services/challenge.js"></script>
 <script src="scripts/services/feature.js"></script>
 <script src="scripts/services/profile.js"></script>
+<script src="scripts/services/surveys/subject.js"></script>
+<script src="scripts/services/surveys/question.js"></script>
+<script src="scripts/services/surveys/test.js"></script>
 
 <!-- Directives -->
 <script src="scripts/directives/checkusername.js"></script>
@@ -128,19 +134,17 @@
 <script src="scripts/filters/url.js"></script>
 
 
-<script src="scripts/lib/ui-bootstrap-0.11.2.min.js"></script>
-<script src="scripts/lib/ui-bootstrap-tpls-0.11.2.min.js"></script>
-
-
 <!-- Plugin JavaScript -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-
 <!-- Contact Form JavaScript -->
-<script src="scripts/lib/jqBootstrapValidation.js"></script>
 
-<!-- Custom Theme JavaScript -->
+<script src="scripts/lib/classie.js"></script>
 <script src="scripts/lib/freelancer.js"></script>
+<script src="scripts/lib/ui-bootstrap-0.11.2.min.js"></script>
+<script src="scripts/lib/ui-bootstrap-tpls-0.11.2.min.js"></script>
+<!-- Custom Theme JavaScript -->
+
 <!-- endbuild -->
 </body>
 

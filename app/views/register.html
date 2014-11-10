@@ -23,7 +23,7 @@
                     characters.</p>
                 </div>
                     <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                             <label>User name</label>
 
                             <div class="input-group">
@@ -40,13 +40,13 @@
                         </div>
                     </div>
                     <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Lab Id</label>
 
                             <div class="input-group">
 
                                 <input type="text" ng-model="user.lab" placeholder="Lab Id"
-                                       class="form-control input-lg" required
+                                       class="form-control input-lg" disabled="true" required
                                        data-validation-required-message="Please enter your Lab Id.">
                                 <br>
                                 <span class="input-group-addon"><i class="fa fa-flask fa-2x"></i>
@@ -56,12 +56,12 @@
                         </div>
                     </div>
                     <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Email Address</label>
 
                             <div class="input-group">
 
-                                <input type="email" ng-model="user.email" placeholder="Email"
+                              <input type="email" ng-model="user.email" disabled="true" placeholder="Email"
                                        class="form-control input-lg" required
                                        data-validation-required-message="Please enter your email address.">
                                 <br>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                      <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Password</label>
 
                             <div class="input-group">
@@ -97,33 +97,3 @@
         </div>
     </div>
 </section>
-<!--
-<div class="auth-forms">
-
-<h2>Register</h2>
-
-<form ng-submit="register()" name="form">
-<div ng-show="error || form.username.$error">
-<p ng-show="error" class="text-danger">{{error}}</p>
-
-<p ng-show="form.username.$error.taken" class="text-danger">Username is already taken.</p>
-
-<p ng-show="form.username.$error.invalid" class="text-danger">Username contains invalid characters.</p>
-</div>
-<input type="email" ng-model="user.email" placeholder="Email" class="form-control"><br>
-<input type="text" ng-model="user.username" placeholder="Username" name="username" check-username
-   class="form-control"><br>
-<input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
-<input type="text" ng-model="user.labcode" placeholder="Lab Code (from email)" class="form-control"><br>
-
-<div class="=panel">
-<h3>About You</h3>
-<input type="text" ng-model="user.fname" placeholder="First Name" class="form-control"><br>
-<input type="text" ng-model="user.lname" placeholder="Last Name" class="form-control"><br>
-<input type="tel" ng-model="user.cell" placeholder="Cell Phone (for text alerts)" class="form-control"><br>
-
-</div>
-<input type="submit" value="Register" class="btn btn-primary"/>
-</form>
-
-</div>-->
