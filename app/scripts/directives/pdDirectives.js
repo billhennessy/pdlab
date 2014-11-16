@@ -24,36 +24,18 @@ app.directive("leave", function () {
     }
 });
 
+
 app.directive("floatingLabel", function () {
   return {
     link: function (scope, element, attrs) {
-      element.bind("input propertychange", ".floating-label-form-group", function (e) {
-        element.toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-      })
-      /*,
-       element.on("focus", ".floating-label-form-group", function() {
-       element.addClass("floating-label-form-group-with-focus");
-       }),
-       element.on("blur", ".floating-label-form-group", function() {
-       element.removeClass("floating-label-form-group-with-focus");
-       })*/
-    }
-  }
-});
+      element.bind("input propertychange", function () {
+        element.addClass("floating-label-form-group-with-value");
 
-// Closes the Responsive Menu on Menu Item Click
-app.directive('collapseNavbar', function () {
-
-  return {
-    link: function (scope, element, attrs) {
-      element.bind('.navbar-collapse ul li a').click(function () {
-        element.click('.navbar-toggle:visible');
       });
 
     }
     }
-
-})
+});
 
 
 app.directive('alerter', function ($timeout, alert) {

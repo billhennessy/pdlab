@@ -1,10 +1,9 @@
-<nav enter="navbar-shrink" leave class="navbar navbar-default navbar-fixed-top navbar-shrink">
-    <div class="container-fluid">
+<nav ng-controller="NavCtrl" enter="navbar-shrink" leave class="navbar navbar-default navbar-fixed-top navbar-shrink"
+     role="navigation">
+  <div class="container-fluid" ng-cloak>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1" ng-init="navCollapsed = true"
-                  ng-click="navCollapsed = !navCollapsed">
+          <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -16,8 +15,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-      <div collapse-navbar ng-controller="NavCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
-           ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+    <div class="collapse navbar-collapse" collapse="isCollapsed">
             <ul class="nav navbar-nav">
                 <li class="hidden">
                     <a href="#page-top"></a>
@@ -59,15 +57,19 @@
                   <a href="#register">Register</a>
                 </li>
 
-              <li class="dropdown" ng-show="user.profile.admin">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Admin<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu" ng-controller="AdminCtrl">
+              <li class="dropdown" on-toggle="toggled(open)" ng-show="user.profile.admin">
+                <a href class="dropdown-toggle">
+                  Admin
+                </a>
+                <ul class="dropdown-menu" ng-controller="AdminCtrl">
                         <li ng-repeat="item in menuItems">
-                          <a href="#admin/{{item | lowercase}}">{{item}}</a>
+                          <a href='#admin/{{item | lowercase}}'>{{item}}</a>
                         </li>
 
-                    </ul>
+                </ul>
                 </li>
+
+
             </ul>
         </div>
 

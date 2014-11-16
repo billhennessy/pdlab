@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.controller('AuthCtrl', function ($scope, $routeParams, $location, Auth, Profile, Lab, user) {
+app.controller('AuthCtrl', function ($scope, $routeParams, $location, Auth, Profile, Lab, user, $modal) {
     if (user) {
       $location.path('users/' + user.uid);
     }
@@ -17,16 +17,19 @@ app.controller('AuthCtrl', function ($scope, $routeParams, $location, Auth, Prof
 
 
   $scope.typing = true;
+
   $scope.login = function () {
+
     Auth.login($scope.user).then(function (user) {
-      console.log(user.uid);
+
 
       Profile.actions(user.uid).$add({
         login: Date.now()
       });
       $location.path('users/' + user.uid);
     }), function (error) {
-            $scope.error = error.toString();
+
+      $scope.error = error.toString();
             $scope.typing = true;
     };
     };
@@ -69,6 +72,19 @@ app.controller('AuthCtrl', function ($scope, $routeParams, $location, Auth, Prof
         });
     };
 
+  // add spinner for registration and logging in
+
+  $scope.spinner = function (size) {
+
+
+    var modalInstance = $modal.open({
+      template: '<i class="fa fa-spinner fa-spin fa-4x"></i>',
+      controller: '',
+      size: size
+
+
+    })
+  };
 
 });
 

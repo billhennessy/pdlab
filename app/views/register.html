@@ -28,7 +28,8 @@
 
                             <div class="input-group">
 
-                              <input check-username name="username" id="username" type="text" ng-model="user.username"
+                              <input floating-label check-username name="username" id="username" type="text"
+                                     ng-model="user.username"
                                      placeholder="Username"
                                        class="form-control input-lg" required
                                        data-validation-required-message="Please enter a user name.">
@@ -39,39 +40,39 @@
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
-                    <div class="row control-group">
-                      <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Lab Id</label>
+                <!-- <div class="row control-group">
+                  <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Lab Id</label>
 
-                            <div class="input-group">
+                        <div class="input-group">
 
-                                <input type="text" ng-model="user.lab" placeholder="Lab Id"
-                                       class="form-control input-lg" disabled="true" required
-                                       data-validation-required-message="Please enter your Lab Id.">
-                                <br>
-                                <span class="input-group-addon"><i class="fa fa-flask fa-2x"></i>
-                                </span>
-                            </div>
-                            <p class="help-block text-danger"></p>
+                            <input type="hidden" ng-model="user.lab" placeholder="Lab Id"
+                                   class="form-control input-lg" disabled="true" required
+                                   data-validation-required-message="Please enter your Lab Id.">
+                            <br>
+                            <span class="input-group-addon"><i class="fa fa-flask fa-2x"></i>
+                            </span>
                         </div>
+                        <p class="help-block text-danger"></p>
                     </div>
-                    <div class="row control-group">
-                      <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
+                </div>
+                <div class="row control-group">
+                  <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Email Address</label>
 
-                            <div class="input-group">
+                        <div class="input-group">
 
-                              <input type="email" ng-model="user.email" disabled="true" placeholder="Email"
-                                       class="form-control input-lg" required
-                                       data-validation-required-message="Please enter your email address.">
-                                <br>
-                                <span class="input-group-addon"><i class="fa fa-envelope-o fa-2x"></i>
-                                </span>
-                            </div>
-
-                            <p class="help-block text-danger"></p>
+                          <input type="hidden" ng-model="user.email" disabled="true" placeholder="Email"
+                                   class="form-control input-lg" required
+                                   data-validation-required-message="Please enter your email address.">
+                            <br>
+                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-2x"></i>
+                            </span>
                         </div>
+
+                        <p class="help-block text-danger"></p>
                     </div>
+                </div> -->
                     <div class="row control-group">
                       <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Password</label>
@@ -87,6 +88,8 @@
                             </div>
                         </div>
                     </div>
+                <input type="hidden" ng-model="user.lab">
+                <input type="hidden" ng-model="user.email">
 
                     <br>
                     <input type="submit" value="Register" ng-click="typing=false" class="btn btn-primary btn-lg"/>

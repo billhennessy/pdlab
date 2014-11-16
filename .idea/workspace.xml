@@ -1,43 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d9b6ae0-a13b-4e71-89f4-68bcf4fdfb94" name="Default" comment="Improved lab isolation, removed obsolete files.">
-      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\lib\jqBootstrapValidation.js" afterPath="" />
+    <list default="true" id="2d9b6ae0-a13b-4e71-89f4-68bcf4fdfb94" name="Default" comment="challenges updated&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/profiles/ProfilesCtrl.js" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\profiles.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\lib\cbpAnimatedHeader.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\lib\classie.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\lib\freelancer.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\lib\ui-bootstrap-0.11.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\lib\ui-bootstrap-tpls-0.11.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\services\modal.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\security-rules.json" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bhenn_000\Code\pdlab\rules.json" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\about.js" afterPath="$PROJECT_DIR$/app/scripts/base/AboutCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\admin.js" afterPath="$PROJECT_DIR$/app/scripts/nav/admin.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\auth.js" afterPath="$PROJECT_DIR$/app/scripts/base/AuthCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\challenges.js" afterPath="$PROJECT_DIR$/app/scripts/challenges/ChallengesCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\challengeview.js" afterPath="$PROJECT_DIR$/app/scripts/challenges/ChallengeViewCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\features.js" afterPath="$PROJECT_DIR$/app/scripts/features/FeaturesCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\featureview.js" afterPath="$PROJECT_DIR$/app/scripts/features/FeatureViewCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\labs.js" afterPath="$PROJECT_DIR$/app/scripts/labs/LabsCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\modalinstance.js" afterPath="$PROJECT_DIR$/app/scripts/base/modalinstance.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\nav.js" afterPath="$PROJECT_DIR$/app/scripts/nav/nav.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\posts.js" afterPath="$PROJECT_DIR$/app/scripts/posts/PostsCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\postview.js" afterPath="$PROJECT_DIR$/app/scripts/posts/PostViewCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\progress.js" afterPath="$PROJECT_DIR$/app/scripts/base/ProgressCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\controllers\users.js" afterPath="$PROJECT_DIR$/app/scripts/profiles/UsersCtrl.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\services\auth.js" afterPath="$PROJECT_DIR$/app/scripts/base/AuthService.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\services\challenge.js" afterPath="$PROJECT_DIR$/app/scripts/challenges/ChallengeService.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\services\feature.js" afterPath="$PROJECT_DIR$/app/scripts/features/FeatureService.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\services\lab.js" afterPath="$PROJECT_DIR$/app/scripts/labs/LabService.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\services\post.js" afterPath="$PROJECT_DIR$/app/scripts/posts/PostService.js" />
+      <change type="MOVED" beforePath="C:\Users\bhenn_000\Code\pdlab\app\scripts\services\profile.js" afterPath="$PROJECT_DIR$/app/scripts/profiles/ProfileService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.jshintrc" afterPath="$PROJECT_DIR$/.jshintrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/about.html" afterPath="$PROJECT_DIR$/app/views/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/modals/addChallengeModal.html" afterPath="$PROJECT_DIR$/app/views/modals/addChallengeModal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sublime-grunt.cache" afterPath="$PROJECT_DIR$/.sublime-grunt.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-challenges.html" afterPath="$PROJECT_DIR$/app/views/admin/admin-challenges.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-lab-users.html" afterPath="$PROJECT_DIR$/app/views/admin/admin-lab-users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin-users.html" afterPath="$PROJECT_DIR$/app/views/admin/admin-users.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/auth.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/auth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/auth.js" afterPath="$PROJECT_DIR$/app/scripts/services/auth.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/controllers/auth.js" afterPath="$PROJECT_DIR$/test/spec/controllers/auth.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/challenges.html" afterPath="$PROJECT_DIR$/app/views/challenges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/challenges.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/challenges.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/challengeview.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/challengeview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/checkusername.js" afterPath="$PROJECT_DIR$/app/scripts/directives/checkusername.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/lib/classie.js" afterPath="$PROJECT_DIR$/app/scripts/lib/classie.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/features.html" afterPath="$PROJECT_DIR$/app/views/features.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/features.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/features.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/freelancer.css" afterPath="$PROJECT_DIR$/app/styles/freelancer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/lib/freelancer.js" afterPath="$PROJECT_DIR$/app/scripts/lib/freelancer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/karma.conf.js" afterPath="$PROJECT_DIR$/test/karma.conf.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/controllers/lab.js" afterPath="$PROJECT_DIR$/test/spec/controllers/lab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/labs.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/labs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.html" afterPath="$PROJECT_DIR$/app/views/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/nav.html" afterPath="$PROJECT_DIR$/app/views/nav.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/nav.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/nav.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/pdDirectives.js" afterPath="$PROJECT_DIR$/app/scripts/directives/pdDirectives.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/profile.html" afterPath="$PROJECT_DIR$/app/views/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/profiles.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/profiles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/progress.html" afterPath="$PROJECT_DIR$/app/views/progress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/publichome.html" afterPath="$PROJECT_DIR$/app/views/publichome.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/register.html" afterPath="$PROJECT_DIR$/app/views/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/services/services.spec.js" afterPath="$PROJECT_DIR$/test/spec/services/services.spec.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ang-news.iws" />
@@ -62,11 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="lab.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/lab.js">
+      <file leaf-file-name="LabService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/labs/LabService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2023">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -77,19 +91,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="714">
               <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding>
-                <marker date="1415394088960" expanded="true" signature="484:1179" placeholder="{...}" />
-                <marker date="1415394088960" expanded="true" signature="300:1187" placeholder="{...}" />
-                <marker date="1415394088960" expanded="true" signature="357:1181" placeholder="{...}" />
-                <marker date="1415394088960" expanded="true" signature="411:1001" placeholder="{...}" />
-                <marker date="1415394088960" expanded="true" signature="513:939" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/profile.js">
+      <file leaf-file-name="ProfileService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/profiles/ProfileService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1853">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
@@ -98,8 +106,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/users.js">
+      <file leaf-file-name="UsersCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/profiles/UsersCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
               <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
@@ -110,25 +118,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profiles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/profiles.js">
+      <file leaf-file-name="ProgressCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/base/ProgressCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2516">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-              <folding>
-                <marker date="1415394088042" expanded="true" signature="1538:1705" placeholder="{...}" />
-                <marker date="1415394088042" expanded="true" signature="1926:2045" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-users.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/admin-users.html">
+      <file leaf-file-name="LeadersCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/profiles/LeadersCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="918">
-              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3291816" vertical-offset="1444" max-vertical-offset="2567">
+              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+              <folding>
+                <marker date="1416114871225" expanded="true" signature="1285:1438" placeholder="..." />
+                <marker date="1416114871225" expanded="true" signature="1378:1406" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,9 +154,11 @@
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3652" max-vertical-offset="4471">
-              <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3176" max-vertical-offset="4284">
+              <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+              <folding>
+                <marker date="1416152454287" expanded="true" signature="11607:11608" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,7 +166,7 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1785">
+            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1819">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
@@ -156,21 +176,9 @@
       <file leaf-file-name=".jshintrc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.jshintrc">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="578">
-              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="561">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2176">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding>
-                <marker date="1415561586643" expanded="true" signature="403:1131" placeholder="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -398,7 +406,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -417,62 +424,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ang-news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdlab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ang-news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdlab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ang-news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdlab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,10 +449,11 @@
       <recent name="C:\Users\bhenn_000\Code\pdlab\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bhenn_000\Code\pdlab\app\views\modals" />
-      <recent name="C:\Users\billh_000\OneDrive\Code\ang-news\app\styles" />
-      <recent name="C:\Users\billh_000\OneDrive\Code\ang-news\app\views\admin" />
-      <recent name="C:\Users\billh_000\OneDrive\Code\ang-news\app\scripts\services" />
+      <recent name="C:\Users\bhenn_000\Code\pdlab\app\scripts\base" />
+      <recent name="C:\Users\bhenn_000\Code\pdlab\app\scripts\profiles" />
+      <recent name="C:\Users\bhenn_000\Code\pdlab\app\scripts\nav" />
+      <recent name="C:\Users\bhenn_000\Code\pdlab\app\scripts\surveys" />
+      <recent name="C:\Users\bhenn_000\Code\pdlab\app\scripts" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.about.js">
@@ -648,7 +603,13 @@
       <option name="project" value="LOCAL" />
       <updated>1414966862370</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="challenges updated&#10;">
+      <created>1415649909380</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1415649909380</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -673,22 +634,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23941368" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23778501" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15836431" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15836431" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33006537" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -725,7 +686,8 @@
     <MESSAGE value="Fixes to Labs" />
     <MESSAGE value="Fixed build" />
     <MESSAGE value="Improved lab isolation, removed obsolete files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved lab isolation, removed obsolete files." />
+    <MESSAGE value="challenges updated&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="challenges updated&#10;" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -741,13 +703,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/auth.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/base/AuthService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1921">
           <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <marker date="1415561586643" expanded="true" signature="403:1131" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -768,13 +727,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/lib/freelancer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -807,7 +759,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/challengeview.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/challenges/ChallengeViewCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="395" max-vertical-offset="1700">
           <caret line="44" column="8" selection-start-line="31" selection-start-column="2" selection-end-line="44" selection-end-column="8" />
@@ -867,14 +819,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/challenge.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/challenges/ChallengeService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="2635">
           <caret line="49" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/challenges.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/challenges/ChallengesCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2125">
           <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
@@ -885,13 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1819">
           <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/security-rules.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2329">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -916,14 +861,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/admin.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/nav/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="272">
           <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/features.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/features/FeaturesCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1785">
           <caret line="26" column="6" selection-start-line="11" selection-start-column="3" selection-end-line="26" selection-end-column="6" />
@@ -937,14 +882,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/posts.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/posts/PostsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/labs.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/labs/LabsCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="683" max-vertical-offset="1819">
           <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
@@ -972,14 +917,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/post.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/posts/PostService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="629">
           <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/feature.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/features/FeatureService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1394">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
@@ -993,17 +938,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/auth.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/base/AuthCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1904">
           <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1802" max-vertical-offset="2550">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1014,24 +952,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/auth.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/base/AuthService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
           <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <marker date="1415561586643" expanded="true" signature="403:1131" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/profiles.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/profiles/ProfilesCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="2516">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding>
-            <marker date="1415394088042" expanded="true" signature="1538:1705" placeholder="{...}" />
-            <marker date="1415394088042" expanded="true" signature="1926:2045" placeholder="{...}" />
-          </folding>
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1039,21 +970,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="503" max-vertical-offset="918">
           <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding>
-            <marker date="1415394088855" expanded="true" signature="147:455" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/profile.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/profiles/ProfileService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1853">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
@@ -1065,13 +985,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="222" max-vertical-offset="731">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <marker date="1415394088960" expanded="true" signature="484:1179" placeholder="{...}" />
-            <marker date="1415394088960" expanded="true" signature="300:1187" placeholder="{...}" />
-            <marker date="1415394088960" expanded="true" signature="357:1181" placeholder="{...}" />
-            <marker date="1415394088960" expanded="true" signature="411:1001" placeholder="{...}" />
-            <marker date="1415394088960" expanded="true" signature="513:939" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,25 +999,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="578">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="199" max-vertical-offset="561">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3652" max-vertical-offset="4471">
-          <caret line="250" column="0" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3176" max-vertical-offset="4284">
+          <caret line="237" column="0" selection-start-line="237" selection-start-column="0" selection-end-line="237" selection-end-column="0" />
+          <folding>
+            <marker date="1416152454287" expanded="true" signature="11607:11608" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/labs/LabService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2023">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/lab.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/profiles/UsersCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2023">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <marker date="1415394088855" expanded="true" signature="147:455" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/base/ProgressCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/profiles/LeadersCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3291816" vertical-offset="1444" max-vertical-offset="2567">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding>
+            <marker date="1416114871225" expanded="true" signature="1285:1438" placeholder="..." />
+            <marker date="1416114871225" expanded="true" signature="1378:1406" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

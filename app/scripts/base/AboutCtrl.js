@@ -7,8 +7,9 @@
  * # AboutCtrl
  * Controller of the angNewsApp
  */
-app.controller('AboutCtrl', function ($scope, $modal, $modalinstance, Lab) {
+app.controller('AboutCtrl', function ($scope, Lab) {
     $scope.labs = Lab.all;
+  console.log($scope.labs.length)
 
-    console.log('labs:' + $scope.labs);
 });
+

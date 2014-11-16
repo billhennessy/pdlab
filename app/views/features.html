@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-8"></div>
             <div class="col-md-4"><!-- Button trigger modal -->
-              <button class="btn btn-primary pull-right" data-toggle="modal" data-target=".portfolio-modal">
+              <button class="btn btn-primary pull-right" ng-click="open('lg')">
                     Submit Feature Request
                 </button>
             </div>
@@ -36,9 +36,67 @@
 </section>
 
 <!-- Modal -->
+<script type="text/ng-template" id="featureModal.html">
+  <div class="portfolio-modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-ng-click="$dismiss()">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+
+              <h4 class="modal-title" id="myModalLabel">Request a Feature
+                <small>or report a bug</small>
+              </h4>
+
+
+              <p ng-show="success" class="bg-success">{{success}}</p>
+
+              <p ng-show="error" class="bg-danger">{{error}}</p>
+
+              <div class="control-group"></div>
+              <form id="contactForm" name="featureForm" novalidate>
+                <div class="input-group">
+                  <label for="featureTitle">Name your feature</label>
+                  <input type="text" class="form-control" id="featureTitle" ng-model="feature.title"
+                         placeholder="Name Feature" required
+                         data-validation-required-message="Please give your feature a name or title.">
+
+                  <p class="help-block text-danger"
+                     ng-show="featureForm.featureTitle.$dirty && featureForm.featureTitle.$invalid"></p>
+                </div>
+                <div class="input-group">
+                  <label for="featureDescription">What else can you tell us about this feature?</label>
+                  <textarea class="form-control" id="featureDescription" ng-model="feature.description"
+                            placeholder="Details" required data-validation-required-message="Please give us an idea of how this feature
+                                  should work."></textarea>
+
+                  <p class="help-block text-danger"
+                     ng-show="featureForm.featureDescription.$dirty && featureForm.featureDescription.$invalid"></p>
+                </div>
+
+
+              </form>
+            </div>
+
+            <button type="button" class="btn btn-default" data-ng-click="$dismiss()">Close</button>
+            <button type="button" class="btn btn-primary" data-ng-click="submitFeature();">Submit</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
 <!-- Small modal -->
 
-<div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<!-- <div class="portfolio-modal modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
   <div class="modal-content">
     <div class="close-modal" data-dismiss="modal">
@@ -57,7 +115,7 @@
                 </h4>
 
 
-            <p ng-show="success" class="bg-success">{{success}}</p>
+                <p ng-show="success" class="bg-success">{{success}}</p>
 
                 <p ng-show="error" class="bg-danger">{{error}}</p>
 
@@ -93,4 +151,4 @@
     </div>
 </div>
 </div>
-</div>
+</div> -->

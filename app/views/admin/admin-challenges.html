@@ -14,79 +14,101 @@
         <p class="success" ng-show="success">{{success}}</p>
 
         <div>
-          <a data-toggle="modal" data-target=".portfolio-modal"><h3>New Challenge</h3></a>
+          <a data-toggle="modal" data-target=".portfolio-modal">
+            <h3>New Challenge</h3>
+          </a>
         </div>
 
         <table class="table table-bordered table-striped table-hover">
             <thead>
             <tr>
-                <th>Icon</th>
-                <th>Title & Description</th>
-                <th>Link & Type</th>
-                <th>Points</th>
-                <th>Action</th>
+              <th>Icon</th>
+              <th>Title & Description</th>
+              <th>Link & Type</th>
+              <th>Points</th>
+              <th>Action</th>
 
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="challenge in challenges">
-                <td>
-                    <div class="row control-group">
+              <td>
+                <div class="row control-group">
 
-                        <input type="text" class="form-control" ng-model="challenge.icon" placeholder="Icon" required
-                               data-validation-required-message="Please include the name of the icon you want use. (See Bill Henenssy for list.">
-
-
-                        <p class="help-block text-danger"></p>
-                      <img ng-src="images/portfolio/{{challenge.icon}}.png" style="max-height:100px">
-                    </div>
-                </td>
-
-                <td>
-                    <input type="text" class="form-control" placeholder="Challenge Title" id="title"
-                           ng-model="challenge.title" required
-                           data-validation-required-message="Please give your challenge a name.">
-
-                    <p class="help-block text-danger"></p>
+                  <input type="text" class="form-control input-sm" ng-model="challenge.icon" placeholder="Icon" required
+                         data-validation-required-message="Please include the name of the icon you want use. (See Bill Henenssy for list.">
 
 
-                    <label>Description</label>
-                    <textarea class="form-control" ng-model="challenge.description" placeholder="Description"
-                              id="description" required
-                              data-validation-required-message="Please describe what users need to do and how it will help them."></textarea>
+                  <p class="help-block text-danger"></p>
+                  <img ng-src="images/portfolio/{{challenge.icon}}.png" style="max-height:100px">
+                </div>
+              </td>
 
-                    <p class="help-block text-danger"></p>
+              <td>
+                <input type="text" class="form-control input-sm" placeholder="Challenge Title" id="title"
+                       ng-model="challenge.title" required
+                       data-validation-required-message="Please give your challenge a name.">
 
-                </td>
-                <td>
-                    <input type="url" ng-model="challenge.link" placeholder="Link URL" required
-                           data-validation-required-message="Please include the link for more information. (Must be HTTPS.)"
-                           class="form-control">
-
-                    <select id="linktype" ng-model="challenge.linktype">
-                        <option ng-selected="challenge.linktype==='typeform'">typeform</option>
-                        <option ng-selected="challenge.linktype==='pdf'">pdf</option>
-                        <option ng-selected="challenge.linktype==='video'">video</option>
-                        <option ng-selected="challenge.linktype==='url'">url</option>
-                    </select>
-                    <!-- /btn-group -->
-                </td>
-
-                <td>
-
-                  <input type="text" class="form-control input-sm"
-                         ng-model="challenge.commitPoints + challenge.completePoints" placeholder="Icon"
-                           required
-                           data-validation-required-message="Please include the number of points earned for this challenge. ">
-                  <input type="number" ng-model="challenge.commitPoints">
-                  <input type="number" ng-model="challenge.completePoints">
-                    <p class="help-block text-danger"></p>
-
-                </td>
+                <p class="help-block text-danger"></p>
 
 
-              <td><a ng-click="updateChallenge(challenge)">update</a>
-                </td>
+                <label>Description</label>
+                <textarea class="form-control" ng-model="challenge.description" placeholder="Description"
+                          id="description" required
+                          data-validation-required-message="Please describe what users need to do and how it will help them."></textarea>
+
+                <p class="help-block text-danger"></p>
+
+              </td>
+              <td>
+                <input type="url" ng-model="challenge.link" placeholder="Link URL" required
+                       data-validation-required-message="Please include the link for more information. (Must be HTTPS.)"
+                       class="form-control input-sm">
+
+                <select id="linktype" class="select form-control input-sm" ng-model="challenge.linktype">
+                  <option ng-selected="challenge.linktype==='typeform'">typeform</option>
+                  <option ng-selected="challenge.linktype==='pdf'">pdf</option>
+                  <option ng-selected="challenge.linktype==='video'">video</option>
+                  <option ng-selected="challenge.linktype==='url'">url</option>
+                </select>
+                <!-- /btn-group -->
+              </td>
+
+              <td>
+
+                <div class="row">
+                  <div class="col-xs-5">
+                    <label>Commit Points</label>
+                  </div>
+                  <div class="col-xs-5">
+                    <input type="number" ng-model="challenge.commitPoints" class="form-control input-sm">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5">
+
+                    <label>Complete Points</label>
+                  </div>
+                  <div class="col-xs-5">
+                    <input type=" number " ng-model="challenge.completePoints " class=" form-control input-sm ">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-5">
+
+                    <label>Total Points</label>
+                  </div>
+                  <div class="col-xs-5">
+                    <span>{{challenge.commitPoints + challenge.completePoints}}</span>
+                  </div>
+                  <p class="help-block text-danger "></p>
+
+              </td>
+
+
+              <td><a ng-click="updateChallenge(challenge) ">update</a>
+              </td>
             </tr>
 
             </tbody>
@@ -100,136 +122,127 @@
 
 <!-- Edit Challenge Modal -->
 
-<div class="portfolio-modal modal fade" id="editChallenge" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-                <div class="rl">
+<div class="portfolio-modal modal fade " id="editChallenge " tabindex="-1 " role="dialog " aria-hidden="true ">
+  <div class="modal-content ">
+    <div class="close-modal " data-dismiss="modal ">
+      <div class="lr ">
+        <div class="rl ">
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div class="modal-body">
+    <div class="container ">
+      <div class="row ">
+        <div class="col-lg-8 col-lg-offset-2 ">
+          <div class="modal-body ">
                         <h2>Create a Challenge</h2>
 
-                        <p class="danger" ng-show="error">{{error}}</p>
+            <p class="danger " ng-show="error ">{{error}}</p>
 
-                        <p class="success" ng-show="success">{{success}}</p>
+            <p class="success " ng-show="success ">{{success}}</p>
 
-                        <hr class="star-primary">
-                        <img ng-src="images/portfolio/{{m_challenge.icon}}.png" class="img-responsive img-centered"
-                             alt="">
+            <hr class="star-primary ">
+            <img ng-src="images/portfolio/{{m_challenge.icon}}.png " class="img-responsive img-centered " alt=" ">
 
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
+            <div class="row ">
+              <div class="col-lg-8 col-lg-offset-2 ">
 
-                                <form name="editChallenge" id="contactForm" novalidate>
-                                    <div class="row control-group">
-                                      <div floating-label
-                                           class="form-group col-xs-12 floating-label-form-group controls">
+                <form name="editChallenge " id="contactForm " novalidate>
+                  <div class="row control-group ">
+                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls ">
                                             <label>Icon</label>
-                                            <input type="text" class="form-control" ng-model="m_challenge.icon"
-                                                   placeholder="Icon" required
-                                                   data-validation-required-message="Please include an icon to represent this challenge.">
+                      <input type="text " class="form-control " ng-model="m_challenge.icon " placeholder="Icon "
+                             required
+                             data-validation-required-message="Please include an icon to represent this challenge. ">
 
-                                            <p class="help-block text-danger"></p>
+                      <p class="help-block text-danger "></p>
                                         </div>
                                     </div>
 
-                                    <div class="row control-group">
-                                      <div floating-label
-                                           class="form-group col-xs-12 floating-label-form-group controls">
+                  <div class="row control-group ">
+                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls ">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" placeholder="Challenge Title"
-                                                   id="title" ng-model="m_challenge.title" required
-                                                   data-validation-required-message="Please give your challenge a name.">
+                      <input type="text " class="form-control " placeholder="Challenge Title " id="title "
+                             ng-model="m_challenge.title " required
+                             data-validation-required-message="Please give your challenge a name. ">
 
-                                            <p class="help-block text-danger"></p>
+                      <p class="help-block text-danger "></p>
                                         </div>
                                     </div>
-                                    <div class="row control-group">
-                                      <div floating-label
-                                           class="form-group col-xs-12 floating-label-form-group controls">
+                  <div class="row control-group ">
+                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls ">
                                             <label>Description</label>
-                                            <textarea class="form-control" ng-model="m_challenge.description"
-                                                      placeholder="Description" id="description" required
-                                                      data-validation-required-message="Please describe what users need to do and how it will help them."></textarea>
+                      <textarea class="form-control " ng-model="m_challenge.description " placeholder="Description "
+                                id="description " required
+                                data-validation-required-message="Please describe what users need to do and how it will help them. "></textarea>
 
-                                            <p class="help-block text-danger"></p>
+                      <p class="help-block text-danger "></p>
                                         </div>
                                     </div>
-                                    <div class="row control-group">
-                                      <div floating-label
-                                           class="form-group col-xs-12 floating-label-form-group controls">
+                  <div class="row control-group ">
+                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls ">
                                             <label>Link</label>
 
-                                            <div class="input-group">
-                                                <input type="url" ng-model="m_challenge.link" placeholder="Link URL"
-                                                       required
-                                                       data-validation-required-message="Please include the link for more information. (Must be HTTPS.)"
-                                                       class="form-control">
+                      <div class="input-group ">
+                        <input type="url " ng-model="m_challenge.link " placeholder="Link URL " required
+                               data-validation-required-message="Please include the link for more information. (Must be HTTPS.) "
+                               class="form-control ">
 
-                                                <select id="linktype" ng-model="m_challenge.linktype">
-                                                    <option ng-selected="m_challenge.linktype==='typeform'">typeform
+                        <select id="linktype " ng-model="m_challenge.linktype ">
+                          <option ng-selected="m_challenge.linktype==='typeform' ">typeform
                                                     </option>
-                                                    <option ng-selected="m_challenge.linktype==='pdf'">pdf</option>
-                                                    <option ng-selected="m_challenge.linktype==='video'">video</option>
-                                                    <option ng-selected="m_challenge.linktype==='url'">url</option>
+                          <option ng-selected="m_challenge.linktype==='pdf' ">pdf</option>
+                          <option ng-selected="m_challenge.linktype==='video' ">video</option>
+                          <option ng-selected="m_challenge.linktype==='url' ">url</option>
                                                 </select>
                                                 <!-- /btn-group -->
                                             </div>
                                             <!-- /input-group -->
-                                            <!--<input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">-->
-                                            <p class="help-block text-danger"></p>
+                      <!--<input type="tel " class="form-control " placeholder="Phone Number " id="phone " required data-validation-required-message="Please enter your phone number. ">-->
+                      <p class="help-block text-danger "></p>
                                         </div>
                                     </div>
-                                    <div class="row control-group">
-                                      <div floating-label
-                                           class="form-group col-xs-12 floating-label-form-group controls">
-                                        <label>Commit Points</label>
-                                        <input type="number" class="form-control" ng-model="m_challenge.commitPoints"
-                                               placeholder="Points for committing" required
-                                               data-validation-required-message="Please include the point value of this challenge.">
+                  <div class="row control-group ">
+                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls ">
+                      <label>Commit Points</label>
+                      <input type="number " class="form-control " ng-model="m_challenge.commitPoints "
+                             placeholder="Points for committing " required
+                             data-validation-required-message="Please include the point value of this challenge. ">
 
-                                        <p class="help-block text-danger"></p>
-                                      </div>
+                      <p class="help-block text-danger "></p>
+                    </div>
                                     </div>
-                                  <div class="row control-group">
-                                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
-                                      <label>Complete Points</label>
-                                      <input type="number" class="form-control" ng-model="m_challenge.completePoints"
-                                             placeholder="Points for completing" required
-                                             data-validation-required-message="Please include the point value of this challenge.">
+                  <div class="row control-group ">
+                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls ">
+                      <label>Complete Points</label>
+                      <input type="number " class="form-control " ng-model="m_challenge.completePoints "
+                             placeholder="Points for completing " required
+                             data-validation-required-message="Please include the point value of this challenge. ">
 
-                                      <p class="help-block text-danger"></p>
+                      <p class="help-block text-danger "></p>
+                    </div>
                                     </div>
-                                  </div>
-                                  <div class="row control-group">
-                                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls">
+                  <div class="row control-group ">
+                    <div floating-label class="form-group col-xs-12 floating-label-form-group controls ">
                                             <label>Points</label>
-                                      <input type="number" class="form-control"
-                                             ng-model="m_challenge.commitPoints + m_challenge.completePoints"
-                                             placeholder="Points" required
-                                                   data-validation-required-message="Please include the point value of this challenge.">
+                      <input type="number " class="form-control "
+                             ng-model="m_challenge.commitPoints + m_challenge.completePoints " placeholder="Points "
+                             required
+                             data-validation-required-message="Please include the point value of this challenge. ">
 
-                                            <p class="help-block text-danger"></p>
+                      <p class="help-block text-danger "></p>
                                         </div>
                                     </div>
                                     <br>
 
-                                    <div id="success"></div>
-                                    <div class="row">
-                                        <div class="form-group col-xs-12">
-                                            <button ng-click="submitChallenge(m_challenge)"
-                                                    class="btn btn-success btn-lg">Save
+                  <div id="success "></div>
+                  <div class="row ">
+                    <div class="form-group col-xs-12 ">
+                      <button ng-click="submitChallenge(m_challenge) " class="btn btn-success btn-lg ">Save
                                             </button>
-                                            <button class="btn btn-default" data-dismiss="modal"><i
-                                                    class="fa fa-xing"></i> Close
+                      <button class="btn btn-default " data-dismiss="modal "><i class="fa fa-xing "></i> Close
                                             </button>
                                         </div>
-                                        <p ng-show="error" class="bg-danger">{{error}}</p>
+                    <p ng-show="error " class="bg-danger ">{{error}}</p>
                                     </div>
                                 </form>
                             </div>

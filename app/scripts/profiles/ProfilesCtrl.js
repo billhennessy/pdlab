@@ -4,14 +4,15 @@
 
 'use strict';
 
-app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal, Auth, Profile, Lab) {
-    var uid = $routeParams.userId;
-    $scope.user = Auth.user;
+app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal, Auth, Profile, Lab, challenges, profile) {
+  var uid = $routeParams.userId;
+  $scope.user = Auth.user;
   //$scope.labs = Lab.all;
-
+  $scope.alerts = [];
   $scope.predicate = 'points';
+  $scope.challenges = challenges;
 
-    $scope.profile = Profile.get(uid);
+  $scope.profile = profile; //Profile.get(uid);
 
   $scope.profile.$loaded(function () {
 
@@ -20,10 +21,12 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
 
     Lab.getUsers(labId).then(function (labmates) {
       $scope.labmates = labmates;
-        })
-  })
+    })
+  });
 
-
+  $scope.closeAlert = function (index) {
+    $scope.alerts.splice(index, 1);
+  };
   $scope.update = function (user) {
 
     return Profile.update(user)
@@ -38,15 +41,8 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
       $scope.error = error.toString();
     };
 
-  Profile.getChallenges(uid).then(function (challenges) {
 
-        $scope.challenges = challenges;
-    /* var keys = challenges.$getIndex();
-     console.log("count: " + keys.length); */
-
-    });
-
-  $scope.getCount = function (objs) {
+  function getCount(objs) {
     var i = 0;
     angular.forEach(objs, function (obj) {
       i++;
@@ -62,17 +58,17 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
 
     if (obj.newpassword === obj.newpassword2) {
       Auth.changePassword(email, obj.oldpassword, obj.newpassword).then(function () {
-                $scope.error = "";
+        $scope.error = "";
         $scope.success = "Success! Please remember your new password.";
         $scope.resetEmail();
 
       }, function (error) {
-                $scope.error = error.toString();
+        $scope.error = error.toString();
       })
-        } else {
-            $scope.error = "Your new passwords do not match."
-        }
-    };
+    } else {
+      $scope.error = "Your new passwords do not match."
+    }
+  };
 
   $scope.resetEmail = function () {
 
@@ -81,16 +77,10 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
     $scope.obj.newpassword2 = "";
   }
 
-  $scope.open = function (size, templateUrl) {
-        var modalInstance = $modal.open({
-            templateUrl: templateUrl,
-            size: size
-        })
-    }
 
   /* $scope.assignChallenges = function() {
-        var d = Profile.assignChallenges('simplelogin:52');
-        console.log(d);
+   var d = Profile.assignChallenges('simplelogin:52');
+   console.log(d);
    };*/
 
 
@@ -115,28 +105,54 @@ app.controller('ProfilesCtrl', function ($scope, $location, $routeParams, $modal
     }
   };
 
+  $scope.open = function (size, templateUrl) {
+    var modalInstance = $modal.open({
+      templateUrl: templateUrl,
+      controller: 'ProfileInstanceCtrl',
+      size: size,
+      resolve: {
+        profile: function () {
+          return $scope.profile;
+        }
+      }
+    })
+  }
+
+
 });
+
+app.controller('ProfileInstanceCtrl', ['$scope', '$modalInstance', 'Profile', 'profile',
+  function ($scope, $modalInstance, Profile, profile) {
+    $scope.profile = profile;
+    $scope.ok = function () {
+      Profile.update(profile);
+      $modalInstance.close();
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
+    };
+  }])
 
 //TODO:  Change password
 
 //TODO:  Update own profile (but not points)
 
-app
-  .factory('loadChallengesService', function ($routeParams, Profile, $q) {
-    var uid = $routeParams.userId;
-    return {
-      getChallenges: function () {
-        return $q.when(
-          Profile.getChallenges($routeParams.userId).then(function (challenges) {
-            return challenges;
-          })
-        )
-      },
-      getProfile: function () {
-        return $q.when(profile.get($routeParams.userId));
-      }
+/*app.factory('loadChallengesService', function($routeParams, Profile, $q) {
+ var uid = $routeParams.userId;
+ return {
+ getChallenges: function() {
+ return $q.when(
+ Profile.getChallenges($routeParams.userId).then(function(challenges) {
+ return challenges;
+ })
+ )
+ },
+ getProfile: function() {
+ return $q.when(profile.get($routeParams.userId));
+ }
 
-    }
+ }
 
 
-});
+ });*/

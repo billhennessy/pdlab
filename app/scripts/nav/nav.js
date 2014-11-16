@@ -8,6 +8,13 @@ app.controller('NavCtrl', function ($scope, $location, $anchorScroll, $modal, Po
     $scope.logout = Auth.logout;
     $scope.user = Auth.user;
     $scope.mission = {};
+  $scope.isCollapsed = true;
+
+  $scope.toggleNav = function () {
+    $scope.isCollapsed = !$scope.isCollapsed;
+
+  }
+
 
     $scope.scroll = function (location) {
         // set the location.hash to the id of

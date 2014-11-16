@@ -5,13 +5,11 @@
     <h3 class="panel-title">Progress</h3>
   </div>
   <div class="panel-body">
-    <div class="progress">
-      <div class="progress-bar progress-bar-warning progress-bar-striped " role="progressbar "
-           aria-valuenow="{{profile.points}} " aria-valuemin="0 " aria-valuemax="100 "
-           style="width: {{profile.points}}%; ">
-        {{profile.points}} points
-                </div>
+    <progress>
+      <bar type="warning" value="profile.points">
+        <span ng-hide="profile.points < 5">{{profile.points}} Points</span>
+      </bar>
+    </progress>
 
-            </div>
   </div>
 </div>

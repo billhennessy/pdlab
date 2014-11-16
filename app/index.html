@@ -11,7 +11,6 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -40,7 +39,10 @@
 <!-- Add your site or application content here -->
 <div ng-include="'views/nav.html'"></div>
 <div ng-view="" autoscroll="true"></div>
+
 <div ng-include="'views/footer.html'"></div>
+
+
 <!-- footer -->
 <!-- Footer -->
 
@@ -72,7 +74,6 @@
 
 <!-- build:js(app) scripts/vendor.js -->
 <!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/json3/lib/json3.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -86,7 +87,7 @@
 <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
 <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 <script src="bower_components/angular-order-object-by/src/ng-order-object-by.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -94,55 +95,48 @@
 <script src="scripts/app.js"></script>
 
 <!-- Controllers -->
-<script src="scripts/controllers/posts.js"></script>
-<script src="scripts/controllers/about.js"></script>
-<script src="scripts/controllers/postview.js"></script>
-<script src="scripts/controllers/nav.js"></script>
-<script src="scripts/controllers/auth.js"></script>
-<script src="scripts/controllers/profiles.js"></script>
-<script src="scripts/controllers/users.js"></script>
-<script src="scripts/controllers/labs.js"></script>
-<script src="scripts/controllers/challenges.js"></script>
-<script src="scripts/controllers/challengeview.js"></script>
-<script src="scripts/controllers/progress.js"></script>
-<script src="scripts/controllers/features.js"></script>
-<script src="scripts/controllers/admin.js"></script>
-<script src="scripts/controllers/modalinstance.js"></script>
-<script src="scripts/controllers/featureview.js"></script>
-<script src="scripts/controllers/leaders.js"></script>
-<script src="scripts/controllers/surveys/subjects.js"></script>
+<script src="scripts/posts/PostsCtrl.js"></script>
+<script src="scripts/base/AboutCtrl.js"></script>
+<script src="scripts/posts/PostViewCtrl.js"></script>
+<script src="scripts/nav/nav.js"></script>
+<script src="scripts/base/AuthCtrl.js"></script>
+<script src="scripts/profiles/ProfilesCtrl.js"></script>
+<script src="scripts/profiles/UsersCtrl.js"></script>
+<script src="scripts/labs/LabsCtrl.js"></script>
+<script src="scripts/challenges/ChallengesCtrl.js"></script>
+<script src="scripts/challenges/ChallengeViewCtrl.js"></script>
+<script src="scripts/base/ProgressCtrl.js"></script>
+<script src="scripts/features/FeaturesCtrl.js"></script>
+<script src="scripts/nav/admin.js"></script>
+<script src="scripts/base/modalinstance.js"></script>
+<script src="scripts/features/FeatureViewCtrl.js"></script>
+<script src="scripts/profiles/LeadersCtrl.js"></script>
+<!-- <script src="scripts/controllers/surveys/subjects.js"></script>
 <script src="scripts/controllers/surveys/questions.js"></script>
-<script src="scripts/controllers/surveys/tests.js"></script>
+<script src="scripts/controllers/surveys/tests.js"></script> -->
 
 <!-- Services -->
-<script src="scripts/services/alerter.js"></script>
-<script src="scripts/services/post.js"></script>
-<script src="scripts/services/auth.js"></script>
-<script src="scripts/services/lab.js"></script>
-<script src="scripts/services/challenge.js"></script>
-<script src="scripts/services/feature.js"></script>
-<script src="scripts/services/profile.js"></script>
-<script src="scripts/services/surveys/subject.js"></script>
+<script src="scripts/base/AlerterService.js"></script>
+<script src="scripts/posts/PostService.js"></script>
+<script src="scripts/base/AuthService.js"></script>
+<script src="scripts/labs/LabService.js"></script>
+<script src="scripts/challenges/ChallengeService.js"></script>
+<script src="scripts/features/FeatureService.js"></script>
+<script src="scripts/profiles/ProfileService.js"></script>
+<script src="scripts/base/modalService.js"></script>
+<!-- <script src="scripts/services/surveys/subject.js"></script>
 <script src="scripts/services/surveys/question.js"></script>
 <script src="scripts/services/surveys/test.js"></script>
-
+-->
 <!-- Directives -->
 <script src="scripts/directives/checkusername.js"></script>
 <script src="scripts/directives/pdDirectives.js"></script>
+<script src="scripts/directives/overlay.js"></script>
 
 <!-- Filters -->
 <script src="scripts/filters/url.js"></script>
 
 
-<!-- Plugin JavaScript -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-<!-- Contact Form JavaScript -->
-
-<script src="scripts/lib/classie.js"></script>
-<script src="scripts/lib/freelancer.js"></script>
-<script src="scripts/lib/ui-bootstrap-0.11.2.min.js"></script>
-<script src="scripts/lib/ui-bootstrap-tpls-0.11.2.min.js"></script>
 <!-- Custom Theme JavaScript -->
 
 <!-- endbuild -->

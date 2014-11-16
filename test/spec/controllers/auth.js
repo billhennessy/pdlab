@@ -1,31 +1,20 @@
 'use strict';
 
-describe('Controller: AuthCtrl', function () {
+describe('Unit: AuthCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('pdlab', [
-        'ngAnimate',
-        'ngCookies',
-        'ngResource',
-        'ngRoute',
-        'ngSanitize',
-        'ngTouch',
-        'firebase',
-        'ui.bootstrap'
-    ]));
+  beforeEach(module('pdlab'));
 
-    var AuthCtrl,
+  var ctrl,
         scope;
 
     // Initialize the controller and a mock scope
-    beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope) {
         scope = $rootScope.$new();
-        AuthCtrl = $controller('AuthCtrl', {
+    ctrl = $controller('AuthCtrl', {
             $scope: scope
         });
     }));
 
-    it('should have a user', function () {
-      expect(scope.user.username).toBe('whennessy');
-    });
+
 });

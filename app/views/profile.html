@@ -9,10 +9,7 @@
 
 
           <div ng-include="'views/progress.html'" scope="" onload=""></div>
-          <div class="alert alert-warning" ng-hide="(getCount(challenges) > 4)">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>Complete Your Mission:</strong>Choose at least 5 challenges for a mission [<a href="#challenges">click</a>]
-                </div>
+          <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
 
           <div class="panel panel-primary">
             <div class="panel-heading">
@@ -42,17 +39,17 @@
             <div class="panel-body">
 
 
-              <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: {{40}}%">
-                  <span class="sr-only">{{40}}% Challenges Complete</span>
-                </div>
-                <div class="progress-bar progress-bar-warning" style="width: {{20}}%">
-                  <span class="sr-only">{{20}}% Bonus Points</span>
-                </div>
-                <div class="progress-bar progress-bar-danger" style="width: {{10}}%">
-                  <span class="sr-only">{{10}}%</span>
-                </div>
-              </div>
+              <progress>
+                <bar value="40" type="success">
+                  <span>40%</span>
+                </bar>
+                <bar value="20" type="warning">
+                  <span>20%</span>
+                </bar>
+                <bar value="10" type="danger">
+                  <span>10%</span>
+                </bar>
+              </progress>
 
               <div class="media">
                 <a class="media-left media-top pull-left" href="#">
@@ -78,28 +75,8 @@
                   <p>At 13 lbs., Stella worries about her weight . . .</p>
                 </div>
               </div>
-              <div class="media">
-                <a class="media-left media-top pull-left" href="#">
-                  <img ng-src="images/usercontent/20140301_172927792_iOS.jpg" style="max-height:128px">
-                </a>
 
-                <div class="media-body">
-                  <h4 class="media-heading">My Ethnographic Subject: Stella</h4>
 
-                  <p>At 13 lbs., Stella worries about her weight . . .</p>
-                </div>
-              </div>
-              <div class="media">
-                <a class="media-left media-top pull-left" href="#">
-                  <img ng-src="images/usercontent/20140301_172927792_iOS.jpg" style="max-height:128px">
-                </a>
-
-                <div class="media-body">
-                  <h4 class="media-heading">My Ethnographic Subject: Stella</h4>
-
-                  <p>At 13 lbs., Stella worries about her weight . . .</p>
-                </div>
-              </div>
             </div>
                 </div>
 
@@ -118,7 +95,7 @@
             <p>Date: {{lab.day1}}</p>
 
             <div style="display:inline-block; min-height:290px;">
-              <datepicker ng-model="lab.day1" show-weeks="false" class="well well-sm"></datepicker>
+              <datepicker ng-model="lab.day2" show-weeks="false" class="well well-sm"></datepicker>
             </div>
             <p>My Lab Mates</p>
 
@@ -131,7 +108,7 @@
             </div>
           </section>
 
-        </div>
+            </div>
         </div>
 
       <div class="row">
@@ -143,8 +120,7 @@
             </div>
             <div class="panel-body">
               <p>Admin Only</p>
-              <button class="btn btn-default" ng-show="user.profile.admin" data-toggle="modal"
-                      data-target="#editProfile">
+              <button class="btn btn-default" ng-show="user.profile.admin" ng-click="open('lg','editProfile.html')">
                 Edit User
               </button>
               <br>
@@ -178,7 +154,7 @@
                 </div>
 
 
-        </div>
+            </div>
         <div class="col-md-6">
 
           <div class="panel panel-warning" ng-show="user.uid === profile.$id">
@@ -216,57 +192,60 @@
                 <strong>You did it!</strong>{{success}}
               </div>
             </div>
-          </div>
-        </div>
+                </div>
+            </div>
         </div>
 
 </section>
-
-<div class="portfolio-modal modal fade" id="editProfile" tabindex="-1" role="dialog" aria-hidden="true">
+<script type="text/ng-template" id="editProfile.html">
+  <div class="portfolio-modal">
     <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-                <div class="rl">
+      <div class="close-modal" ng-click="$dismiss()">
+        <div class="lr">
+          <div class="rl">
+          </div>
                 </div>
             </div>
-        </div>
       <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div class="modal-body">
-                      <div class="panel panel-body">
-                            <h2>Edit</h2>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="modal-body">
+              <div class="panel panel-body">
+                <h2>Edit</h2>
 
-                            <form>
-                                <div class="form-group">
-                                    <label for="username">User Name</label>
-                                    <input id="username" type="text" class="form-control" ng-model="profile.username">
-                                </div>
-                                <div class="form-group">
-                                  <label for="lab">Lab</label>
-                                    <input id="lab" type="text" class="form-control" ng-model="profile.lab">
-                                  <!-- <select ng-model="profile.lab" ng-options="lab.client for lab in labs"></select> -->
-                                </div>
-                                <div class="form-group">
-                                    <label for="points">Points</label>
-                                    <input id="points" type="number" class="form-control" ng-model="profile.points">
-                                </div>
-                              <div class="form-group" ng-disabled="true">
-                                <label for="admin">Admin</label>
-                                <input id="admin" type="checkbox" class="form-control" ng-model="profile.admin">
-                              </div>
-                                <div class="btn-group">
-                                  <button class="btn btn-default" ng-click="update(profile)" data-dismiss="modal">
-                                    Update
-                                  </button>
-                                  <button class="btn" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                </div>
-                            </form>
+                <form>
+                  <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input id="username" type="text" class="form-control" ng-model="profile.username">
+                  </div>
+                  <div class="form-group">
+                    <label for="lab">Lab</label>
+                    <input id="lab" type="text" class="form-control" ng-model="profile.lab">
+                    <!-- <select ng-model="profile.lab" ng-options="lab.client for lab in labs"></select> -->
+                  </div>
+                  <div class="form-group">
+                    <label for="points">Points</label>
+                    <input id="points" type="number" class="form-control" ng-model="profile.points">
+                  </div>
+                  <div class="form-group" ng-disabled="true">
+                    <label for="admin">Admin</label>
+                    <input id="admin" type="checkbox" class="form-control" ng-model="profile.admin">
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-default" ng-click="ok(profile)" data-dismiss="modal">
+                      Update
+                    </button>
+                    <button class="btn" ng-click="cancel()"><i class="fa fa-times"></i> Close</button>
+                  </div>
+                </form>
 
-                        </div>
+              </div>
 
+            </div>
                     </div>
                 </div>
-                </section>
             </div>
         </div>
+  </div>
+
+</script>

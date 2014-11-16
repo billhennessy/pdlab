@@ -19,7 +19,8 @@ var app = angular.module('pdlab', [
   'ngTouch',
   'firebase',
   'ui.bootstrap',
-  'ngOrderObjectBy'
+  'ngOrderObjectBy',
+  'wc.Directives'
 ])
     .constant('FIREBASE_URL', 'https://pdlab.firebaseIO.com/')
   .config(function ($routeProvider) {
@@ -38,14 +39,14 @@ var app = angular.module('pdlab', [
             })
 
           .when('/register', {
-                templateUrl: 'views/register.html',
-                controller: 'AuthCtrl',
-                resolve: {
-                  user: function (Auth) {
-                        return Auth.resolveUser();
-                    }
+            templateUrl: 'views/register.html',
+            controller: 'AuthCtrl',
+            resolve: {
+              user: function (Auth) {
+                return Auth.resolveUser();
                 }
-            })
+            }
+          })
 
           .when('/register/:labId/:email', {
             templateUrl: 'views/register.html',
@@ -58,7 +59,7 @@ var app = angular.module('pdlab', [
 
           })
 
-            .when('/login', {
+          .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'AuthCtrl',
                 resolve: {
@@ -82,16 +83,15 @@ var app = angular.module('pdlab', [
              })*/
             .when('/users/:userId', {
                 templateUrl: 'views/profile.html',
-                controller: 'ProfilesCtrl'
-            /*,
-             resolve: {
-             challenges: function (loadChallengesService) {
-             return loadChallengesService.getChallenges();
-             },
-             profile: function (loadChallengesService) {
-             return loadChallengesService.getProfile();
-             }
-             }*/
+            controller: 'ProfilesCtrl',
+            resolve: {
+              challenges: function (Profile, $route) {
+                return Profile.getChallenges($route.current.params.userId);
+              },
+              profile: function (Profile, $route) {
+                return Profile.get($route.current.params.userId);
+              }
+            }
 
             })
 
